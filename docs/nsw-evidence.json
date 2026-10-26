@@ -1,0 +1,1094 @@
+{
+  "format": "causalos-evidence-v1",
+  "created_utc": "2026-10-26T21:13:56.494454+00:00",
+  "software": {
+    "causalos": "0.1.0",
+    "python": "3.12.14",
+    "packages": {
+      "numpy": "2.5.4",
+      "scipy": "1.18.1",
+      "pandas": "3.1.0",
+      "scikit-learn": "1.9.1",
+      "statsmodels": "0.15.0",
+      "networkx": "3.7",
+      "duckdb": "2.0.0"
+    }
+  },
+  "dataset": {
+    "rows": 445,
+    "columns": [
+      "treat",
+      "age",
+      "educ",
+      "black",
+      "hisp",
+      "marr",
+      "nodegree",
+      "re74",
+      "re75",
+      "re78"
+    ],
+    "sha256": "60c4c2810ef8fa5d3c2005b7deeb4c69ed4a36422ea43932be15e90489e06052"
+  },
+  "source_metadata": {
+    "name": "nsw",
+    "title": "NSW job-training randomized experiment",
+    "kind": "real_experimental",
+    "simulated": false,
+    "question": {
+      "treatment": "treat",
+      "outcome": "re78",
+      "covariates": [
+        "age",
+        "educ",
+        "black",
+        "hisp",
+        "marr",
+        "nodegree",
+        "re74",
+        "re75"
+      ],
+      "graph": {
+        "nodes": [
+          "age",
+          "educ",
+          "black",
+          "hisp",
+          "marr",
+          "nodegree",
+          "re74",
+          "re75",
+          "treat",
+          "re78"
+        ],
+        "edges": [
+          [
+            "age",
+            "re78"
+          ],
+          [
+            "educ",
+            "re78"
+          ],
+          [
+            "black",
+            "re78"
+          ],
+          [
+            "hisp",
+            "re78"
+          ],
+          [
+            "marr",
+            "re78"
+          ],
+          [
+            "nodegree",
+            "re78"
+          ],
+          [
+            "re74",
+            "re78"
+          ],
+          [
+            "re75",
+            "re78"
+          ],
+          [
+            "treat",
+            "re78"
+          ]
+        ],
+        "unresolved": [],
+        "latent": []
+      },
+      "assumptions": {
+        "exchangeability": true,
+        "consistency": true,
+        "positivity": true,
+        "temporal_order": true,
+        "no_interference": true,
+        "measurement_validity": true,
+        "selection_ignorability": true
+      },
+      "graph_source": "user",
+      "seed": 42
+    },
+    "provenance": {
+      "source": "https://raw.githubusercontent.com/vincentarelbundock/Rdatasets/master/csv/causaldata/nsw_mixtape.csv",
+      "documentation": "https://nickch-k.r-universe.dev/causaldata/doc/manual.html#nsw_mixtape",
+      "sha256": "72efd333a4b94a2bee55149d3542021d0adde03201d010ebe971e3e863360cd6",
+      "license": "causaldata: MIT + LICENSE; copyright 2021 Nick Huntington-Klein",
+      "original_study": "LaLonde (1986), Evaluating the Econometric Evaluations of Training Programs with Experimental Data; Dehejia and Wahba (1999) restricted sample.",
+      "transformations": [
+        "Remove rownames and constant data_id labels; keep all 445 observations and all measured variables."
+      ]
+    },
+    "limitations": [
+      "Assumptions in this reproducible case are configured from the documented randomized study design; users must assess their relevance.",
+      "The estimand is the average effect in this selected randomized study sample, not a current labor-market policy forecast.",
+      "No ground-truth individual treatment effects or true population ATE are observed.",
+      "Earnings are in historical 1978 dollars. Heavy tails make finite-sample uncertainty important."
+    ]
+  },
+  "question": {
+    "treatment": "treat",
+    "outcome": "re78",
+    "covariates": [
+      "age",
+      "educ",
+      "black",
+      "hisp",
+      "marr",
+      "nodegree",
+      "re74",
+      "re75"
+    ],
+    "graph": {
+      "nodes": [
+        "age",
+        "educ",
+        "black",
+        "hisp",
+        "marr",
+        "nodegree",
+        "re74",
+        "re75",
+        "treat",
+        "re78"
+      ],
+      "edges": [
+        [
+          "age",
+          "re78"
+        ],
+        [
+          "educ",
+          "re78"
+        ],
+        [
+          "black",
+          "re78"
+        ],
+        [
+          "hisp",
+          "re78"
+        ],
+        [
+          "marr",
+          "re78"
+        ],
+        [
+          "nodegree",
+          "re78"
+        ],
+        [
+          "re74",
+          "re78"
+        ],
+        [
+          "re75",
+          "re78"
+        ],
+        [
+          "treat",
+          "re78"
+        ]
+      ],
+      "unresolved": [],
+      "latent": []
+    },
+    "assumptions": {
+      "exchangeability": true,
+      "consistency": true,
+      "positivity": true,
+      "temporal_order": true,
+      "no_interference": true,
+      "measurement_validity": true,
+      "selection_ignorability": true
+    },
+    "graph_source": "user",
+    "seed": 42
+  },
+  "analysis": {
+    "status": "identified",
+    "estimates": [
+      {
+        "method": "regression",
+        "estimate": 1676.3426254030333,
+        "se": 685.3024746500472,
+        "ci": [
+          333.1497750889407,
+          3019.535475717126
+        ],
+        "confidence_level": 0.95,
+        "target": "ATE",
+        "assumptions": "Additive linear conditional mean; HC3 heteroskedasticity-robust normal interval. A constant effect or correct additive outcome specification is required."
+      },
+      {
+        "method": "ipw",
+        "estimate": 1612.434785031361,
+        "se": 701.0632420939442,
+        "ci": [
+          158.45525150561897,
+          3008.1766183708255
+        ],
+        "confidence_level": 0.95,
+        "target": "ATE",
+        "assumptions": "Horvitz-Thompson ATE; correctly specified logistic propensity; propensity clipped at [0.01,0.99]. Stratified pairs bootstrap (80 refits), percentile interval."
+      },
+      {
+        "method": "aipw",
+        "estimate": 1618.9969088854534,
+        "se": 671.5407653631578,
+        "ci": [
+          302.7770087736642,
+          2935.216808997243
+        ],
+        "confidence_level": 0.95,
+        "target": "ATE",
+        "assumptions": "Parametric augmented IPW with logistic treatment model and separate linear outcome models. The point estimate is doubly robust under a correct propensity or outcome model; the displayed simple influence-score interval additionally needs both parametric nuisance models correct (or negligible nuisance bias) and regularity."
+      },
+      {
+        "method": "dml",
+        "estimate": 1540.2080991816854,
+        "se": 713.244292965342,
+        "ci": [
+          142.24928496961525,
+          2938.1669133937557
+        ],
+        "confidence_level": 0.95,
+        "target": "ATE",
+        "assumptions": "Cross-fitted interactive-regression-model ATE / orthogonal AIPW score; 5 stratified folds, random-forest outcomes and logistic propensity. Asymptotic influence-score interval needs nuisance-rate and overlap assumptions; finite-sample coverage is not guaranteed."
+      }
+    ],
+    "diagnostics": {
+      "n": 445,
+      "treated": 185,
+      "control": 260,
+      "association": {
+        "method": "unadjusted_association",
+        "estimate": 1794.3423818501024,
+        "se": 670.9965444673315,
+        "ci": [
+          479.18915469413264,
+          3109.4956090060723
+        ],
+        "confidence_level": 0.95,
+        "target": "association",
+        "assumptions": "Unadjusted difference in sample means; association alone does not establish causality."
+      },
+      "overlap": {
+        "min": 0.19480376672858057,
+        "max": 0.6757930344092863,
+        "outside_005_095": 0.0,
+        "clipped_fraction": 0.0,
+        "effective_sample_size_treated": 175.98990358929706,
+        "effective_sample_size_control": 251.5035600916609,
+        "proves_positivity": false
+      },
+      "balance": [
+        {
+          "variable": "age",
+          "smd_before": 0.10727712146617467,
+          "smd_after_ipw": -0.0005798262534348864
+        },
+        {
+          "variable": "educ",
+          "smd_before": 0.14121982079828682,
+          "smd_after_ipw": 0.00205860558751715
+        },
+        {
+          "variable": "black",
+          "smd_before": 0.04388661137007063,
+          "smd_after_ipw": -0.0014311774227682725
+        },
+        {
+          "variable": "hisp",
+          "smd_before": -0.1745610713731719,
+          "smd_after_ipw": 0.0007458485117340975
+        },
+        {
+          "variable": "marr",
+          "smd_before": 0.09364070075641238,
+          "smd_after_ipw": 0.005861701920815612
+        },
+        {
+          "variable": "nodegree",
+          "smd_before": -0.30398643906182043,
+          "smd_after_ipw": -0.00024458118085037564
+        },
+        {
+          "variable": "re74",
+          "smd_before": -0.0021599489524727986,
+          "smd_after_ipw": -0.0007214881376025139
+        },
+        {
+          "variable": "re75",
+          "smd_before": 0.08386324067125678,
+          "smd_after_ipw": 0.00900801251517514
+        }
+      ],
+      "rows_dropped": 0
+    },
+    "refutation": {
+      "placebo": {
+        "method": "permuted_treatment_regression",
+        "estimate": 773.360619406154,
+        "se": 667.7015949130927,
+        "ci": [
+          -535.3345066235077,
+          2082.055745435816
+        ],
+        "confidence_level": 0.95,
+        "target": "ATE",
+        "assumptions": "One seeded treatment permutation; detects gross estimator artifacts, cannot validate exchangeability.",
+        "includes_zero": true
+      },
+      "subset": {
+        "method": "random_80_percent_regression",
+        "estimate": 1564.8163993283006,
+        "se": 688.1619741761051,
+        "ci": [
+          216.0189299431347,
+          2913.613868713466
+        ],
+        "confidence_level": 0.95,
+        "target": "ATE",
+        "assumptions": "Seeded 80% subset stability check; not an independent replication."
+      },
+      "interpretation": "Passing a refutation check does not prove the causal assumptions. A failed check prompts investigation."
+    },
+    "sensitivity": {
+      "model": "Single omitted-variable linear-model bias envelope using specified partial R-squared values (Cinelli & Hazlett, 2020).",
+      "grid": [
+        {
+          "r2_treatment": 0.01,
+          "r2_outcome": 0.01,
+          "bias": 133.87877130744792,
+          "adjusted_effect": 1542.4638540955852,
+          "effect_lower": 1542.4638540955852,
+          "effect_upper": 1810.2213967104813
+        },
+        {
+          "r2_treatment": 0.01,
+          "r2_outcome": 0.05,
+          "bias": 299.362033387602,
+          "adjusted_effect": 1376.9805920154313,
+          "effect_lower": 1376.9805920154313,
+          "effect_upper": 1975.7046587906352
+        },
+        {
+          "r2_treatment": 0.01,
+          "r2_outcome": 0.1,
+          "bias": 423.361847676334,
+          "adjusted_effect": 1252.9807777266992,
+          "effect_lower": 1252.9807777266992,
+          "effect_upper": 2099.7044730793673
+        },
+        {
+          "r2_treatment": 0.01,
+          "r2_outcome": 0.2,
+          "bias": 598.724066775204,
+          "adjusted_effect": 1077.6185586278293,
+          "effect_lower": 1077.6185586278293,
+          "effect_upper": 2275.066692178237
+        },
+        {
+          "r2_treatment": 0.01,
+          "r2_outcome": 0.3,
+          "bias": 733.2842301616463,
+          "adjusted_effect": 943.058395241387,
+          "effect_lower": 943.058395241387,
+          "effect_upper": 2409.6268555646793
+        },
+        {
+          "r2_treatment": 0.05,
+          "r2_outcome": 0.01,
+          "bias": 305.5994123093345,
+          "adjusted_effect": 1370.7432130936986,
+          "effect_lower": 1370.7432130936986,
+          "effect_upper": 1981.942037712368
+        },
+        {
+          "r2_treatment": 0.05,
+          "r2_outcome": 0.05,
+          "bias": 683.3410598076582,
+          "adjusted_effect": 993.001565595375,
+          "effect_lower": 993.001565595375,
+          "effect_upper": 2359.6836852106917
+        },
+        {
+          "r2_treatment": 0.05,
+          "r2_outcome": 0.1,
+          "bias": 966.3901945063944,
+          "adjusted_effect": 709.9524308966388,
+          "effect_lower": 709.9524308966388,
+          "effect_upper": 2642.7328199094277
+        },
+        {
+          "r2_treatment": 0.05,
+          "r2_outcome": 0.2,
+          "bias": 1366.6821196153164,
+          "adjusted_effect": 309.66050578771683,
+          "effect_lower": 309.66050578771683,
+          "effect_upper": 3043.0247450183497
+        },
+        {
+          "r2_treatment": 0.05,
+          "r2_outcome": 0.3,
+          "bias": 1673.8369168214447,
+          "adjusted_effect": 2.5057085815885785,
+          "effect_lower": 2.5057085815885785,
+          "effect_upper": 3350.1795422244777
+        },
+        {
+          "r2_treatment": 0.1,
+          "r2_outcome": 0.01,
+          "bias": 444.02565182060306,
+          "adjusted_effect": 1232.3169735824301,
+          "effect_lower": 1232.3169735824301,
+          "effect_upper": 2120.368277223636
+        },
+        {
+          "r2_treatment": 0.1,
+          "r2_outcome": 0.05,
+          "bias": 992.8715412245217,
+          "adjusted_effect": 683.4710841785115,
+          "effect_lower": 683.4710841785115,
+          "effect_upper": 2669.2141666275547
+        },
+        {
+          "r2_treatment": 0.1,
+          "r2_outcome": 0.1,
+          "bias": 1404.1323992939963,
+          "adjusted_effect": 272.21022610903697,
+          "effect_lower": 272.21022610903697,
+          "effect_upper": 3080.4750246970298
+        },
+        {
+          "r2_treatment": 0.1,
+          "r2_outcome": 0.2,
+          "bias": 1985.7430824490434,
+          "adjusted_effect": -309.40045704601016,
+          "effect_lower": -309.40045704601016,
+          "effect_upper": 3662.0857078520767
+        },
+        {
+          "r2_treatment": 0.1,
+          "r2_outcome": 0.3,
+          "bias": 2432.028656130791,
+          "adjusted_effect": -755.686030727758,
+          "effect_lower": -755.686030727758,
+          "effect_upper": 4108.371281533824
+        },
+        {
+          "r2_treatment": 0.2,
+          "r2_outcome": 0.01,
+          "bias": 666.0384777309046,
+          "adjusted_effect": 1010.3041476721287,
+          "effect_lower": 1010.3041476721287,
+          "effect_upper": 2342.381103133938
+        },
+        {
+          "r2_treatment": 0.2,
+          "r2_outcome": 0.05,
+          "bias": 1489.3073118367827,
+          "adjusted_effect": 187.03531356625058,
+          "effect_lower": 187.03531356625058,
+          "effect_upper": 3165.6499372398157
+        },
+        {
+          "r2_treatment": 0.2,
+          "r2_outcome": 0.1,
+          "bias": 2106.198598940994,
+          "adjusted_effect": -429.85597353796084,
+          "effect_lower": -429.85597353796084,
+          "effect_upper": 3782.5412243440273
+        },
+        {
+          "r2_treatment": 0.2,
+          "r2_outcome": 0.2,
+          "bias": 2978.6146236735653,
+          "adjusted_effect": -1302.271998270532,
+          "effect_lower": -1302.271998270532,
+          "effect_upper": 4654.957249076599
+        },
+        {
+          "r2_treatment": 0.2,
+          "r2_outcome": 0.3,
+          "bias": 3648.0429841961864,
+          "adjusted_effect": -1971.700358793153,
+          "effect_lower": -1971.700358793153,
+          "effect_upper": 5324.38560959922
+        },
+        {
+          "r2_treatment": 0.3,
+          "r2_outcome": 0.01,
+          "bias": 872.0490685585798,
+          "adjusted_effect": 804.2935568444534,
+          "effect_lower": 804.2935568444534,
+          "effect_upper": 2548.391693961613
+        },
+        {
+          "r2_treatment": 0.3,
+          "r2_outcome": 0.05,
+          "bias": 1949.9609970123595,
+          "adjusted_effect": -273.61837160932623,
+          "effect_lower": -273.61837160932623,
+          "effect_upper": 3626.303622415393
+        },
+        {
+          "r2_treatment": 0.3,
+          "r2_outcome": 0.1,
+          "bias": 2757.6612880734406,
+          "adjusted_effect": -1081.3186626704073,
+          "effect_lower": -1081.3186626704073,
+          "effect_upper": 4434.003913476474
+        },
+        {
+          "r2_treatment": 0.3,
+          "r2_outcome": 0.2,
+          "bias": 3899.921994024719,
+          "adjusted_effect": -2223.5793686216857,
+          "effect_lower": -2223.5793686216857,
+          "effect_upper": 5576.264619427752
+        },
+        {
+          "r2_treatment": 0.3,
+          "r2_outcome": 0.3,
+          "bias": 4776.409461009033,
+          "adjusted_effect": -3100.066835606,
+          "effect_lower": -3100.066835606,
+          "effect_upper": 6452.752086412067
+        }
+      ],
+      "interpretation": "User-specified confounder strengths, not measured hidden confounding. Bounds cover point-estimate bias in either sign; they are not confidence or causal identification intervals."
+    },
+    "assumptions": {
+      "exchangeability": true,
+      "consistency": true,
+      "positivity": true,
+      "temporal_order": true,
+      "no_interference": true,
+      "measurement_validity": true,
+      "selection_ignorability": true
+    },
+    "limitations": [
+      "Identification is conditional on the supplied graph and accepted scientific assumptions, not established by observational fit.",
+      "Only complete-data binary-treatment backdoor ATEs are supported; latent-variable ID and partial-identification bounds are not implemented.",
+      "Population transport, measurement error, selection bias and interference cannot be ruled out by these diagnostics.",
+      "Estimator agreement does not establish causal validity. Confidence intervals quantify sampling uncertainty under estimator assumptions, not uncertainty in the graph.",
+      "Individual counterfactuals are not identified by an ATE analysis; no individual counterfactual outcomes are generated."
+    ],
+    "identification": {
+      "identified": true,
+      "reason": "The supplied adjustment set satisfies the backdoor criterion in the user-confirmed DAG, conditional on the accepted assumptions.",
+      "estimand": "Sample-population average treatment effect E[Y(1)-Y(0)]",
+      "adjustment_set": [
+        "age",
+        "educ",
+        "black",
+        "hisp",
+        "marr",
+        "nodegree",
+        "re74",
+        "re75"
+      ],
+      "formula": "E_X[E[Y | T=1,X] - E[Y | T=0,X]]",
+      "graph_source": "user"
+    }
+  },
+  "profile": {
+    "rows": 445,
+    "columns": [
+      {
+        "name": "treat",
+        "dtype": "int64",
+        "missing": 0,
+        "missing_percent": 0.0,
+        "unique": 2,
+        "numeric": {
+          "mean": 0.4157303370786517,
+          "std": 0.49340216140983345,
+          "min": 0,
+          "q25": 0.0,
+          "median": 0.0,
+          "q75": 1.0,
+          "max": 1
+        },
+        "nonfinite": 0
+      },
+      {
+        "name": "age",
+        "dtype": "int64",
+        "missing": 0,
+        "missing_percent": 0.0,
+        "unique": 34,
+        "numeric": {
+          "mean": 25.370786516853933,
+          "std": 7.100282354606268,
+          "min": 17,
+          "q25": 20.0,
+          "median": 24.0,
+          "q75": 28.0,
+          "max": 55
+        },
+        "nonfinite": 0
+      },
+      {
+        "name": "educ",
+        "dtype": "int64",
+        "missing": 0,
+        "missing_percent": 0.0,
+        "unique": 14,
+        "numeric": {
+          "mean": 10.195505617977528,
+          "std": 1.7921192668870145,
+          "min": 3,
+          "q25": 9.0,
+          "median": 10.0,
+          "q75": 11.0,
+          "max": 16
+        },
+        "nonfinite": 0
+      },
+      {
+        "name": "black",
+        "dtype": "int64",
+        "missing": 0,
+        "missing_percent": 0.0,
+        "unique": 2,
+        "numeric": {
+          "mean": 0.8337078651685393,
+          "std": 0.3727617347065325,
+          "min": 0,
+          "q25": 1.0,
+          "median": 1.0,
+          "q75": 1.0,
+          "max": 1
+        },
+        "nonfinite": 0
+      },
+      {
+        "name": "hisp",
+        "dtype": "int64",
+        "missing": 0,
+        "missing_percent": 0.0,
+        "unique": 2,
+        "numeric": {
+          "mean": 0.08764044943820225,
+          "std": 0.28308954458271646,
+          "min": 0,
+          "q25": 0.0,
+          "median": 0.0,
+          "q75": 0.0,
+          "max": 1
+        },
+        "nonfinite": 0
+      },
+      {
+        "name": "marr",
+        "dtype": "int64",
+        "missing": 0,
+        "missing_percent": 0.0,
+        "unique": 2,
+        "numeric": {
+          "mean": 0.16853932584269662,
+          "std": 0.3747658444979307,
+          "min": 0,
+          "q25": 0.0,
+          "median": 0.0,
+          "q75": 0.0,
+          "max": 1
+        },
+        "nonfinite": 0
+      },
+      {
+        "name": "nodegree",
+        "dtype": "int64",
+        "missing": 0,
+        "missing_percent": 0.0,
+        "unique": 2,
+        "numeric": {
+          "mean": 0.7820224719101123,
+          "std": 0.41333672924883913,
+          "min": 0,
+          "q25": 1.0,
+          "median": 1.0,
+          "q75": 1.0,
+          "max": 1
+        },
+        "nonfinite": 0
+      },
+      {
+        "name": "re74",
+        "dtype": "float64",
+        "missing": 0,
+        "missing_percent": 0.0,
+        "unique": 115,
+        "numeric": {
+          "mean": 2102.2653091945003,
+          "std": 5363.582366425955,
+          "min": 0.0,
+          "q25": 0.0,
+          "median": 0.0,
+          "q75": 824.388916015625,
+          "max": 39570.6796875
+        },
+        "nonfinite": 0
+      },
+      {
+        "name": "re75",
+        "dtype": "float64",
+        "missing": 0,
+        "missing_percent": 0.0,
+        "unique": 155,
+        "numeric": {
+          "mean": 1377.1383746029285,
+          "std": 3150.9608004400393,
+          "min": 0.0,
+          "q25": 0.0,
+          "median": 0.0,
+          "q75": 1220.8360595703125,
+          "max": 25142.240234375
+        },
+        "nonfinite": 0
+      },
+      {
+        "name": "re78",
+        "dtype": "float64",
+        "missing": 0,
+        "missing_percent": 0.0,
+        "unique": 308,
+        "numeric": {
+          "mean": 5300.763683456249,
+          "std": 6631.491680617359,
+          "min": 0.0,
+          "q25": 0.0,
+          "median": 3701.81201171875,
+          "q75": 8124.71484375,
+          "max": 60307.9296875
+        },
+        "nonfinite": 0
+      }
+    ],
+    "duplicates": 15,
+    "correlation": {
+      "columns": [
+        "treat",
+        "age",
+        "educ",
+        "black",
+        "hisp",
+        "marr",
+        "nodegree",
+        "re74",
+        "re75",
+        "re78"
+      ],
+      "values": [
+        [
+          1.0,
+          0.05297747579341063,
+          0.07089001582065661,
+          0.021602017018397087,
+          -0.08406595024241921,
+          0.04653126821735741,
+          -0.15101238105840728,
+          -0.0010535708763148586,
+          0.04151868749544183,
+          0.13350426301548
+        ],
+        [
+          0.05297747579341063,
+          1.0,
+          0.022964323735727085,
+          0.0871710012631811,
+          -0.09015737277730294,
+          0.2100716544228861,
+          -0.11283772491611535,
+          -0.0012287824201481145,
+          0.05262571956121891,
+          0.05716566734553951
+        ],
+        [
+          0.07089001582065661,
+          0.022964323735727085,
+          1.0,
+          0.045404935550961076,
+          -0.1448348494716843,
+          0.08161285363241096,
+          -0.6355754526215887,
+          0.041189305781315924,
+          0.02585520751889163,
+          0.11616561719533548
+        ],
+        [
+          0.021602017018397087,
+          0.0871710012631811,
+          0.045404935550961076,
+          1.0,
+          -0.6939694969003644,
+          0.02373050561282277,
+          0.041948128864361216,
+          0.005445734188347367,
+          -0.056388707983944714,
+          -0.1149577253842137
+        ],
+        [
+          -0.08406595024241921,
+          -0.09015737277730294,
+          -0.1448348494716843,
+          -0.6939694969003644,
+          1.0,
+          0.009064143801173888,
+          0.0866383434547567,
+          -0.028484879855656207,
+          0.04080520968778418,
+          0.058605960731935934
+        ],
+        [
+          0.04653126821735741,
+          0.2100716544228861,
+          0.08161285363241096,
+          0.02373050561282277,
+          0.009064143801173888,
+          1.0,
+          -0.03855449548917672,
+          0.14252163579794558,
+          0.2679134743556945,
+          0.03267195408850404
+        ],
+        [
+          -0.15101238105840728,
+          -0.11283772491611535,
+          -0.6355754526215887,
+          0.041948128864361216,
+          0.0866383434547567,
+          -0.03855449548917672,
+          1.0,
+          -0.06782801268293318,
+          0.020786930536311848,
+          -0.10606313614125847
+        ],
+        [
+          -0.0010535708763148586,
+          -0.0012287824201481145,
+          0.041189305781315924,
+          0.005445734188347367,
+          -0.028484879855656207,
+          0.14252163579794558,
+          -0.06782801268293318,
+          1.0,
+          0.6552006463328209,
+          0.08538444807049567
+        ],
+        [
+          0.04151868749544183,
+          0.05262571956121891,
+          0.02585520751889163,
+          -0.056388707983944714,
+          0.04080520968778418,
+          0.2679134743556945,
+          0.020786930536311848,
+          0.6552006463328209,
+          1.0,
+          0.08459903540047937
+        ],
+        [
+          0.13350426301548,
+          0.05716566734553951,
+          0.11616561719533548,
+          -0.1149577253842137,
+          0.058605960731935934,
+          0.03267195408850404,
+          -0.10606313614125847,
+          0.08538444807049567,
+          0.08459903540047937,
+          1.0
+        ]
+      ]
+    },
+    "cohorts": [
+      {
+        "treatment": 0,
+        "n": 260
+      },
+      {
+        "treatment": 1,
+        "n": 185
+      }
+    ],
+    "balance": [
+      {
+        "variable": "age",
+        "smd_before": 0.1072771214661747
+      },
+      {
+        "variable": "educ",
+        "smd_before": 0.14121982079828688
+      },
+      {
+        "variable": "black",
+        "smd_before": 0.04388661137007063
+      },
+      {
+        "variable": "hisp",
+        "smd_before": -0.17456107137317195
+      },
+      {
+        "variable": "marr",
+        "smd_before": 0.09364070075641237
+      },
+      {
+        "variable": "nodegree",
+        "smd_before": -0.30398643906182043
+      },
+      {
+        "variable": "re74",
+        "smd_before": -0.0021599489524727986
+      },
+      {
+        "variable": "re75",
+        "smd_before": 0.08386324067125676
+      }
+    ],
+    "provenance": {
+      "sha256": "7733b44eb709cffae758eb194f5973eb4bdc0e608633151afc4d3f6025ba11fc",
+      "hash_definition": "SHA256 of ordered (column,dtype) JSON and pandas hash_pandas_object(index=False) bytes; pandas-version dependent",
+      "engine": "DuckDB 2.0.0",
+      "transformations": [],
+      "queries": [
+        "SELECT COUNT(*) AS rows FROM observations",
+        "SELECT COUNT(*) FROM (SELECT DISTINCT * FROM observations)",
+        "SELECT COUNT(*) FILTER (WHERE \"treat\" IS NULL), COUNT(DISTINCT \"treat\") FROM observations",
+        "SELECT AVG(\"treat\"), STDDEV_SAMP(\"treat\"), MIN(\"treat\"), QUANTILE_CONT(\"treat\", 0.25), MEDIAN(\"treat\"), QUANTILE_CONT(\"treat\", 0.75), MAX(\"treat\"), COUNT(*) FILTER(WHERE NOT ISFINITE(\"treat\")) FROM observations",
+        "SELECT COUNT(*) FILTER (WHERE \"age\" IS NULL), COUNT(DISTINCT \"age\") FROM observations",
+        "SELECT AVG(\"age\"), STDDEV_SAMP(\"age\"), MIN(\"age\"), QUANTILE_CONT(\"age\", 0.25), MEDIAN(\"age\"), QUANTILE_CONT(\"age\", 0.75), MAX(\"age\"), COUNT(*) FILTER(WHERE NOT ISFINITE(\"age\")) FROM observations",
+        "SELECT COUNT(*) FILTER (WHERE \"educ\" IS NULL), COUNT(DISTINCT \"educ\") FROM observations",
+        "SELECT AVG(\"educ\"), STDDEV_SAMP(\"educ\"), MIN(\"educ\"), QUANTILE_CONT(\"educ\", 0.25), MEDIAN(\"educ\"), QUANTILE_CONT(\"educ\", 0.75), MAX(\"educ\"), COUNT(*) FILTER(WHERE NOT ISFINITE(\"educ\")) FROM observations",
+        "SELECT COUNT(*) FILTER (WHERE \"black\" IS NULL), COUNT(DISTINCT \"black\") FROM observations",
+        "SELECT AVG(\"black\"), STDDEV_SAMP(\"black\"), MIN(\"black\"), QUANTILE_CONT(\"black\", 0.25), MEDIAN(\"black\"), QUANTILE_CONT(\"black\", 0.75), MAX(\"black\"), COUNT(*) FILTER(WHERE NOT ISFINITE(\"black\")) FROM observations",
+        "SELECT COUNT(*) FILTER (WHERE \"hisp\" IS NULL), COUNT(DISTINCT \"hisp\") FROM observations",
+        "SELECT AVG(\"hisp\"), STDDEV_SAMP(\"hisp\"), MIN(\"hisp\"), QUANTILE_CONT(\"hisp\", 0.25), MEDIAN(\"hisp\"), QUANTILE_CONT(\"hisp\", 0.75), MAX(\"hisp\"), COUNT(*) FILTER(WHERE NOT ISFINITE(\"hisp\")) FROM observations",
+        "SELECT COUNT(*) FILTER (WHERE \"marr\" IS NULL), COUNT(DISTINCT \"marr\") FROM observations",
+        "SELECT AVG(\"marr\"), STDDEV_SAMP(\"marr\"), MIN(\"marr\"), QUANTILE_CONT(\"marr\", 0.25), MEDIAN(\"marr\"), QUANTILE_CONT(\"marr\", 0.75), MAX(\"marr\"), COUNT(*) FILTER(WHERE NOT ISFINITE(\"marr\")) FROM observations",
+        "SELECT COUNT(*) FILTER (WHERE \"nodegree\" IS NULL), COUNT(DISTINCT \"nodegree\") FROM observations",
+        "SELECT AVG(\"nodegree\"), STDDEV_SAMP(\"nodegree\"), MIN(\"nodegree\"), QUANTILE_CONT(\"nodegree\", 0.25), MEDIAN(\"nodegree\"), QUANTILE_CONT(\"nodegree\", 0.75), MAX(\"nodegree\"), COUNT(*) FILTER(WHERE NOT ISFINITE(\"nodegree\")) FROM observations",
+        "SELECT COUNT(*) FILTER (WHERE \"re74\" IS NULL), COUNT(DISTINCT \"re74\") FROM observations",
+        "SELECT AVG(\"re74\"), STDDEV_SAMP(\"re74\"), MIN(\"re74\"), QUANTILE_CONT(\"re74\", 0.25), MEDIAN(\"re74\"), QUANTILE_CONT(\"re74\", 0.75), MAX(\"re74\"), COUNT(*) FILTER(WHERE NOT ISFINITE(\"re74\")) FROM observations",
+        "SELECT COUNT(*) FILTER (WHERE \"re75\" IS NULL), COUNT(DISTINCT \"re75\") FROM observations",
+        "SELECT AVG(\"re75\"), STDDEV_SAMP(\"re75\"), MIN(\"re75\"), QUANTILE_CONT(\"re75\", 0.25), MEDIAN(\"re75\"), QUANTILE_CONT(\"re75\", 0.75), MAX(\"re75\"), COUNT(*) FILTER(WHERE NOT ISFINITE(\"re75\")) FROM observations",
+        "SELECT COUNT(*) FILTER (WHERE \"re78\" IS NULL), COUNT(DISTINCT \"re78\") FROM observations",
+        "SELECT AVG(\"re78\"), STDDEV_SAMP(\"re78\"), MIN(\"re78\"), QUANTILE_CONT(\"re78\", 0.25), MEDIAN(\"re78\"), QUANTILE_CONT(\"re78\", 0.75), MAX(\"re78\"), COUNT(*) FILTER(WHERE NOT ISFINITE(\"re78\")) FROM observations",
+        "SELECT \"treat\" AS treatment, COUNT(*) AS n FROM observations GROUP BY \"treat\" ORDER BY \"treat\" LIMIT 30",
+        "SELECT \"treat\", AVG(\"age\"), VAR_SAMP(\"age\") FROM observations WHERE \"treat\" IN (0,1) GROUP BY \"treat\" ORDER BY \"treat\"",
+        "SELECT \"treat\", AVG(\"educ\"), VAR_SAMP(\"educ\") FROM observations WHERE \"treat\" IN (0,1) GROUP BY \"treat\" ORDER BY \"treat\"",
+        "SELECT \"treat\", AVG(\"black\"), VAR_SAMP(\"black\") FROM observations WHERE \"treat\" IN (0,1) GROUP BY \"treat\" ORDER BY \"treat\"",
+        "SELECT \"treat\", AVG(\"hisp\"), VAR_SAMP(\"hisp\") FROM observations WHERE \"treat\" IN (0,1) GROUP BY \"treat\" ORDER BY \"treat\"",
+        "SELECT \"treat\", AVG(\"marr\"), VAR_SAMP(\"marr\") FROM observations WHERE \"treat\" IN (0,1) GROUP BY \"treat\" ORDER BY \"treat\"",
+        "SELECT \"treat\", AVG(\"nodegree\"), VAR_SAMP(\"nodegree\") FROM observations WHERE \"treat\" IN (0,1) GROUP BY \"treat\" ORDER BY \"treat\"",
+        "SELECT \"treat\", AVG(\"re74\"), VAR_SAMP(\"re74\") FROM observations WHERE \"treat\" IN (0,1) GROUP BY \"treat\" ORDER BY \"treat\"",
+        "SELECT \"treat\", AVG(\"re75\"), VAR_SAMP(\"re75\") FROM observations WHERE \"treat\" IN (0,1) GROUP BY \"treat\" ORDER BY \"treat\""
+      ],
+      "rows_removed": 0
+    },
+    "warnings": [
+      "15 repeated row records detected; no rows removed. Repeated observations may require clustered inference."
+    ]
+  },
+  "experiment": null,
+  "counterfactual": null,
+  "validity_experiment": null,
+  "reproducibility_configuration": {
+    "example": "nsw",
+    "seed": 42,
+    "rows": 445,
+    "question": {
+      "treatment": "treat",
+      "outcome": "re78",
+      "covariates": [
+        "age",
+        "educ",
+        "black",
+        "hisp",
+        "marr",
+        "nodegree",
+        "re74",
+        "re75"
+      ],
+      "graph": {
+        "nodes": [
+          "age",
+          "educ",
+          "black",
+          "hisp",
+          "marr",
+          "nodegree",
+          "re74",
+          "re75",
+          "treat",
+          "re78"
+        ],
+        "edges": [
+          [
+            "age",
+            "re78"
+          ],
+          [
+            "educ",
+            "re78"
+          ],
+          [
+            "black",
+            "re78"
+          ],
+          [
+            "hisp",
+            "re78"
+          ],
+          [
+            "marr",
+            "re78"
+          ],
+          [
+            "nodegree",
+            "re78"
+          ],
+          [
+            "re74",
+            "re78"
+          ],
+          [
+            "re75",
+            "re78"
+          ],
+          [
+            "treat",
+            "re78"
+          ]
+        ],
+        "unresolved": [],
+        "latent": []
+      },
+      "assumptions": {
+        "exchangeability": true,
+        "consistency": true,
+        "positivity": true,
+        "temporal_order": true,
+        "no_interference": true,
+        "measurement_validity": true,
+        "selection_ignorability": true
+      },
+      "graph_source": "user",
+      "seed": 42
+    }
+  },
+  "interpretation": {
+    "association": "An observed relationship does not establish a causal effect.",
+    "identification": "Identification is conditional on the supplied graph and explicit, partly untestable assumptions.",
+    "simulation": "Intervention replay is simulated evidence within a specified finite model family, not real-world experimental verification.",
+    "counterfactuals": "Individual counterfactual claims require an appropriate structural model; no individual counterfactual is inferred from an average treatment effect."
+  }
+}

@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools>=77.0.3", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "causalos-lab"
+version = "0.1.0"
+description = "An assumption-aware causal research laboratory and budgeted experiment-design testbed"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+authors = [{name = "Nazeeh"}]
+keywords = ["causal-inference", "experimental-design", "statistics", "active-learning"]
+classifiers = ["Development Status :: 3 - Alpha", "Programming Language :: Python :: 3", "Topic :: Scientific/Engineering :: Artificial Intelligence"]
+dependencies = [
+  "numpy>=1.26,<3", "scipy>=1.12,<2", "pandas>=2.2,<4",
+  "scikit-learn>=1.5,<2", "statsmodels>=0.14,<1", "networkx>=3.3,<4",
+  "duckdb>=1.1,<3", "fastapi>=0.115,<1", "uvicorn>=0.30,<1",
+  "matplotlib>=3.9,<4"
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10", "httpx>=0.27,<1", "build>=1.2,<2", "ruff>=0.8,<1"]
+discovery = ["causal-learn>=0.1.4,<0.2"]
+
+[project.urls]
+Homepage = "https://github.com/nazeeh111/CausalOS"
+Repository = "https://github.com/nazeeh111/CausalOS"
+Issues = "https://github.com/nazeeh111/CausalOS/issues"
+
+[project.scripts]
+causalos = "causalos.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["causalos*"]
+
+[tool.setuptools.package-data]
+causalos = ["web/*", "resources/*", "resources/**/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+filterwarnings = ["ignore:.*deprecated.*:DeprecationWarning"]
+
+[tool.ruff]
+line-length = 110
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F"]

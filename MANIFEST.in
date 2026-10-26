@@ -1,0 +1,10 @@
+include LICENSE README.md CONTRIBUTING.md CITATION.cff requirements-lock.txt
+recursive-include sql *.sql
+recursive-include examples *.py *.md *.json *.png
+recursive-include benchmarks *.md *.json *.csv *.png *.svg
+recursive-include docs *.md *.bib
+include docs/nsw-evidence.html docs/nsw-evidence.json
+recursive-include assets *.svg
+recursive-include assets/launch *.html *.py *.md *.txt *.json
+recursive-exclude assets/launch/composition/assets *
+global-exclude __pycache__ *.py[cod] .DS_Store

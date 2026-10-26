@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.venv/
+*.egg-info/
+build/
+dist/
+.DS_Store
+*.duckdb
+*.duckdb.wal
+artifacts/
+node_modules/
+.env*
+!.env.example
+assets/launch/composition/.hyperframes/
+assets/launch/composition/snapshots/

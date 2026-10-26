@@ -1,0 +1,35 @@
+name: Verify scientific workflows
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ['3.11', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+          cache: pip
+      - run: python -m pip install '.[dev,discovery]'
+      - run: ruff check causalos tests
+      - run: pytest -q
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: node docs/demo/check_parity.cjs
+      - run: causalos example confounded --out artifacts/example
+      - run: causalos analyze artifacts/example/data.csv --question artifacts/example/question.json --out artifacts/analysis.json --report artifacts/report.html
+      - run: causalos replay --steps 3 --out artifacts/replay.json
+      - run: python -m build
+      - uses: actions/upload-artifact@v4
+        with:
+          name: evidence-python-${{ matrix.python }}
+          path: |
+            artifacts/
+            dist/

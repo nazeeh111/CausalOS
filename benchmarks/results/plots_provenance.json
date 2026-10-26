@@ -1,0 +1,53 @@
+{
+  "change": "Aggregate each policy/scenario metric within seed, then standard error over64 independent seed-cluster means; no raw episode rerun",
+  "benchmark_source_sha256": "7e195d9c38096831305d9a68a8a397d7c26107ba19768572fb1f61596abc3442",
+  "runtime_cluster_checks": [
+    {
+      "policy": "random",
+      "independent_seed_clusters": 64,
+      "scenarios_per_cluster": 3,
+      "mean_cost95": 6.615104166666666,
+      "clustered_sem": 0.27204190019680313
+    },
+    {
+      "policy": "uncertainty",
+      "independent_seed_clusters": 64,
+      "scenarios_per_cluster": 3,
+      "mean_cost95": 6.6078125,
+      "clustered_sem": 0.14539852448854412
+    },
+    {
+      "policy": "information_gain",
+      "independent_seed_clusters": 64,
+      "scenarios_per_cluster": 3,
+      "mean_cost95": 6.224479166666667,
+      "clustered_sem": 0.1274954657947698
+    },
+    {
+      "policy": "query_eig",
+      "independent_seed_clusters": 64,
+      "scenarios_per_cluster": 3,
+      "mean_cost95": 4.744270833333333,
+      "clustered_sem": 0.19848141326244928
+    },
+    {
+      "policy": "decision_value",
+      "independent_seed_clusters": 64,
+      "scenarios_per_cluster": 3,
+      "mean_cost95": 5.694791666666667,
+      "clustered_sem": 0.27648630207840846
+    },
+    {
+      "policy": "causalos",
+      "independent_seed_clusters": 64,
+      "scenarios_per_cluster": 3,
+      "mean_cost95": 4.744270833333333,
+      "clustered_sem": 0.19848141326244928
+    }
+  ],
+  "raw_csv_sha256": {
+    "summary.csv": "6e8637d787a9627d35cbeb2e78427e7debb3891b34bd43bb18847cbe7d216c60",
+    "episodes.csv": "b04ddbe2591958ab007ca514c262bd922c4658a5e2d92371cc69bd8168bfefa7",
+    "traces.csv": "e9075f8d3251495ec9372384181ac66fb78c641b00a4be00e5a0bd514e99311c"
+  }
+}

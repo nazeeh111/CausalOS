@@ -1,0 +1,9 @@
+* text=auto eol=lf
+# Preserve executed CSV bytes, including the csv module's CRLF records.
+*.csv -text whitespace=cr-at-eol
+# Matplotlib SVG path attributes contain significant separator whitespace.
+*.svg -whitespace
+*.png binary
+*.jpg binary
+*.mp4 binary
+*.wav binary

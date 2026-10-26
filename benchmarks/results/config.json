@@ -1,0 +1,168 @@
+{
+  "schema_version": 1,
+  "train_seeds": [
+    0,
+    23
+  ],
+  "validation_seeds": [
+    1000,
+    1023
+  ],
+  "test_seeds": [
+    2000,
+    2063
+  ],
+  "scenarios": [
+    "fork",
+    "weak",
+    "expensive",
+    "misspecified"
+  ],
+  "budget": 12,
+  "policies": [
+    "random",
+    "uncertainty",
+    "information_gain",
+    "query_eig",
+    "decision_value",
+    "causalos",
+    "no_cost",
+    "no_decision"
+  ],
+  "parameters": {
+    "decision_weight": 0.0,
+    "query_weight": 1.0,
+    "cost_power": 1.0,
+    "graph_weight": 0.0
+  },
+  "optimization": {
+    "training": [
+      {
+        "parameters": {
+          "decision_weight": 0.0,
+          "query_weight": 1.0,
+          "cost_power": 1.0,
+          "graph_weight": 0.0
+        },
+        "objective": 0.017205985012145725
+      },
+      {
+        "parameters": {
+          "decision_weight": 0.0,
+          "query_weight": 1.0,
+          "cost_power": 0.0,
+          "graph_weight": 0.0
+        },
+        "objective": 0.017826251335049045
+      },
+      {
+        "parameters": {
+          "decision_weight": 0.5,
+          "query_weight": 0.5,
+          "cost_power": 0.0,
+          "graph_weight": 0.0
+        },
+        "objective": 0.017826251335049045
+      },
+      {
+        "parameters": {
+          "decision_weight": 1.0,
+          "query_weight": 0.0,
+          "cost_power": 0.0,
+          "graph_weight": 0.0
+        },
+        "objective": 0.017826254128542156
+      },
+      {
+        "parameters": {
+          "decision_weight": 0.0,
+          "query_weight": 1.0,
+          "cost_power": 1.5,
+          "graph_weight": 0.0
+        },
+        "objective": 0.06633287666826196
+      },
+      {
+        "parameters": {
+          "decision_weight": 0.5,
+          "query_weight": 0.5,
+          "cost_power": 1.0,
+          "graph_weight": 0.0
+        },
+        "objective": 0.06823112046859955
+      },
+      {
+        "parameters": {
+          "decision_weight": 1.0,
+          "query_weight": 0.0,
+          "cost_power": 1.0,
+          "graph_weight": 0.0
+        },
+        "objective": 0.07022186119000284
+      },
+      {
+        "parameters": {
+          "decision_weight": 0.5,
+          "query_weight": 0.5,
+          "cost_power": 1.5,
+          "graph_weight": 0.0
+        },
+        "objective": 0.08043828350016807
+      },
+      {
+        "parameters": {
+          "decision_weight": 1.0,
+          "query_weight": 0.0,
+          "cost_power": 1.5,
+          "graph_weight": 0.0
+        },
+        "objective": 0.08144390561902948
+      }
+    ],
+    "validation": [
+      {
+        "parameters": {
+          "decision_weight": 0.0,
+          "query_weight": 1.0,
+          "cost_power": 1.0,
+          "graph_weight": 0.0
+        },
+        "objective": 0.016402460159466933
+      },
+      {
+        "parameters": {
+          "decision_weight": 0.0,
+          "query_weight": 1.0,
+          "cost_power": 0.0,
+          "graph_weight": 0.0
+        },
+        "objective": 0.018180198352149908
+      },
+      {
+        "parameters": {
+          "decision_weight": 0.5,
+          "query_weight": 0.5,
+          "cost_power": 0.0,
+          "graph_weight": 0.0
+        },
+        "objective": 0.018180198352149908
+      }
+    ],
+    "objective": "mean(normalized regret + 0.20 query Brier + 0.04 capped cost-to-95 / budget)",
+    "selection": "Train nine parameter settings; choose among training top three using validation only."
+  },
+  "quadrature_order": 21,
+  "python": "3.12.14",
+  "numpy": "2.5.4",
+  "elapsed_seconds": 221.734,
+  "test_episodes": 2048,
+  "design_source_sha256": "e95db6dd2bfe9fe2f4dee1c818ba3582861e479f653752dc492ac1c6099a3850",
+  "limitations": [
+    "Four known-parameter linear-Gaussian candidate SCMs, not unrestricted graph discovery",
+    "95% intervals are finite-model Bayesian credible envelopes, not general frequentist confidence intervals",
+    "Query-EIG is a myopic finite-model adaptation of goal-oriented Bayesian design, not a reproduction of GO-CBED's transformer policy",
+    "No claim of state-of-the-art performance or universal scientific novelty",
+    "Misspecification is deliberately outside the model family and reports abstention/calibration failures"
+  ],
+  "default_sync_note": "Default policy synchronized to independently selected validation parameters after evaluation; all episodes explicitly supplied the same selected parameters."
+}

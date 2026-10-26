@@ -1,0 +1,61 @@
+{
+  "artifact_sha256": {
+    "README.md": "3b1bcaa546a9925334d1cecb598ab30fc3c9d28a86302aca8a363c7232e0951e",
+    "analysis-results.png": "af95c6557b2e83b3749f775d76c748c4dbcc9c1f2a705eb62f28c8a9428cf8c3",
+    "app.js": "dd0bb31af470ca5d31a6c721f38d9372292607d47dedbf7d03ec1a47cf5ef5b1",
+    "calibration-learning.svg": "3b12d0aacad7301fb108b9e5b3b01a7da56caa5761a1794df537663f793a910d",
+    "check_parity.cjs": "cccef179f83223fb20ff8630dbb99e52e6bfbefe0fd10b5bc1cbc25e84a88a0a",
+    "counterfactual.js": "4dad9f5891ab697f0291f5b29b9fcca8ce115f37cb1bf7fbfb828de6d7a39d08",
+    "demo-api.js": "8c00aa8b2e519de8b35e081710d99230b7209f45de9e70c531b829b8db0b4e5b",
+    "evidence-comparison.svg": "a55fcab52058a64ea51dd63b4a27e3683fb1fe45d79f1fed07837f071d4f861a",
+    "evidence.js": "4bbe0097ae385aefdc15447a8cbba49cde5bd1ac2db34576ed9e034dfbff61fc",
+    "fixtures.json": "ed1ecfeac1aad13669dae2dd3d56fdb267eb427ff78dd267900a164a87f57c1c",
+    "index.html": "79c052bee4064fd1e3176edbefeb12a7fab3b1d0566cefb86ce7c76b7e646319",
+    "observations.json": "824fafffea4038dd2f23886d145ce17e3cdcfd5a3896c17f4bae9dc6825ef13e",
+    "parity.json": "c35ad1d44bc043290cc1210ba58efd6fa5b4a29e8e96d742825c2b6f6d3074b9",
+    "policy-comparison.svg": "10d8906c5c544983279d91c5f3f73779921c1d67f5aa7684d89f93838df61ca5",
+    "styles.css": "45039982e19e0cca815ac6736a85cc906b77945a530e854915366808abdd4d31"
+  },
+  "environment": {
+    "packages": {
+      "duckdb": "2.0.0",
+      "numpy": "2.5.4",
+      "pandas": "3.1.0",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.18.1",
+      "statsmodels": "0.15.0"
+    },
+    "python": "3.12.14"
+  },
+  "format": "causalos-public-replay-build-v1",
+  "source_sha256": {
+    "causalos/__init__.py": "a16ed3cea0cdd073fc4cc579799ec58597686f0257bf344fb16716a1d2ab4952",
+    "causalos/api.py": "e93162cbab87fa41c3975e025208170d6dba8aeeaece5d5a83a747b5593bac69",
+    "causalos/benchmark.py": "7e195d9c38096831305d9a68a8a397d7c26107ba19768572fb1f61596abc3442",
+    "causalos/cli.py": "40dc7668a6de283487f8c027ee7b71bd83e28bd8a124938adbcf5061e9bbffb4",
+    "causalos/core.py": "23d2d48e38f5f95766309c348eec537eb9456b8ce7369310923d2854129051ab",
+    "causalos/counterfactual.py": "c5d61d1e2a00b32be15cee4dc2d51f7c638f6005064fac29a030164b1a3859b6",
+    "causalos/datasets.py": "a9e85d2597e36ce9c55223462b55de06ca8274b9e4a7701fb57ec28b82646ae4",
+    "causalos/design.py": "e95db6dd2bfe9fe2f4dee1c818ba3582861e479f653752dc492ac1c6099a3850",
+    "causalos/discovery.py": "ff940bd6bdc746fa3cb12ef38ed1099166f51f56ad9b91777e9ff2b98e7e15a4",
+    "causalos/evidence_design.py": "1c3ad2802fe037fb8466276be56e3a2b6b7be8319b5ec7b91272812de7bcb31b",
+    "causalos/profiling.py": "3857d34320448ce9edbb1b0e345b687f7d58f49ce7c36c229bc460883569cac4",
+    "causalos/report.py": "15a3b94652da1eb5cf5ef39a807eb9d17b7b070e544dc566321eb35b261f8464",
+    "causalos/resources/benchmark_summary.json": "b007ebb17e1cafa798a4106ad969f596b0ceb11c069a80f856fbef5c8360b0cd",
+    "causalos/resources/data/CAUSALDATA_LICENSE.txt": "3e8e36da6816ff0cabff3b3ada5fc9f48706c6bfd8ba479cfe669932c4a5b7b9",
+    "causalos/resources/data/nsw-provenance.json": "5bd45bac9f01dad8ebb4a4bc298f808e9fe56c3bf91ec901e60fe62740f3ec58",
+    "causalos/resources/data/nsw.csv": "72efd333a4b94a2bee55149d3542021d0adde03201d010ebe971e3e863360cd6",
+    "causalos/web/analysis-results.png": "af95c6557b2e83b3749f775d76c748c4dbcc9c1f2a705eb62f28c8a9428cf8c3",
+    "causalos/web/app.js": "dd0bb31af470ca5d31a6c721f38d9372292607d47dedbf7d03ec1a47cf5ef5b1",
+    "causalos/web/calibration-learning.svg": "3b12d0aacad7301fb108b9e5b3b01a7da56caa5761a1794df537663f793a910d",
+    "causalos/web/counterfactual.js": "4dad9f5891ab697f0291f5b29b9fcca8ce115f37cb1bf7fbfb828de6d7a39d08",
+    "causalos/web/evidence-comparison.svg": "a55fcab52058a64ea51dd63b4a27e3683fb1fe45d79f1fed07837f071d4f861a",
+    "causalos/web/evidence.js": "4bbe0097ae385aefdc15447a8cbba49cde5bd1ac2db34576ed9e034dfbff61fc",
+    "causalos/web/index.html": "4539e6e0d69eb913ec527b5309f2c0a7093ad525493fa770d98e213d135a515c",
+    "causalos/web/policy-comparison.svg": "10d8906c5c544983279d91c5f3f73779921c1d67f5aa7684d89f93838df61ca5",
+    "causalos/web/styles.css": "a7ea35a13f76fa0ef6adc737ce6490e8a745724839e25bf9ce03a1e15e26f711",
+    "docs/demo/check_parity.cjs": "cccef179f83223fb20ff8630dbb99e52e6bfbefe0fd10b5bc1cbc25e84a88a0a",
+    "docs/demo/demo-api.js": "8c00aa8b2e519de8b35e081710d99230b7209f45de9e70c531b829b8db0b4e5b",
+    "examples/build_demo.py": "ce6619b171793ec3000570c186dc2db2926266fa0c9a42e09e094faa874a9160"
+  }
+}

@@ -1,0 +1,1 @@
+CAUSALOS LAB makes causal assumptions visible and lets competing explanations face a simulated experiment. Open source, CPU compatible, and reproducible.

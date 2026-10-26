@@ -1,0 +1,161 @@
+{
+  "executed_source_sha256": "d05d0b29c3d6e56162759fc094649a6d0cbacdbb7be7c17a0c5f82cc01e42fd2",
+  "current_source_sha256": "1c3ad2802fe037fb8466276be56e3a2b6b7be8319b5ec7b91272812de7bcb31b",
+  "changes_after_execution": "Synchronized default prior to validation-selected .05; added surrogate-loss metadata; replaced unused evaluator scenario label in policy state with constant validity-study; externalized scenario argument to simulator step; added secondary trace-only alert analysis and invalid scenario validation. No likelihood, acquisition, guard, selected parameters or raw episodes changed.",
+  "verification": "All eight policies across all three scenarios at fixed seed5000 reproduce stored numerical endpoints within1e-12; no refitting or outcome selection.",
+  "equivalence_checks": [
+    {
+      "seed": 5000,
+      "scenario": "nominal",
+      "policy": "nominal_query_eig",
+      "same": true
+    },
+    {
+      "seed": 5000,
+      "scenario": "nominal",
+      "policy": "nominal_query_eig_guard",
+      "same": true
+    },
+    {
+      "seed": 5000,
+      "scenario": "nominal",
+      "policy": "augmented_model_eig",
+      "same": true
+    },
+    {
+      "seed": 5000,
+      "scenario": "nominal",
+      "policy": "validity_query_eig",
+      "same": true
+    },
+    {
+      "seed": 5000,
+      "scenario": "nominal",
+      "policy": "validity_decision_value",
+      "same": true
+    },
+    {
+      "seed": 5000,
+      "scenario": "nominal",
+      "policy": "evidence_no_guard",
+      "same": true
+    },
+    {
+      "seed": 5000,
+      "scenario": "nominal",
+      "policy": "evidence",
+      "same": true
+    },
+    {
+      "seed": 5000,
+      "scenario": "nominal",
+      "policy": "random_guard",
+      "same": true
+    },
+    {
+      "seed": 5000,
+      "scenario": "weak_confounding",
+      "policy": "nominal_query_eig",
+      "same": true
+    },
+    {
+      "seed": 5000,
+      "scenario": "weak_confounding",
+      "policy": "nominal_query_eig_guard",
+      "same": true
+    },
+    {
+      "seed": 5000,
+      "scenario": "weak_confounding",
+      "policy": "augmented_model_eig",
+      "same": true
+    },
+    {
+      "seed": 5000,
+      "scenario": "weak_confounding",
+      "policy": "validity_query_eig",
+      "same": true
+    },
+    {
+      "seed": 5000,
+      "scenario": "weak_confounding",
+      "policy": "validity_decision_value",
+      "same": true
+    },
+    {
+      "seed": 5000,
+      "scenario": "weak_confounding",
+      "policy": "evidence_no_guard",
+      "same": true
+    },
+    {
+      "seed": 5000,
+      "scenario": "weak_confounding",
+      "policy": "evidence",
+      "same": true
+    },
+    {
+      "seed": 5000,
+      "scenario": "weak_confounding",
+      "policy": "random_guard",
+      "same": true
+    },
+    {
+      "seed": 5000,
+      "scenario": "unseen_negative",
+      "policy": "nominal_query_eig",
+      "same": true
+    },
+    {
+      "seed": 5000,
+      "scenario": "unseen_negative",
+      "policy": "nominal_query_eig_guard",
+      "same": true
+    },
+    {
+      "seed": 5000,
+      "scenario": "unseen_negative",
+      "policy": "augmented_model_eig",
+      "same": true
+    },
+    {
+      "seed": 5000,
+      "scenario": "unseen_negative",
+      "policy": "validity_query_eig",
+      "same": true
+    },
+    {
+      "seed": 5000,
+      "scenario": "unseen_negative",
+      "policy": "validity_decision_value",
+      "same": true
+    },
+    {
+      "seed": 5000,
+      "scenario": "unseen_negative",
+      "policy": "evidence_no_guard",
+      "same": true
+    },
+    {
+      "seed": 5000,
+      "scenario": "unseen_negative",
+      "policy": "evidence",
+      "same": true
+    },
+    {
+      "seed": 5000,
+      "scenario": "unseen_negative",
+      "policy": "random_guard",
+      "same": true
+    }
+  ],
+  "raw_csv_sha256": {
+    "summary.csv": "ef64b5b358d6eceb2bc9b612866d37cf64ac389162c21f3fc60abd2babe108f8",
+    "secondary_alert_episodes.csv": "c489e951d41917c96aa2f9f0135f46c258b37485e0a768f60bca7aed091e34a6",
+    "secondary_alert_summary.csv": "d9adaaebfbd50c3c65ac3dd8ec1bbaffc3c0aea32c22486f775977c7c2462349",
+    "episodes.csv": "9071f82ec6203d6c8edb3b880f1c7b779681be05db83f1038277f7de2c61458d",
+    "secondary_alert_paired.csv": "946ddafb251214ba5bab6a92a5acc91153b4ac5bee3a0309718fe7451020acd6",
+    "paired_comparison.csv": "25625d09eb270966cf3ec350d7e886f8a6ca01f0d574bba64cdb17d79b5c3e7d",
+    "traces.csv": "a4d5d576beaff72391c4a5030e6101aa808b247084d32ceb5ce27563c507920b"
+  }
+}

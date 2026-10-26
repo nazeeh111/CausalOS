@@ -1,0 +1,38 @@
+{
+  "study": 2,
+  "train_seeds": [
+    3000,
+    3023
+  ],
+  "validation_seeds": [
+    4000,
+    4023
+  ],
+  "test_seeds": [
+    5000,
+    5095
+  ],
+  "parameters": {
+    "contamination_prior": 0.05,
+    "decision_weight": 0.5
+  },
+  "shadow_theta_grid": [
+    -0.15,
+    -0.35
+  ],
+  "budget": 12.0,
+  "guard_threshold": 0.2,
+  "abstention_loss": 0.1,
+  "test_episodes": 2304,
+  "elapsed_seconds": 209.162,
+  "python": "3.12.14",
+  "source_sha256": "d05d0b29c3d6e56162759fc094649a6d0cbacdbb7be7c17a0c5f82cc01e42fd2",
+  "primary_comparison": "evidence versus nominal_query_eig_guard, sharing the augmented posterior and guard",
+  "limits": [
+    "Fixed known mechanism coefficients",
+    "Finite two-point shadow set",
+    "Synthetic Gaussian SCM evidence only",
+    "Mechanism developed after a negative nominal study with a new held-out test split",
+    "Alerts are evidence relative to the specified alternative family, not proof of real-world causal direction"
+  ]
+}

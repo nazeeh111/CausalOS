@@ -1,0 +1,2659 @@
+{
+  "synthetic": {
+    "configuration": {
+      "seeds": 12,
+      "n": 1200,
+      "estimand": "known constant ATE",
+      "nuisance_training": "Cross-fitting internal to each independent SCM replicate for DML; no simulator truth is supplied."
+    },
+    "summary": [
+      {
+        "case": "confounded",
+        "method": "regression",
+        "repetitions": 12,
+        "bias": 0.0013622885308045192,
+        "rmse": 0.05352421890511408,
+        "mae": 0.04707401543112392,
+        "coverage_95": 1.0,
+        "coverage_mc_se": 0.0,
+        "coverage_binomial_wilson_95": [
+          0.7575059933447589,
+          0.9999999999999999
+        ]
+      },
+      {
+        "case": "confounded",
+        "method": "ipw",
+        "repetitions": 12,
+        "bias": 0.001839312134135555,
+        "rmse": 0.062194847142930484,
+        "mae": 0.05769182944544902,
+        "coverage_95": 1.0,
+        "coverage_mc_se": 0.0,
+        "coverage_binomial_wilson_95": [
+          0.7575059933447589,
+          0.9999999999999999
+        ]
+      },
+      {
+        "case": "confounded",
+        "method": "aipw",
+        "repetitions": 12,
+        "bias": 0.0019686870581743787,
+        "rmse": 0.05293702442977076,
+        "mae": 0.047496140433480626,
+        "coverage_95": 1.0,
+        "coverage_mc_se": 0.0,
+        "coverage_binomial_wilson_95": [
+          0.7575059933447589,
+          0.9999999999999999
+        ]
+      },
+      {
+        "case": "confounded",
+        "method": "dml",
+        "repetitions": 12,
+        "bias": 0.004597512201258018,
+        "rmse": 0.05042233828688967,
+        "mae": 0.04454477464358211,
+        "coverage_95": 1.0,
+        "coverage_mc_se": 0.0,
+        "coverage_binomial_wilson_95": [
+          0.7575059933447589,
+          0.9999999999999999
+        ]
+      },
+      {
+        "case": "randomized",
+        "method": "regression",
+        "repetitions": 12,
+        "bias": -0.00561472173558758,
+        "rmse": 0.05902436444425973,
+        "mae": 0.04533647546763899,
+        "coverage_95": 0.9166666666666666,
+        "coverage_mc_se": 0.07978559231302819,
+        "coverage_binomial_wilson_95": [
+          0.646120088858883,
+          0.9851349055950829
+        ]
+      },
+      {
+        "case": "randomized",
+        "method": "ipw",
+        "repetitions": 12,
+        "bias": -0.005605775282907409,
+        "rmse": 0.05899880747707176,
+        "mae": 0.04531176753888711,
+        "coverage_95": 0.9166666666666666,
+        "coverage_mc_se": 0.07978559231302819,
+        "coverage_binomial_wilson_95": [
+          0.646120088858883,
+          0.9851349055950829
+        ]
+      },
+      {
+        "case": "randomized",
+        "method": "aipw",
+        "repetitions": 12,
+        "bias": -0.005619880681643245,
+        "rmse": 0.05899913210388183,
+        "mae": 0.04527122234025308,
+        "coverage_95": 0.9166666666666666,
+        "coverage_mc_se": 0.07978559231302819,
+        "coverage_binomial_wilson_95": [
+          0.646120088858883,
+          0.9851349055950829
+        ]
+      },
+      {
+        "case": "randomized",
+        "method": "dml",
+        "repetitions": 12,
+        "bias": -0.0006125018275335292,
+        "rmse": 0.05776153585646009,
+        "mae": 0.042534307736038966,
+        "coverage_95": 0.9166666666666666,
+        "coverage_mc_se": 0.07978559231302819,
+        "coverage_binomial_wilson_95": [
+          0.646120088858883,
+          0.9851349055950829
+        ]
+      }
+    ],
+    "records": [
+      {
+        "case": "confounded",
+        "seed": 1000,
+        "method": "regression",
+        "true_ate": 2.0,
+        "estimate": 1.947346945479667,
+        "absolute_error": 0.052653054520332976,
+        "ci": [
+          1.829461909137415,
+          2.065231981821919
+        ],
+        "covered": true
+      },
+      {
+        "case": "confounded",
+        "seed": 1000,
+        "method": "ipw",
+        "true_ate": 2.0,
+        "estimate": 1.9589373983018803,
+        "absolute_error": 0.041062601698119705,
+        "ci": [
+          1.836599647529301,
+          2.0821608723282043
+        ],
+        "covered": true
+      },
+      {
+        "case": "confounded",
+        "seed": 1000,
+        "method": "aipw",
+        "true_ate": 2.0,
+        "estimate": 1.953619082464079,
+        "absolute_error": 0.04638091753592111,
+        "ci": [
+          1.835533549847049,
+          2.0717046150811087
+        ],
+        "covered": true
+      },
+      {
+        "case": "confounded",
+        "seed": 1000,
+        "method": "dml",
+        "true_ate": 2.0,
+        "estimate": 1.9763189305549447,
+        "absolute_error": 0.023681069445055325,
+        "ci": [
+          1.8528914618011116,
+          2.0997463993087777
+        ],
+        "covered": true
+      },
+      {
+        "case": "randomized",
+        "seed": 1000,
+        "method": "regression",
+        "true_ate": 1.0,
+        "estimate": 0.9660011779648249,
+        "absolute_error": 0.033998822035175125,
+        "ci": [
+          0.8535797510411456,
+          1.0784226048885042
+        ],
+        "covered": true
+      },
+      {
+        "case": "randomized",
+        "seed": 1000,
+        "method": "ipw",
+        "true_ate": 1.0,
+        "estimate": 0.9659592815090334,
+        "absolute_error": 0.03404071849096657,
+        "ci": [
+          0.8451967827789049,
+          1.0580583819409584
+        ],
+        "covered": true
+      },
+      {
+        "case": "randomized",
+        "seed": 1000,
+        "method": "aipw",
+        "true_ate": 1.0,
+        "estimate": 0.9659974768452495,
+        "absolute_error": 0.0340025231547505,
+        "ci": [
+          0.8538055331279594,
+          1.0781894205625395
+        ],
+        "covered": true
+      },
+      {
+        "case": "randomized",
+        "seed": 1000,
+        "method": "dml",
+        "true_ate": 1.0,
+        "estimate": 0.9698555400153744,
+        "absolute_error": 0.03014445998462556,
+        "ci": [
+          0.8541748515114169,
+          1.085536228519332
+        ],
+        "covered": true
+      },
+      {
+        "case": "confounded",
+        "seed": 1001,
+        "method": "regression",
+        "true_ate": 2.0,
+        "estimate": 2.107220800660865,
+        "absolute_error": 0.10722080066086503,
+        "ci": [
+          1.9831509825170914,
+          2.2312906188046386
+        ],
+        "covered": true
+      },
+      {
+        "case": "confounded",
+        "seed": 1001,
+        "method": "ipw",
+        "true_ate": 2.0,
+        "estimate": 2.0690316463658367,
+        "absolute_error": 0.0690316463658367,
+        "ci": [
+          1.8837816652029775,
+          2.2047654980343707
+        ],
+        "covered": true
+      },
+      {
+        "case": "confounded",
+        "seed": 1001,
+        "method": "aipw",
+        "true_ate": 2.0,
+        "estimate": 2.107650776893679,
+        "absolute_error": 0.10765077689367919,
+        "ci": [
+          1.9784175851879666,
+          2.2368839685993915
+        ],
+        "covered": true
+      },
+      {
+        "case": "confounded",
+        "seed": 1001,
+        "method": "dml",
+        "true_ate": 2.0,
+        "estimate": 2.0787496153019522,
+        "absolute_error": 0.07874961530195224,
+        "ci": [
+          1.9277776749957436,
+          2.229721555608161
+        ],
+        "covered": true
+      },
+      {
+        "case": "randomized",
+        "seed": 1001,
+        "method": "regression",
+        "true_ate": 1.0,
+        "estimate": 1.0295190562474317,
+        "absolute_error": 0.029519056247431674,
+        "ci": [
+          0.9186890769948408,
+          1.1403490355000225
+        ],
+        "covered": true
+      },
+      {
+        "case": "randomized",
+        "seed": 1001,
+        "method": "ipw",
+        "true_ate": 1.0,
+        "estimate": 1.0295779404268943,
+        "absolute_error": 0.029577940426894322,
+        "ci": [
+          0.928704422858184,
+          1.1225140154521478
+        ],
+        "covered": true
+      },
+      {
+        "case": "randomized",
+        "seed": 1001,
+        "method": "aipw",
+        "true_ate": 1.0,
+        "estimate": 1.0294732776748579,
+        "absolute_error": 0.029473277674857856,
+        "ci": [
+          0.9188776648226269,
+          1.1400688905270888
+        ],
+        "covered": true
+      },
+      {
+        "case": "randomized",
+        "seed": 1001,
+        "method": "dml",
+        "true_ate": 1.0,
+        "estimate": 1.0251260947276795,
+        "absolute_error": 0.02512609472767946,
+        "ci": [
+          0.9125093430752331,
+          1.1377428463801258
+        ],
+        "covered": true
+      },
+      {
+        "case": "confounded",
+        "seed": 1002,
+        "method": "regression",
+        "true_ate": 2.0,
+        "estimate": 2.0002754441239747,
+        "absolute_error": 0.00027544412397473295,
+        "ci": [
+          1.8805536795882385,
+          2.119997208659711
+        ],
+        "covered": true
+      },
+      {
+        "case": "confounded",
+        "seed": 1002,
+        "method": "ipw",
+        "true_ate": 2.0,
+        "estimate": 2.01959266340883,
+        "absolute_error": 0.019592663408829925,
+        "ci": [
+          1.9286531167876337,
+          2.1905319958790637
+        ],
+        "covered": true
+      },
+      {
+        "case": "confounded",
+        "seed": 1002,
+        "method": "aipw",
+        "true_ate": 2.0,
+        "estimate": 2.0170413217023264,
+        "absolute_error": 0.017041321702326417,
+        "ci": [
+          1.8956574344645287,
+          2.138425208940124
+        ],
+        "covered": true
+      },
+      {
+        "case": "confounded",
+        "seed": 1002,
+        "method": "dml",
+        "true_ate": 2.0,
+        "estimate": 2.0172153441144025,
+        "absolute_error": 0.01721534411440251,
+        "ci": [
+          1.888100796158977,
+          2.146329892069828
+        ],
+        "covered": true
+      },
+      {
+        "case": "randomized",
+        "seed": 1002,
+        "method": "regression",
+        "true_ate": 1.0,
+        "estimate": 1.021990795411804,
+        "absolute_error": 0.02199079541180393,
+        "ci": [
+          0.9123330366746313,
+          1.1316485541489767
+        ],
+        "covered": true
+      },
+      {
+        "case": "randomized",
+        "seed": 1002,
+        "method": "ipw",
+        "true_ate": 1.0,
+        "estimate": 1.021846945661714,
+        "absolute_error": 0.02184694566171408,
+        "ci": [
+          0.9021254943003986,
+          1.1058153200281686
+        ],
+        "covered": true
+      },
+      {
+        "case": "randomized",
+        "seed": 1002,
+        "method": "aipw",
+        "true_ate": 1.0,
+        "estimate": 1.0216996735774915,
+        "absolute_error": 0.021699673577491474,
+        "ci": [
+          0.9122218172328354,
+          1.1311775299221476
+        ],
+        "covered": true
+      },
+      {
+        "case": "randomized",
+        "seed": 1002,
+        "method": "dml",
+        "true_ate": 1.0,
+        "estimate": 1.026817212151226,
+        "absolute_error": 0.02681721215122601,
+        "ci": [
+          0.9160663927621292,
+          1.1375680315403227
+        ],
+        "covered": true
+      },
+      {
+        "case": "confounded",
+        "seed": 1003,
+        "method": "regression",
+        "true_ate": 2.0,
+        "estimate": 2.046106843896278,
+        "absolute_error": 0.04610684389627817,
+        "ci": [
+          1.9221454779105578,
+          2.1700682098819986
+        ],
+        "covered": true
+      },
+      {
+        "case": "confounded",
+        "seed": 1003,
+        "method": "ipw",
+        "true_ate": 2.0,
+        "estimate": 2.0648250654309708,
+        "absolute_error": 0.06482506543097077,
+        "ci": [
+          1.9461675992550167,
+          2.143722708480491
+        ],
+        "covered": true
+      },
+      {
+        "case": "confounded",
+        "seed": 1003,
+        "method": "aipw",
+        "true_ate": 2.0,
+        "estimate": 2.0379571000112633,
+        "absolute_error": 0.03795710001126329,
+        "ci": [
+          1.9144261634184605,
+          2.161488036604066
+        ],
+        "covered": true
+      },
+      {
+        "case": "confounded",
+        "seed": 1003,
+        "method": "dml",
+        "true_ate": 2.0,
+        "estimate": 2.022648618582053,
+        "absolute_error": 0.022648618582052915,
+        "ci": [
+          1.8946974702552712,
+          2.150599766908835
+        ],
+        "covered": true
+      },
+      {
+        "case": "randomized",
+        "seed": 1003,
+        "method": "regression",
+        "true_ate": 1.0,
+        "estimate": 1.00919592243328,
+        "absolute_error": 0.009195922433280046,
+        "ci": [
+          0.89527960060349,
+          1.12311224426307
+        ],
+        "covered": true
+      },
+      {
+        "case": "randomized",
+        "seed": 1003,
+        "method": "ipw",
+        "true_ate": 1.0,
+        "estimate": 1.0091938723642742,
+        "absolute_error": 0.009193872364274158,
+        "ci": [
+          0.9013219697735195,
+          1.096603183734245
+        ],
+        "covered": true
+      },
+      {
+        "case": "randomized",
+        "seed": 1003,
+        "method": "aipw",
+        "true_ate": 1.0,
+        "estimate": 1.0091959553615915,
+        "absolute_error": 0.009195955361591457,
+        "ci": [
+          0.8955215014812206,
+          1.1228704092419624
+        ],
+        "covered": true
+      },
+      {
+        "case": "randomized",
+        "seed": 1003,
+        "method": "dml",
+        "true_ate": 1.0,
+        "estimate": 1.003319518075781,
+        "absolute_error": 0.003319518075781014,
+        "ci": [
+          0.8877862300639006,
+          1.1188528060876615
+        ],
+        "covered": true
+      },
+      {
+        "case": "confounded",
+        "seed": 1004,
+        "method": "regression",
+        "true_ate": 2.0,
+        "estimate": 1.9700509757319513,
+        "absolute_error": 0.029949024268048685,
+        "ci": [
+          1.8511492983402906,
+          2.088952653123612
+        ],
+        "covered": true
+      },
+      {
+        "case": "confounded",
+        "seed": 1004,
+        "method": "ipw",
+        "true_ate": 2.0,
+        "estimate": 1.898028296421041,
+        "absolute_error": 0.1019717035789589,
+        "ci": [
+          1.7586964518860155,
+          2.0811556928678607
+        ],
+        "covered": true
+      },
+      {
+        "case": "confounded",
+        "seed": 1004,
+        "method": "aipw",
+        "true_ate": 2.0,
+        "estimate": 1.9575457399717993,
+        "absolute_error": 0.04245426002820074,
+        "ci": [
+          1.8350523887250758,
+          2.0800390912185227
+        ],
+        "covered": true
+      },
+      {
+        "case": "confounded",
+        "seed": 1004,
+        "method": "dml",
+        "true_ate": 2.0,
+        "estimate": 1.9170418700403509,
+        "absolute_error": 0.08295812995964913,
+        "ci": [
+          1.7743306709857443,
+          2.0597530690949575
+        ],
+        "covered": true
+      },
+      {
+        "case": "randomized",
+        "seed": 1004,
+        "method": "regression",
+        "true_ate": 1.0,
+        "estimate": 0.8976872471610788,
+        "absolute_error": 0.10231275283892116,
+        "ci": [
+          0.7821819872895621,
+          1.0131925070325956
+        ],
+        "covered": true
+      },
+      {
+        "case": "randomized",
+        "seed": 1004,
+        "method": "ipw",
+        "true_ate": 1.0,
+        "estimate": 0.8978252729038555,
+        "absolute_error": 0.1021747270961445,
+        "ci": [
+          0.7789344165179695,
+          1.0008997178332322
+        ],
+        "covered": true
+      },
+      {
+        "case": "randomized",
+        "seed": 1004,
+        "method": "aipw",
+        "true_ate": 1.0,
+        "estimate": 0.8977677893232638,
+        "absolute_error": 0.10223221067673616,
+        "ci": [
+          0.7825067103740908,
+          1.0130288682724369
+        ],
+        "covered": true
+      },
+      {
+        "case": "randomized",
+        "seed": 1004,
+        "method": "dml",
+        "true_ate": 1.0,
+        "estimate": 0.9308075312934576,
+        "absolute_error": 0.06919246870654239,
+        "ci": [
+          0.8126605351272801,
+          1.048954527459635
+        ],
+        "covered": true
+      },
+      {
+        "case": "confounded",
+        "seed": 1005,
+        "method": "regression",
+        "true_ate": 2.0,
+        "estimate": 2.072226231318782,
+        "absolute_error": 0.07222623131878203,
+        "ci": [
+          1.9531696560964655,
+          2.1912828065410985
+        ],
+        "covered": true
+      },
+      {
+        "case": "confounded",
+        "seed": 1005,
+        "method": "ipw",
+        "true_ate": 2.0,
+        "estimate": 2.0813684208144596,
+        "absolute_error": 0.08136842081445961,
+        "ci": [
+          1.9579407416750818,
+          2.2197322938295567
+        ],
+        "covered": true
+      },
+      {
+        "case": "confounded",
+        "seed": 1005,
+        "method": "aipw",
+        "true_ate": 2.0,
+        "estimate": 2.0703804188071255,
+        "absolute_error": 0.07038041880712553,
+        "ci": [
+          1.9520793204871894,
+          2.188681517127062
+        ],
+        "covered": true
+      },
+      {
+        "case": "confounded",
+        "seed": 1005,
+        "method": "dml",
+        "true_ate": 2.0,
+        "estimate": 2.0616224114185346,
+        "absolute_error": 0.06162241141853464,
+        "ci": [
+          1.9371533413116324,
+          2.1860914815254366
+        ],
+        "covered": true
+      },
+      {
+        "case": "randomized",
+        "seed": 1005,
+        "method": "regression",
+        "true_ate": 1.0,
+        "estimate": 0.9921872702420089,
+        "absolute_error": 0.007812729757991077,
+        "ci": [
+          0.8778289939694033,
+          1.1065455465146146
+        ],
+        "covered": true
+      },
+      {
+        "case": "randomized",
+        "seed": 1005,
+        "method": "ipw",
+        "true_ate": 1.0,
+        "estimate": 0.9922591508914028,
+        "absolute_error": 0.007740849108597181,
+        "ci": [
+          0.8554138228342516,
+          1.106739154599464
+        ],
+        "covered": true
+      },
+      {
+        "case": "randomized",
+        "seed": 1005,
+        "method": "aipw",
+        "true_ate": 1.0,
+        "estimate": 0.9924872970609798,
+        "absolute_error": 0.007512702939020177,
+        "ci": [
+          0.8783868039111823,
+          1.1065877902107772
+        ],
+        "covered": true
+      },
+      {
+        "case": "randomized",
+        "seed": 1005,
+        "method": "dml",
+        "true_ate": 1.0,
+        "estimate": 1.0008444564703893,
+        "absolute_error": 0.000844456470389332,
+        "ci": [
+          0.8846116518905546,
+          1.1170772610502242
+        ],
+        "covered": true
+      },
+      {
+        "case": "confounded",
+        "seed": 1006,
+        "method": "regression",
+        "true_ate": 2.0,
+        "estimate": 1.9467470268798825,
+        "absolute_error": 0.05325297312011745,
+        "ci": [
+          1.818849301320216,
+          2.074644752439549
+        ],
+        "covered": true
+      },
+      {
+        "case": "confounded",
+        "seed": 1006,
+        "method": "ipw",
+        "true_ate": 2.0,
+        "estimate": 1.9275904425893942,
+        "absolute_error": 0.07240955741060584,
+        "ci": [
+          1.8123231227473586,
+          2.0154341343437787
+        ],
+        "covered": true
+      },
+      {
+        "case": "confounded",
+        "seed": 1006,
+        "method": "aipw",
+        "true_ate": 2.0,
+        "estimate": 1.944900065956305,
+        "absolute_error": 0.055099934043695065,
+        "ci": [
+          1.8171568688392348,
+          2.072643263073375
+        ],
+        "covered": true
+      },
+      {
+        "case": "confounded",
+        "seed": 1006,
+        "method": "dml",
+        "true_ate": 2.0,
+        "estimate": 1.9406085596095017,
+        "absolute_error": 0.05939144039049826,
+        "ci": [
+          1.8069213764309127,
+          2.074295742788091
+        ],
+        "covered": true
+      },
+      {
+        "case": "randomized",
+        "seed": 1006,
+        "method": "regression",
+        "true_ate": 1.0,
+        "estimate": 1.0452670367988275,
+        "absolute_error": 0.04526703679882749,
+        "ci": [
+          0.9305458563250524,
+          1.1599882172726026
+        ],
+        "covered": true
+      },
+      {
+        "case": "randomized",
+        "seed": 1006,
+        "method": "ipw",
+        "true_ate": 1.0,
+        "estimate": 1.0452771125457907,
+        "absolute_error": 0.0452771125457907,
+        "ci": [
+          0.9056917944177176,
+          1.1564532026269387
+        ],
+        "covered": true
+      },
+      {
+        "case": "randomized",
+        "seed": 1006,
+        "method": "aipw",
+        "true_ate": 1.0,
+        "estimate": 1.0451175488097,
+        "absolute_error": 0.04511754880969998,
+        "ci": [
+          0.9306484977937644,
+          1.1595865998256356
+        ],
+        "covered": true
+      },
+      {
+        "case": "randomized",
+        "seed": 1006,
+        "method": "dml",
+        "true_ate": 1.0,
+        "estimate": 1.0503417075364332,
+        "absolute_error": 0.05034170753643319,
+        "ci": [
+          0.9322605491031911,
+          1.1684228659696754
+        ],
+        "covered": true
+      },
+      {
+        "case": "confounded",
+        "seed": 1007,
+        "method": "regression",
+        "true_ate": 2.0,
+        "estimate": 1.955042287540622,
+        "absolute_error": 0.044957712459378074,
+        "ci": [
+          1.834849910731984,
+          2.07523466434926
+        ],
+        "covered": true
+      },
+      {
+        "case": "confounded",
+        "seed": 1007,
+        "method": "ipw",
+        "true_ate": 2.0,
+        "estimate": 1.9400919861103119,
+        "absolute_error": 0.05990801388968814,
+        "ci": [
+          1.7880295313175998,
+          2.1046013195977387
+        ],
+        "covered": true
+      },
+      {
+        "case": "confounded",
+        "seed": 1007,
+        "method": "aipw",
+        "true_ate": 2.0,
+        "estimate": 1.9438030826619623,
+        "absolute_error": 0.056196917338037666,
+        "ci": [
+          1.8202706724724822,
+          2.0673354928514422
+        ],
+        "covered": true
+      },
+      {
+        "case": "confounded",
+        "seed": 1007,
+        "method": "dml",
+        "true_ate": 2.0,
+        "estimate": 1.9642959230662818,
+        "absolute_error": 0.03570407693371824,
+        "ci": [
+          1.8263888609561065,
+          2.102202985176457
+        ],
+        "covered": true
+      },
+      {
+        "case": "randomized",
+        "seed": 1007,
+        "method": "regression",
+        "true_ate": 1.0,
+        "estimate": 0.9733377548289736,
+        "absolute_error": 0.026662245171026444,
+        "ci": [
+          0.8586719423181189,
+          1.0880035673398283
+        ],
+        "covered": true
+      },
+      {
+        "case": "randomized",
+        "seed": 1007,
+        "method": "ipw",
+        "true_ate": 1.0,
+        "estimate": 0.9732247550620624,
+        "absolute_error": 0.026775244937937592,
+        "ci": [
+          0.8423815591117897,
+          1.0713446426087236
+        ],
+        "covered": true
+      },
+      {
+        "case": "randomized",
+        "seed": 1007,
+        "method": "aipw",
+        "true_ate": 1.0,
+        "estimate": 0.9733247443499938,
+        "absolute_error": 0.02667525565000617,
+        "ci": [
+          0.8589072382637053,
+          1.0877422504362824
+        ],
+        "covered": true
+      },
+      {
+        "case": "randomized",
+        "seed": 1007,
+        "method": "dml",
+        "true_ate": 1.0,
+        "estimate": 0.9617230971752709,
+        "absolute_error": 0.038276902824729064,
+        "ci": [
+          0.8444412884427641,
+          1.0790049059077778
+        ],
+        "covered": true
+      },
+      {
+        "case": "confounded",
+        "seed": 1008,
+        "method": "regression",
+        "true_ate": 2.0,
+        "estimate": 1.9418446931065436,
+        "absolute_error": 0.05815530689345638,
+        "ci": [
+          1.822209627498966,
+          2.061479758714121
+        ],
+        "covered": true
+      },
+      {
+        "case": "confounded",
+        "seed": 1008,
+        "method": "ipw",
+        "true_ate": 2.0,
+        "estimate": 1.960670900763481,
+        "absolute_error": 0.03932909923651895,
+        "ci": [
+          1.859337890149605,
+          2.108051933368565
+        ],
+        "covered": true
+      },
+      {
+        "case": "confounded",
+        "seed": 1008,
+        "method": "aipw",
+        "true_ate": 2.0,
+        "estimate": 1.9498304796198924,
+        "absolute_error": 0.05016952038010758,
+        "ci": [
+          1.8291667607361264,
+          2.0704941985036585
+        ],
+        "covered": true
+      },
+      {
+        "case": "confounded",
+        "seed": 1008,
+        "method": "dml",
+        "true_ate": 2.0,
+        "estimate": 1.9735259866109987,
+        "absolute_error": 0.02647401338900135,
+        "ci": [
+          1.8470868126214863,
+          2.099965160600511
+        ],
+        "covered": true
+      },
+      {
+        "case": "randomized",
+        "seed": 1008,
+        "method": "regression",
+        "true_ate": 1.0,
+        "estimate": 0.9168283868164269,
+        "absolute_error": 0.08317161318357313,
+        "ci": [
+          0.8049232292279671,
+          1.0287335444048866
+        ],
+        "covered": true
+      },
+      {
+        "case": "randomized",
+        "seed": 1008,
+        "method": "ipw",
+        "true_ate": 1.0,
+        "estimate": 0.9168068683143046,
+        "absolute_error": 0.08319313168569542,
+        "ci": [
+          0.8130356735847918,
+          1.0062982252186405
+        ],
+        "covered": true
+      },
+      {
+        "case": "randomized",
+        "seed": 1008,
+        "method": "aipw",
+        "true_ate": 1.0,
+        "estimate": 0.9168462870352819,
+        "absolute_error": 0.08315371296471807,
+        "ci": [
+          0.8051762732519778,
+          1.028516300818586
+        ],
+        "covered": true
+      },
+      {
+        "case": "randomized",
+        "seed": 1008,
+        "method": "dml",
+        "true_ate": 1.0,
+        "estimate": 0.9147357279616297,
+        "absolute_error": 0.08526427203837028,
+        "ci": [
+          0.7986240096428079,
+          1.0308474462804516
+        ],
+        "covered": true
+      },
+      {
+        "case": "confounded",
+        "seed": 1009,
+        "method": "regression",
+        "true_ate": 2.0,
+        "estimate": 2.0443489334844647,
+        "absolute_error": 0.04434893348446467,
+        "ci": [
+          1.9195617788559778,
+          2.1691360881129516
+        ],
+        "covered": true
+      },
+      {
+        "case": "confounded",
+        "seed": 1009,
+        "method": "ipw",
+        "true_ate": 2.0,
+        "estimate": 2.0674349059354866,
+        "absolute_error": 0.06743490593548662,
+        "ci": [
+          1.9701632638957292,
+          2.1685031222892444
+        ],
+        "covered": true
+      },
+      {
+        "case": "confounded",
+        "seed": 1009,
+        "method": "aipw",
+        "true_ate": 2.0,
+        "estimate": 2.0400869554999628,
+        "absolute_error": 0.04008695549996277,
+        "ci": [
+          1.9113204781602446,
+          2.168853432839681
+        ],
+        "covered": true
+      },
+      {
+        "case": "confounded",
+        "seed": 1009,
+        "method": "dml",
+        "true_ate": 2.0,
+        "estimate": 2.0625370853854967,
+        "absolute_error": 0.06253708538549674,
+        "ci": [
+          1.9280116976267707,
+          2.1970624731442228
+        ],
+        "covered": true
+      },
+      {
+        "case": "randomized",
+        "seed": 1009,
+        "method": "regression",
+        "true_ate": 1.0,
+        "estimate": 0.9827008284809698,
+        "absolute_error": 0.017299171519030154,
+        "ci": [
+          0.8668976454930196,
+          1.0985040114689202
+        ],
+        "covered": true
+      },
+      {
+        "case": "randomized",
+        "seed": 1009,
+        "method": "ipw",
+        "true_ate": 1.0,
+        "estimate": 0.9826675653694819,
+        "absolute_error": 0.017332434630518145,
+        "ci": [
+          0.8942793759328092,
+          1.1006846463377868
+        ],
+        "covered": true
+      },
+      {
+        "case": "randomized",
+        "seed": 1009,
+        "method": "aipw",
+        "true_ate": 1.0,
+        "estimate": 0.9826401426268467,
+        "absolute_error": 0.017359857373153265,
+        "ci": [
+          0.8670757364383246,
+          1.0982045488153689
+        ],
+        "covered": true
+      },
+      {
+        "case": "randomized",
+        "seed": 1009,
+        "method": "dml",
+        "true_ate": 1.0,
+        "estimate": 0.9795499424691547,
+        "absolute_error": 0.020450057530845278,
+        "ci": [
+          0.8602297546202694,
+          1.09887013031804
+        ],
+        "covered": true
+      },
+      {
+        "case": "confounded",
+        "seed": 1010,
+        "method": "regression",
+        "true_ate": 2.0,
+        "estimate": 2.020439570287206,
+        "absolute_error": 0.020439570287206,
+        "ci": [
+          1.906126254977014,
+          2.1347528855973983
+        ],
+        "covered": true
+      },
+      {
+        "case": "confounded",
+        "seed": 1010,
+        "method": "ipw",
+        "true_ate": 2.0,
+        "estimate": 2.054934147521924,
+        "absolute_error": 0.054934147521923826,
+        "ci": [
+          1.9803234998043073,
+          2.162055448882676
+        ],
+        "covered": true
+      },
+      {
+        "case": "confounded",
+        "seed": 1010,
+        "method": "aipw",
+        "true_ate": 2.0,
+        "estimate": 2.023672392035573,
+        "absolute_error": 0.02367239203557281,
+        "ci": [
+          1.9100326453821923,
+          2.1373121386889533
+        ],
+        "covered": true
+      },
+      {
+        "case": "confounded",
+        "seed": 1010,
+        "method": "dml",
+        "true_ate": 2.0,
+        "estimate": 2.0520806462666017,
+        "absolute_error": 0.05208064626660169,
+        "ci": [
+          1.9346509152261486,
+          2.1695103773070548
+        ],
+        "covered": true
+      },
+      {
+        "case": "randomized",
+        "seed": 1010,
+        "method": "regression",
+        "true_ate": 1.0,
+        "estimate": 1.1323577115009653,
+        "absolute_error": 0.1323577115009653,
+        "ci": [
+          1.017711014431172,
+          1.2470044085707586
+        ],
+        "covered": false
+      },
+      {
+        "case": "randomized",
+        "seed": 1010,
+        "method": "ipw",
+        "true_ate": 1.0,
+        "estimate": 1.132340082537205,
+        "absolute_error": 0.13234008253720497,
+        "ci": [
+          1.0099191133390648,
+          1.2385638596632802
+        ],
+        "covered": false
+      },
+      {
+        "case": "randomized",
+        "seed": 1010,
+        "method": "aipw",
+        "true_ate": 1.0,
+        "estimate": 1.1324215945280183,
+        "absolute_error": 0.13242159452801827,
+        "ci": [
+          1.018028106174955,
+          1.2468150828810816
+        ],
+        "covered": false
+      },
+      {
+        "case": "randomized",
+        "seed": 1010,
+        "method": "dml",
+        "true_ate": 1.0,
+        "estimate": 1.1450818464895236,
+        "absolute_error": 0.1450818464895236,
+        "ci": [
+          1.0272819202286172,
+          1.26288177275043
+        ],
+        "covered": false
+      },
+      {
+        "case": "confounded",
+        "seed": 1011,
+        "method": "regression",
+        "true_ate": 2.0,
+        "estimate": 1.9646977098594172,
+        "absolute_error": 0.03530229014058284,
+        "ci": [
+          1.8452498069017396,
+          2.0841456128170948
+        ],
+        "covered": true
+      },
+      {
+        "case": "confounded",
+        "seed": 1011,
+        "method": "ipw",
+        "true_ate": 2.0,
+        "estimate": 1.9795658719460107,
+        "absolute_error": 0.020434128053989253,
+        "ci": [
+          1.902941121422509,
+          2.079913551445584
+        ],
+        "covered": true
+      },
+      {
+        "case": "confounded",
+        "seed": 1011,
+        "method": "aipw",
+        "true_ate": 2.0,
+        "estimate": 1.9771368290741247,
+        "absolute_error": 0.02286317092587531,
+        "ci": [
+          1.8581122398396561,
+          2.096161418308593
+        ],
+        "covered": true
+      },
+      {
+        "case": "confounded",
+        "seed": 1011,
+        "method": "dml",
+        "true_ate": 2.0,
+        "estimate": 1.9885251554639778,
+        "absolute_error": 0.01147484453602221,
+        "ci": [
+          1.8635114483541053,
+          2.1135388625738503
+        ],
+        "covered": true
+      },
+      {
+        "case": "randomized",
+        "seed": 1011,
+        "method": "regression",
+        "true_ate": 1.0,
+        "estimate": 0.9655501512863577,
+        "absolute_error": 0.03444984871364232,
+        "ci": [
+          0.8539836237106446,
+          1.0771166788620707
+        ],
+        "covered": true
+      },
+      {
+        "case": "randomized",
+        "seed": 1011,
+        "method": "ipw",
+        "true_ate": 1.0,
+        "estimate": 0.9657518490190923,
+        "absolute_error": 0.03424815098090772,
+        "ci": [
+          0.8582038631953235,
+          1.0475093967405864
+        ],
+        "covered": true
+      },
+      {
+        "case": "randomized",
+        "seed": 1011,
+        "method": "aipw",
+        "true_ate": 1.0,
+        "estimate": 0.9655896446270064,
+        "absolute_error": 0.03441035537299364,
+        "ci": [
+          0.8542763707826873,
+          1.0769029184713255
+        ],
+        "covered": true
+      },
+      {
+        "case": "randomized",
+        "seed": 1011,
+        "method": "dml",
+        "true_ate": 1.0,
+        "estimate": 0.9844473037036776,
+        "absolute_error": 0.015552696296322388,
+        "ci": [
+          0.869442495689442,
+          1.0994521117179132
+        ],
+        "covered": true
+      }
+    ],
+    "abstention": [
+      {
+        "case": "collider",
+        "n": 12,
+        "abstention_rate": 1.0,
+        "unsupported_estimate_rate": 0.0
+      },
+      {
+        "case": "hidden_confounding",
+        "n": 12,
+        "abstention_rate": 1.0,
+        "unsupported_estimate_rate": 0.0
+      },
+      {
+        "case": "nonidentifiable",
+        "n": 12,
+        "abstention_rate": 1.0,
+        "unsupported_estimate_rate": 0.0
+      }
+    ],
+    "incorrect_assumption_stress_test": {
+      "description": "An unrecorded confounder is deliberately omitted from the supplied graph and exchangeability is incorrectly confirmed. This cannot be detected from observational data by the gate.",
+      "false_nonzero_rate": 1.0,
+      "records": [
+        {
+          "seed": 9000,
+          "true_ate": 0.0,
+          "conditional_estimate": 1.746048402696209,
+          "ci": [
+            1.515392636800845,
+            1.9767041685915732
+          ],
+          "false_nonzero": true
+        },
+        {
+          "seed": 9001,
+          "true_ate": 0.0,
+          "conditional_estimate": 1.6564325106857578,
+          "ci": [
+            1.4197982777017804,
+            1.8930667436697353
+          ],
+          "false_nonzero": true
+        },
+        {
+          "seed": 9002,
+          "true_ate": 0.0,
+          "conditional_estimate": 1.8181584238026827,
+          "ci": [
+            1.5858716064558853,
+            2.05044524114948
+          ],
+          "false_nonzero": true
+        },
+        {
+          "seed": 9003,
+          "true_ate": 0.0,
+          "conditional_estimate": 1.730933772043391,
+          "ci": [
+            1.5065281317826158,
+            1.9553394123041663
+          ],
+          "false_nonzero": true
+        },
+        {
+          "seed": 9004,
+          "true_ate": 0.0,
+          "conditional_estimate": 1.6404044181378796,
+          "ci": [
+            1.4040693170331273,
+            1.876739519242632
+          ],
+          "false_nonzero": true
+        },
+        {
+          "seed": 9005,
+          "true_ate": 0.0,
+          "conditional_estimate": 1.713517044702023,
+          "ci": [
+            1.480654434790603,
+            1.9463796546134429
+          ],
+          "false_nonzero": true
+        },
+        {
+          "seed": 9006,
+          "true_ate": 0.0,
+          "conditional_estimate": 1.5169882455405674,
+          "ci": [
+            1.2786260283440023,
+            1.7553504627371326
+          ],
+          "false_nonzero": true
+        },
+        {
+          "seed": 9007,
+          "true_ate": 0.0,
+          "conditional_estimate": 1.5528609403473643,
+          "ci": [
+            1.3131105847992337,
+            1.792611295895495
+          ],
+          "false_nonzero": true
+        },
+        {
+          "seed": 9008,
+          "true_ate": 0.0,
+          "conditional_estimate": 1.5825249021771313,
+          "ci": [
+            1.3455259978939265,
+            1.819523806460336
+          ],
+          "false_nonzero": true
+        },
+        {
+          "seed": 9009,
+          "true_ate": 0.0,
+          "conditional_estimate": 1.6168297635080364,
+          "ci": [
+            1.3830632115698505,
+            1.8505963154462224
+          ],
+          "false_nonzero": true
+        },
+        {
+          "seed": 9010,
+          "true_ate": 0.0,
+          "conditional_estimate": 1.6417125648703506,
+          "ci": [
+            1.4111318311455008,
+            1.8722932985952003
+          ],
+          "false_nonzero": true
+        },
+        {
+          "seed": 9011,
+          "true_ate": 0.0,
+          "conditional_estimate": 1.6530952857460866,
+          "ci": [
+            1.4151918551281288,
+            1.8909987163640443
+          ],
+          "false_nonzero": true
+        }
+      ]
+    }
+  },
+  "nsw": {
+    "metadata": {
+      "name": "nsw",
+      "title": "NSW job-training randomized experiment",
+      "kind": "real_experimental",
+      "simulated": false,
+      "question": {
+        "treatment": "treat",
+        "outcome": "re78",
+        "covariates": [
+          "age",
+          "educ",
+          "black",
+          "hisp",
+          "marr",
+          "nodegree",
+          "re74",
+          "re75"
+        ],
+        "graph": {
+          "nodes": [
+            "age",
+            "educ",
+            "black",
+            "hisp",
+            "marr",
+            "nodegree",
+            "re74",
+            "re75",
+            "treat",
+            "re78"
+          ],
+          "edges": [
+            [
+              "age",
+              "re78"
+            ],
+            [
+              "educ",
+              "re78"
+            ],
+            [
+              "black",
+              "re78"
+            ],
+            [
+              "hisp",
+              "re78"
+            ],
+            [
+              "marr",
+              "re78"
+            ],
+            [
+              "nodegree",
+              "re78"
+            ],
+            [
+              "re74",
+              "re78"
+            ],
+            [
+              "re75",
+              "re78"
+            ],
+            [
+              "treat",
+              "re78"
+            ]
+          ],
+          "unresolved": [],
+          "latent": []
+        },
+        "assumptions": {
+          "exchangeability": true,
+          "consistency": true,
+          "positivity": true,
+          "temporal_order": true,
+          "no_interference": true,
+          "measurement_validity": true,
+          "selection_ignorability": true
+        },
+        "graph_source": "user",
+        "seed": 42
+      },
+      "provenance": {
+        "source": "https://raw.githubusercontent.com/vincentarelbundock/Rdatasets/master/csv/causaldata/nsw_mixtape.csv",
+        "documentation": "https://nickch-k.r-universe.dev/causaldata/doc/manual.html#nsw_mixtape",
+        "sha256": "72efd333a4b94a2bee55149d3542021d0adde03201d010ebe971e3e863360cd6",
+        "license": "causaldata: MIT + LICENSE; copyright 2021 Nick Huntington-Klein",
+        "original_study": "LaLonde (1986), Evaluating the Econometric Evaluations of Training Programs with Experimental Data; Dehejia and Wahba (1999) restricted sample.",
+        "transformations": [
+          "Remove rownames and constant data_id labels; keep all 445 observations and all measured variables."
+        ]
+      },
+      "limitations": [
+        "Assumptions in this reproducible case are configured from the documented randomized study design; users must assess their relevance.",
+        "The estimand is the average effect in this selected randomized study sample, not a current labor-market policy forecast.",
+        "No ground-truth individual treatment effects or true population ATE are observed.",
+        "Earnings are in historical 1978 dollars. Heavy tails make finite-sample uncertainty important."
+      ]
+    },
+    "profile": {
+      "rows": 445,
+      "columns": [
+        {
+          "name": "treat",
+          "dtype": "int64",
+          "missing": 0,
+          "missing_percent": 0.0,
+          "unique": 2,
+          "numeric": {
+            "mean": 0.4157303370786517,
+            "std": 0.49340216140983345,
+            "min": 0,
+            "q25": 0.0,
+            "median": 0.0,
+            "q75": 1.0,
+            "max": 1
+          },
+          "nonfinite": 0
+        },
+        {
+          "name": "age",
+          "dtype": "int64",
+          "missing": 0,
+          "missing_percent": 0.0,
+          "unique": 34,
+          "numeric": {
+            "mean": 25.370786516853933,
+            "std": 7.100282354606268,
+            "min": 17,
+            "q25": 20.0,
+            "median": 24.0,
+            "q75": 28.0,
+            "max": 55
+          },
+          "nonfinite": 0
+        },
+        {
+          "name": "educ",
+          "dtype": "int64",
+          "missing": 0,
+          "missing_percent": 0.0,
+          "unique": 14,
+          "numeric": {
+            "mean": 10.195505617977528,
+            "std": 1.7921192668870145,
+            "min": 3,
+            "q25": 9.0,
+            "median": 10.0,
+            "q75": 11.0,
+            "max": 16
+          },
+          "nonfinite": 0
+        },
+        {
+          "name": "black",
+          "dtype": "int64",
+          "missing": 0,
+          "missing_percent": 0.0,
+          "unique": 2,
+          "numeric": {
+            "mean": 0.8337078651685393,
+            "std": 0.3727617347065325,
+            "min": 0,
+            "q25": 1.0,
+            "median": 1.0,
+            "q75": 1.0,
+            "max": 1
+          },
+          "nonfinite": 0
+        },
+        {
+          "name": "hisp",
+          "dtype": "int64",
+          "missing": 0,
+          "missing_percent": 0.0,
+          "unique": 2,
+          "numeric": {
+            "mean": 0.08764044943820225,
+            "std": 0.28308954458271646,
+            "min": 0,
+            "q25": 0.0,
+            "median": 0.0,
+            "q75": 0.0,
+            "max": 1
+          },
+          "nonfinite": 0
+        },
+        {
+          "name": "marr",
+          "dtype": "int64",
+          "missing": 0,
+          "missing_percent": 0.0,
+          "unique": 2,
+          "numeric": {
+            "mean": 0.16853932584269662,
+            "std": 0.3747658444979307,
+            "min": 0,
+            "q25": 0.0,
+            "median": 0.0,
+            "q75": 0.0,
+            "max": 1
+          },
+          "nonfinite": 0
+        },
+        {
+          "name": "nodegree",
+          "dtype": "int64",
+          "missing": 0,
+          "missing_percent": 0.0,
+          "unique": 2,
+          "numeric": {
+            "mean": 0.7820224719101123,
+            "std": 0.41333672924883913,
+            "min": 0,
+            "q25": 1.0,
+            "median": 1.0,
+            "q75": 1.0,
+            "max": 1
+          },
+          "nonfinite": 0
+        },
+        {
+          "name": "re74",
+          "dtype": "float64",
+          "missing": 0,
+          "missing_percent": 0.0,
+          "unique": 115,
+          "numeric": {
+            "mean": 2102.2653091945003,
+            "std": 5363.582366425955,
+            "min": 0.0,
+            "q25": 0.0,
+            "median": 0.0,
+            "q75": 824.388916015625,
+            "max": 39570.6796875
+          },
+          "nonfinite": 0
+        },
+        {
+          "name": "re75",
+          "dtype": "float64",
+          "missing": 0,
+          "missing_percent": 0.0,
+          "unique": 155,
+          "numeric": {
+            "mean": 1377.1383746029285,
+            "std": 3150.9608004400393,
+            "min": 0.0,
+            "q25": 0.0,
+            "median": 0.0,
+            "q75": 1220.8360595703125,
+            "max": 25142.240234375
+          },
+          "nonfinite": 0
+        },
+        {
+          "name": "re78",
+          "dtype": "float64",
+          "missing": 0,
+          "missing_percent": 0.0,
+          "unique": 308,
+          "numeric": {
+            "mean": 5300.763683456249,
+            "std": 6631.491680617359,
+            "min": 0.0,
+            "q25": 0.0,
+            "median": 3701.81201171875,
+            "q75": 8124.71484375,
+            "max": 60307.9296875
+          },
+          "nonfinite": 0
+        }
+      ],
+      "duplicates": 15,
+      "correlation": {
+        "columns": [
+          "treat",
+          "age",
+          "educ",
+          "black",
+          "hisp",
+          "marr",
+          "nodegree",
+          "re74",
+          "re75",
+          "re78"
+        ],
+        "values": [
+          [
+            1.0,
+            0.05297747579341063,
+            0.07089001582065661,
+            0.021602017018397087,
+            -0.08406595024241921,
+            0.04653126821735741,
+            -0.15101238105840728,
+            -0.0010535708763148586,
+            0.04151868749544183,
+            0.13350426301548
+          ],
+          [
+            0.05297747579341063,
+            1.0,
+            0.022964323735727085,
+            0.0871710012631811,
+            -0.09015737277730294,
+            0.2100716544228861,
+            -0.11283772491611535,
+            -0.0012287824201481145,
+            0.05262571956121891,
+            0.05716566734553951
+          ],
+          [
+            0.07089001582065661,
+            0.022964323735727085,
+            1.0,
+            0.045404935550961076,
+            -0.1448348494716843,
+            0.08161285363241096,
+            -0.6355754526215887,
+            0.041189305781315924,
+            0.02585520751889163,
+            0.11616561719533548
+          ],
+          [
+            0.021602017018397087,
+            0.0871710012631811,
+            0.045404935550961076,
+            1.0,
+            -0.6939694969003644,
+            0.02373050561282277,
+            0.041948128864361216,
+            0.005445734188347367,
+            -0.056388707983944714,
+            -0.1149577253842137
+          ],
+          [
+            -0.08406595024241921,
+            -0.09015737277730294,
+            -0.1448348494716843,
+            -0.6939694969003644,
+            1.0,
+            0.009064143801173888,
+            0.0866383434547567,
+            -0.028484879855656207,
+            0.04080520968778418,
+            0.058605960731935934
+          ],
+          [
+            0.04653126821735741,
+            0.2100716544228861,
+            0.08161285363241096,
+            0.02373050561282277,
+            0.009064143801173888,
+            1.0,
+            -0.03855449548917672,
+            0.14252163579794558,
+            0.2679134743556945,
+            0.03267195408850404
+          ],
+          [
+            -0.15101238105840728,
+            -0.11283772491611535,
+            -0.6355754526215887,
+            0.041948128864361216,
+            0.0866383434547567,
+            -0.03855449548917672,
+            1.0,
+            -0.06782801268293318,
+            0.020786930536311848,
+            -0.10606313614125847
+          ],
+          [
+            -0.0010535708763148586,
+            -0.0012287824201481145,
+            0.041189305781315924,
+            0.005445734188347367,
+            -0.028484879855656207,
+            0.14252163579794558,
+            -0.06782801268293318,
+            1.0,
+            0.6552006463328209,
+            0.08538444807049567
+          ],
+          [
+            0.04151868749544183,
+            0.05262571956121891,
+            0.02585520751889163,
+            -0.056388707983944714,
+            0.04080520968778418,
+            0.2679134743556945,
+            0.020786930536311848,
+            0.6552006463328209,
+            1.0,
+            0.08459903540047937
+          ],
+          [
+            0.13350426301548,
+            0.05716566734553951,
+            0.11616561719533548,
+            -0.1149577253842137,
+            0.058605960731935934,
+            0.03267195408850404,
+            -0.10606313614125847,
+            0.08538444807049567,
+            0.08459903540047937,
+            1.0
+          ]
+        ]
+      },
+      "cohorts": [
+        {
+          "treatment": 0,
+          "n": 260
+        },
+        {
+          "treatment": 1,
+          "n": 185
+        }
+      ],
+      "balance": [
+        {
+          "variable": "age",
+          "smd_before": 0.1072771214661747
+        },
+        {
+          "variable": "educ",
+          "smd_before": 0.14121982079828688
+        },
+        {
+          "variable": "black",
+          "smd_before": 0.04388661137007063
+        },
+        {
+          "variable": "hisp",
+          "smd_before": -0.17456107137317195
+        },
+        {
+          "variable": "marr",
+          "smd_before": 0.09364070075641237
+        },
+        {
+          "variable": "nodegree",
+          "smd_before": -0.30398643906182043
+        },
+        {
+          "variable": "re74",
+          "smd_before": -0.0021599489524727986
+        },
+        {
+          "variable": "re75",
+          "smd_before": 0.08386324067125676
+        }
+      ],
+      "provenance": {
+        "sha256": "7733b44eb709cffae758eb194f5973eb4bdc0e608633151afc4d3f6025ba11fc",
+        "hash_definition": "SHA256 of ordered (column,dtype) JSON and pandas hash_pandas_object(index=False) bytes; pandas-version dependent",
+        "engine": "DuckDB 2.0.0",
+        "transformations": [],
+        "queries": [
+          "SELECT COUNT(*) AS rows FROM observations",
+          "SELECT COUNT(*) FROM (SELECT DISTINCT * FROM observations)",
+          "SELECT COUNT(*) FILTER (WHERE \"treat\" IS NULL), COUNT(DISTINCT \"treat\") FROM observations",
+          "SELECT AVG(\"treat\"), STDDEV_SAMP(\"treat\"), MIN(\"treat\"), QUANTILE_CONT(\"treat\", 0.25), MEDIAN(\"treat\"), QUANTILE_CONT(\"treat\", 0.75), MAX(\"treat\"), COUNT(*) FILTER(WHERE NOT ISFINITE(\"treat\")) FROM observations",
+          "SELECT COUNT(*) FILTER (WHERE \"age\" IS NULL), COUNT(DISTINCT \"age\") FROM observations",
+          "SELECT AVG(\"age\"), STDDEV_SAMP(\"age\"), MIN(\"age\"), QUANTILE_CONT(\"age\", 0.25), MEDIAN(\"age\"), QUANTILE_CONT(\"age\", 0.75), MAX(\"age\"), COUNT(*) FILTER(WHERE NOT ISFINITE(\"age\")) FROM observations",
+          "SELECT COUNT(*) FILTER (WHERE \"educ\" IS NULL), COUNT(DISTINCT \"educ\") FROM observations",
+          "SELECT AVG(\"educ\"), STDDEV_SAMP(\"educ\"), MIN(\"educ\"), QUANTILE_CONT(\"educ\", 0.25), MEDIAN(\"educ\"), QUANTILE_CONT(\"educ\", 0.75), MAX(\"educ\"), COUNT(*) FILTER(WHERE NOT ISFINITE(\"educ\")) FROM observations",
+          "SELECT COUNT(*) FILTER (WHERE \"black\" IS NULL), COUNT(DISTINCT \"black\") FROM observations",
+          "SELECT AVG(\"black\"), STDDEV_SAMP(\"black\"), MIN(\"black\"), QUANTILE_CONT(\"black\", 0.25), MEDIAN(\"black\"), QUANTILE_CONT(\"black\", 0.75), MAX(\"black\"), COUNT(*) FILTER(WHERE NOT ISFINITE(\"black\")) FROM observations",
+          "SELECT COUNT(*) FILTER (WHERE \"hisp\" IS NULL), COUNT(DISTINCT \"hisp\") FROM observations",
+          "SELECT AVG(\"hisp\"), STDDEV_SAMP(\"hisp\"), MIN(\"hisp\"), QUANTILE_CONT(\"hisp\", 0.25), MEDIAN(\"hisp\"), QUANTILE_CONT(\"hisp\", 0.75), MAX(\"hisp\"), COUNT(*) FILTER(WHERE NOT ISFINITE(\"hisp\")) FROM observations",
+          "SELECT COUNT(*) FILTER (WHERE \"marr\" IS NULL), COUNT(DISTINCT \"marr\") FROM observations",
+          "SELECT AVG(\"marr\"), STDDEV_SAMP(\"marr\"), MIN(\"marr\"), QUANTILE_CONT(\"marr\", 0.25), MEDIAN(\"marr\"), QUANTILE_CONT(\"marr\", 0.75), MAX(\"marr\"), COUNT(*) FILTER(WHERE NOT ISFINITE(\"marr\")) FROM observations",
+          "SELECT COUNT(*) FILTER (WHERE \"nodegree\" IS NULL), COUNT(DISTINCT \"nodegree\") FROM observations",
+          "SELECT AVG(\"nodegree\"), STDDEV_SAMP(\"nodegree\"), MIN(\"nodegree\"), QUANTILE_CONT(\"nodegree\", 0.25), MEDIAN(\"nodegree\"), QUANTILE_CONT(\"nodegree\", 0.75), MAX(\"nodegree\"), COUNT(*) FILTER(WHERE NOT ISFINITE(\"nodegree\")) FROM observations",
+          "SELECT COUNT(*) FILTER (WHERE \"re74\" IS NULL), COUNT(DISTINCT \"re74\") FROM observations",
+          "SELECT AVG(\"re74\"), STDDEV_SAMP(\"re74\"), MIN(\"re74\"), QUANTILE_CONT(\"re74\", 0.25), MEDIAN(\"re74\"), QUANTILE_CONT(\"re74\", 0.75), MAX(\"re74\"), COUNT(*) FILTER(WHERE NOT ISFINITE(\"re74\")) FROM observations",
+          "SELECT COUNT(*) FILTER (WHERE \"re75\" IS NULL), COUNT(DISTINCT \"re75\") FROM observations",
+          "SELECT AVG(\"re75\"), STDDEV_SAMP(\"re75\"), MIN(\"re75\"), QUANTILE_CONT(\"re75\", 0.25), MEDIAN(\"re75\"), QUANTILE_CONT(\"re75\", 0.75), MAX(\"re75\"), COUNT(*) FILTER(WHERE NOT ISFINITE(\"re75\")) FROM observations",
+          "SELECT COUNT(*) FILTER (WHERE \"re78\" IS NULL), COUNT(DISTINCT \"re78\") FROM observations",
+          "SELECT AVG(\"re78\"), STDDEV_SAMP(\"re78\"), MIN(\"re78\"), QUANTILE_CONT(\"re78\", 0.25), MEDIAN(\"re78\"), QUANTILE_CONT(\"re78\", 0.75), MAX(\"re78\"), COUNT(*) FILTER(WHERE NOT ISFINITE(\"re78\")) FROM observations",
+          "SELECT \"treat\" AS treatment, COUNT(*) AS n FROM observations GROUP BY \"treat\" ORDER BY \"treat\" LIMIT 30",
+          "SELECT \"treat\", AVG(\"age\"), VAR_SAMP(\"age\") FROM observations WHERE \"treat\" IN (0,1) GROUP BY \"treat\" ORDER BY \"treat\"",
+          "SELECT \"treat\", AVG(\"educ\"), VAR_SAMP(\"educ\") FROM observations WHERE \"treat\" IN (0,1) GROUP BY \"treat\" ORDER BY \"treat\"",
+          "SELECT \"treat\", AVG(\"black\"), VAR_SAMP(\"black\") FROM observations WHERE \"treat\" IN (0,1) GROUP BY \"treat\" ORDER BY \"treat\"",
+          "SELECT \"treat\", AVG(\"hisp\"), VAR_SAMP(\"hisp\") FROM observations WHERE \"treat\" IN (0,1) GROUP BY \"treat\" ORDER BY \"treat\"",
+          "SELECT \"treat\", AVG(\"marr\"), VAR_SAMP(\"marr\") FROM observations WHERE \"treat\" IN (0,1) GROUP BY \"treat\" ORDER BY \"treat\"",
+          "SELECT \"treat\", AVG(\"nodegree\"), VAR_SAMP(\"nodegree\") FROM observations WHERE \"treat\" IN (0,1) GROUP BY \"treat\" ORDER BY \"treat\"",
+          "SELECT \"treat\", AVG(\"re74\"), VAR_SAMP(\"re74\") FROM observations WHERE \"treat\" IN (0,1) GROUP BY \"treat\" ORDER BY \"treat\"",
+          "SELECT \"treat\", AVG(\"re75\"), VAR_SAMP(\"re75\") FROM observations WHERE \"treat\" IN (0,1) GROUP BY \"treat\" ORDER BY \"treat\""
+        ],
+        "rows_removed": 0
+      },
+      "warnings": [
+        "15 repeated row records detected; no rows removed. Repeated observations may require clustered inference."
+      ]
+    },
+    "analysis": {
+      "status": "identified",
+      "estimates": [
+        {
+          "method": "regression",
+          "estimate": 1676.3426254030333,
+          "se": 685.3024746500472,
+          "ci": [
+            333.1497750889407,
+            3019.535475717126
+          ],
+          "confidence_level": 0.95,
+          "target": "ATE",
+          "assumptions": "Additive linear conditional mean; HC3 heteroskedasticity-robust normal interval. A constant effect or correct additive outcome specification is required."
+        },
+        {
+          "method": "ipw",
+          "estimate": 1612.434785031361,
+          "se": 701.0632420939442,
+          "ci": [
+            158.45525150561897,
+            3008.1766183708255
+          ],
+          "confidence_level": 0.95,
+          "target": "ATE",
+          "assumptions": "Horvitz-Thompson ATE; correctly specified logistic propensity; propensity clipped at [0.01,0.99]. Stratified pairs bootstrap (80 refits), percentile interval."
+        },
+        {
+          "method": "aipw",
+          "estimate": 1618.9969088854534,
+          "se": 671.5407653631578,
+          "ci": [
+            302.7770087736642,
+            2935.216808997243
+          ],
+          "confidence_level": 0.95,
+          "target": "ATE",
+          "assumptions": "Parametric augmented IPW with logistic treatment model and separate linear outcome models. Approximate influence-score interval; requires correct propensity or outcome nuisance models and regularity."
+        },
+        {
+          "method": "dml",
+          "estimate": 1540.2080991816854,
+          "se": 713.244292965342,
+          "ci": [
+            142.24928496961525,
+            2938.1669133937557
+          ],
+          "confidence_level": 0.95,
+          "target": "ATE",
+          "assumptions": "Cross-fitted interactive-regression-model ATE / orthogonal AIPW score; 5 stratified folds, random-forest outcomes and logistic propensity. Asymptotic influence-score interval needs nuisance-rate and overlap assumptions; finite-sample coverage is not guaranteed."
+        }
+      ],
+      "diagnostics": {
+        "n": 445,
+        "treated": 185,
+        "control": 260,
+        "association": {
+          "method": "unadjusted_association",
+          "estimate": 1794.3423818501024,
+          "se": 670.9965444673315,
+          "ci": [
+            479.18915469413264,
+            3109.4956090060723
+          ],
+          "confidence_level": 0.95,
+          "target": "association",
+          "assumptions": "Unadjusted difference in sample means; association alone does not establish causality."
+        },
+        "overlap": {
+          "min": 0.19480376672858057,
+          "max": 0.6757930344092863,
+          "outside_005_095": 0.0,
+          "clipped_fraction": 0.0,
+          "effective_sample_size_treated": 175.98990358929706,
+          "effective_sample_size_control": 251.5035600916609,
+          "proves_positivity": false
+        },
+        "balance": [
+          {
+            "variable": "age",
+            "smd_before": 0.10727712146617467,
+            "smd_after_ipw": -0.0005798262534348864
+          },
+          {
+            "variable": "educ",
+            "smd_before": 0.14121982079828682,
+            "smd_after_ipw": 0.00205860558751715
+          },
+          {
+            "variable": "black",
+            "smd_before": 0.04388661137007063,
+            "smd_after_ipw": -0.0014311774227682725
+          },
+          {
+            "variable": "hisp",
+            "smd_before": -0.1745610713731719,
+            "smd_after_ipw": 0.0007458485117340975
+          },
+          {
+            "variable": "marr",
+            "smd_before": 0.09364070075641238,
+            "smd_after_ipw": 0.005861701920815612
+          },
+          {
+            "variable": "nodegree",
+            "smd_before": -0.30398643906182043,
+            "smd_after_ipw": -0.00024458118085037564
+          },
+          {
+            "variable": "re74",
+            "smd_before": -0.0021599489524727986,
+            "smd_after_ipw": -0.0007214881376025139
+          },
+          {
+            "variable": "re75",
+            "smd_before": 0.08386324067125678,
+            "smd_after_ipw": 0.00900801251517514
+          }
+        ],
+        "rows_dropped": 0
+      },
+      "refutation": {
+        "placebo": {
+          "method": "permuted_treatment_regression",
+          "estimate": 773.360619406154,
+          "se": 667.7015949130927,
+          "ci": [
+            -535.3345066235077,
+            2082.055745435816
+          ],
+          "confidence_level": 0.95,
+          "target": "ATE",
+          "assumptions": "One seeded treatment permutation; detects gross estimator artifacts, cannot validate exchangeability.",
+          "includes_zero": true
+        },
+        "subset": {
+          "method": "random_80_percent_regression",
+          "estimate": 1564.8163993283006,
+          "se": 688.1619741761051,
+          "ci": [
+            216.0189299431347,
+            2913.613868713466
+          ],
+          "confidence_level": 0.95,
+          "target": "ATE",
+          "assumptions": "Seeded 80% subset stability check; not an independent replication."
+        },
+        "interpretation": "Passing a refutation check does not prove the causal assumptions. A failed check prompts investigation."
+      },
+      "sensitivity": {
+        "model": "Single omitted-variable linear-model bias envelope using specified partial R-squared values (Cinelli & Hazlett, 2020).",
+        "grid": [
+          {
+            "r2_treatment": 0.01,
+            "r2_outcome": 0.01,
+            "bias": 133.87877130744792,
+            "adjusted_effect": 1542.4638540955852,
+            "effect_lower": 1542.4638540955852,
+            "effect_upper": 1810.2213967104813
+          },
+          {
+            "r2_treatment": 0.01,
+            "r2_outcome": 0.05,
+            "bias": 299.362033387602,
+            "adjusted_effect": 1376.9805920154313,
+            "effect_lower": 1376.9805920154313,
+            "effect_upper": 1975.7046587906352
+          },
+          {
+            "r2_treatment": 0.01,
+            "r2_outcome": 0.1,
+            "bias": 423.361847676334,
+            "adjusted_effect": 1252.9807777266992,
+            "effect_lower": 1252.9807777266992,
+            "effect_upper": 2099.7044730793673
+          },
+          {
+            "r2_treatment": 0.01,
+            "r2_outcome": 0.2,
+            "bias": 598.724066775204,
+            "adjusted_effect": 1077.6185586278293,
+            "effect_lower": 1077.6185586278293,
+            "effect_upper": 2275.066692178237
+          },
+          {
+            "r2_treatment": 0.01,
+            "r2_outcome": 0.3,
+            "bias": 733.2842301616463,
+            "adjusted_effect": 943.058395241387,
+            "effect_lower": 943.058395241387,
+            "effect_upper": 2409.6268555646793
+          },
+          {
+            "r2_treatment": 0.05,
+            "r2_outcome": 0.01,
+            "bias": 305.5994123093345,
+            "adjusted_effect": 1370.7432130936986,
+            "effect_lower": 1370.7432130936986,
+            "effect_upper": 1981.942037712368
+          },
+          {
+            "r2_treatment": 0.05,
+            "r2_outcome": 0.05,
+            "bias": 683.3410598076582,
+            "adjusted_effect": 993.001565595375,
+            "effect_lower": 993.001565595375,
+            "effect_upper": 2359.6836852106917
+          },
+          {
+            "r2_treatment": 0.05,
+            "r2_outcome": 0.1,
+            "bias": 966.3901945063944,
+            "adjusted_effect": 709.9524308966388,
+            "effect_lower": 709.9524308966388,
+            "effect_upper": 2642.7328199094277
+          },
+          {
+            "r2_treatment": 0.05,
+            "r2_outcome": 0.2,
+            "bias": 1366.6821196153164,
+            "adjusted_effect": 309.66050578771683,
+            "effect_lower": 309.66050578771683,
+            "effect_upper": 3043.0247450183497
+          },
+          {
+            "r2_treatment": 0.05,
+            "r2_outcome": 0.3,
+            "bias": 1673.8369168214447,
+            "adjusted_effect": 2.5057085815885785,
+            "effect_lower": 2.5057085815885785,
+            "effect_upper": 3350.1795422244777
+          },
+          {
+            "r2_treatment": 0.1,
+            "r2_outcome": 0.01,
+            "bias": 444.02565182060306,
+            "adjusted_effect": 1232.3169735824301,
+            "effect_lower": 1232.3169735824301,
+            "effect_upper": 2120.368277223636
+          },
+          {
+            "r2_treatment": 0.1,
+            "r2_outcome": 0.05,
+            "bias": 992.8715412245217,
+            "adjusted_effect": 683.4710841785115,
+            "effect_lower": 683.4710841785115,
+            "effect_upper": 2669.2141666275547
+          },
+          {
+            "r2_treatment": 0.1,
+            "r2_outcome": 0.1,
+            "bias": 1404.1323992939963,
+            "adjusted_effect": 272.21022610903697,
+            "effect_lower": 272.21022610903697,
+            "effect_upper": 3080.4750246970298
+          },
+          {
+            "r2_treatment": 0.1,
+            "r2_outcome": 0.2,
+            "bias": 1985.7430824490434,
+            "adjusted_effect": -309.40045704601016,
+            "effect_lower": -309.40045704601016,
+            "effect_upper": 3662.0857078520767
+          },
+          {
+            "r2_treatment": 0.1,
+            "r2_outcome": 0.3,
+            "bias": 2432.028656130791,
+            "adjusted_effect": -755.686030727758,
+            "effect_lower": -755.686030727758,
+            "effect_upper": 4108.371281533824
+          },
+          {
+            "r2_treatment": 0.2,
+            "r2_outcome": 0.01,
+            "bias": 666.0384777309046,
+            "adjusted_effect": 1010.3041476721287,
+            "effect_lower": 1010.3041476721287,
+            "effect_upper": 2342.381103133938
+          },
+          {
+            "r2_treatment": 0.2,
+            "r2_outcome": 0.05,
+            "bias": 1489.3073118367827,
+            "adjusted_effect": 187.03531356625058,
+            "effect_lower": 187.03531356625058,
+            "effect_upper": 3165.6499372398157
+          },
+          {
+            "r2_treatment": 0.2,
+            "r2_outcome": 0.1,
+            "bias": 2106.198598940994,
+            "adjusted_effect": -429.85597353796084,
+            "effect_lower": -429.85597353796084,
+            "effect_upper": 3782.5412243440273
+          },
+          {
+            "r2_treatment": 0.2,
+            "r2_outcome": 0.2,
+            "bias": 2978.6146236735653,
+            "adjusted_effect": -1302.271998270532,
+            "effect_lower": -1302.271998270532,
+            "effect_upper": 4654.957249076599
+          },
+          {
+            "r2_treatment": 0.2,
+            "r2_outcome": 0.3,
+            "bias": 3648.0429841961864,
+            "adjusted_effect": -1971.700358793153,
+            "effect_lower": -1971.700358793153,
+            "effect_upper": 5324.38560959922
+          },
+          {
+            "r2_treatment": 0.3,
+            "r2_outcome": 0.01,
+            "bias": 872.0490685585798,
+            "adjusted_effect": 804.2935568444534,
+            "effect_lower": 804.2935568444534,
+            "effect_upper": 2548.391693961613
+          },
+          {
+            "r2_treatment": 0.3,
+            "r2_outcome": 0.05,
+            "bias": 1949.9609970123595,
+            "adjusted_effect": -273.61837160932623,
+            "effect_lower": -273.61837160932623,
+            "effect_upper": 3626.303622415393
+          },
+          {
+            "r2_treatment": 0.3,
+            "r2_outcome": 0.1,
+            "bias": 2757.6612880734406,
+            "adjusted_effect": -1081.3186626704073,
+            "effect_lower": -1081.3186626704073,
+            "effect_upper": 4434.003913476474
+          },
+          {
+            "r2_treatment": 0.3,
+            "r2_outcome": 0.2,
+            "bias": 3899.921994024719,
+            "adjusted_effect": -2223.5793686216857,
+            "effect_lower": -2223.5793686216857,
+            "effect_upper": 5576.264619427752
+          },
+          {
+            "r2_treatment": 0.3,
+            "r2_outcome": 0.3,
+            "bias": 4776.409461009033,
+            "adjusted_effect": -3100.066835606,
+            "effect_lower": -3100.066835606,
+            "effect_upper": 6452.752086412067
+          }
+        ],
+        "interpretation": "User-specified confounder strengths, not measured hidden confounding. Bounds cover point-estimate bias in either sign; they are not confidence or causal identification intervals."
+      },
+      "assumptions": {
+        "exchangeability": true,
+        "consistency": true,
+        "positivity": true,
+        "temporal_order": true,
+        "no_interference": true,
+        "measurement_validity": true,
+        "selection_ignorability": true
+      },
+      "limitations": [
+        "Identification is conditional on the supplied graph and accepted scientific assumptions, not established by observational fit.",
+        "Only complete-data binary-treatment backdoor ATEs are supported; latent-variable ID and partial-identification bounds are not implemented.",
+        "Population transport, measurement error, selection bias and interference cannot be ruled out by these diagnostics.",
+        "Estimator agreement does not establish causal validity. Confidence intervals quantify sampling uncertainty under estimator assumptions, not uncertainty in the graph.",
+        "Individual counterfactuals are not identified by an ATE analysis; no individual counterfactual outcomes are generated."
+      ],
+      "identification": {
+        "identified": true,
+        "reason": "The supplied adjustment set satisfies the backdoor criterion in the user-confirmed DAG, conditional on the accepted assumptions.",
+        "estimand": "Sample-population average treatment effect E[Y(1)-Y(0)]",
+        "adjustment_set": [
+          "age",
+          "educ",
+          "black",
+          "hisp",
+          "marr",
+          "nodegree",
+          "re74",
+          "re75"
+        ],
+        "formula": "E_X[E[Y | T=1,X] - E[Y | T=0,X]]",
+        "graph_source": "user"
+      }
+    },
+    "sql_summary": {
+      "query": "SELECT treat, COUNT(*) AS n, AVG(re78) AS mean_1978_earnings, STDDEV_SAMP(re78) / SQRT(COUNT(*)) AS standard_error FROM observations GROUP BY treat ORDER BY treat",
+      "results": [
+        {
+          "treat": 0,
+          "n": 260,
+          "mean_1978_earnings": 4554.801120215196,
+          "standard_error": 340.09307148518155
+        },
+        {
+          "treat": 1,
+          "n": 185,
+          "mean_1978_earnings": 6349.143502065298,
+          "standard_error": 578.422912249225
+        }
+      ],
+      "interpretation": "Descriptive group summaries; the difference alone is causal only under the study design assumptions."
+    }
+  },
+  "ihdp": {
+    "source": "https://github.com/AMLab-Amsterdam/CEVAE/tree/master/datasets/IHDP",
+    "source_sha256": "2bdc8b94fdf2f669b1d3d49325fd9359d88418566545003867841312a1653411",
+    "benchmark": "IHDP NPCI replication 1, 747 units, 25 covariates; semi-synthetic outcomes",
+    "source_loader_reference": "https://github.com/AMLab-Amsterdam/CEVAE/blob/master/datasets.py",
+    "license_note": "No upstream license declaration found; source data are not redistributed. Local analysis uses separately downloaded benchmark bytes.",
+    "method": "Independent train/validation/test nuisance fitting with validation-selected RF outcome models and logistic propensity, heldout orthogonal AIPW score",
+    "summary": {
+      "splits": 10,
+      "mean_absolute_ate_error": 0.22654584661053323,
+      "mean_pehe": 0.6160521732041863,
+      "coverage_95": 1.0
+    },
+    "records": [
+      {
+        "seed": 0,
+        "n_train": 448,
+        "n_validation": 149,
+        "n_test": 150,
+        "partition_disjoint": true,
+        "selected_min_leaf": 5,
+        "validation_mse": 1.048256199166505,
+        "test_ate_truth": 4.005662194344652,
+        "heldout_aipw_ate": 3.3553450961758307,
+        "absolute_ate_error": 0.6503170981688218,
+        "ci": [
+          2.1048436627821623,
+          4.605846529569499
+        ],
+        "covered": true,
+        "pehe": 0.5761963669795518,
+        "propensity_clipped_fraction": 0.05333333333333334,
+        "test_index_sha256": "65220a217530a22ef790bca5f34ebe477f44327f977e4ebeeb379b7ac4ebeca8"
+      },
+      {
+        "seed": 1,
+        "n_train": 448,
+        "n_validation": 149,
+        "n_test": 150,
+        "partition_disjoint": true,
+        "selected_min_leaf": 5,
+        "validation_mse": 1.5298222933032595,
+        "test_ate_truth": 4.090069120521237,
+        "heldout_aipw_ate": 3.9302416263538906,
+        "absolute_ate_error": 0.15982749416734654,
+        "ci": [
+          2.3376956266020246,
+          5.522787626105757
+        ],
+        "covered": true,
+        "pehe": 0.5348168986691191,
+        "propensity_clipped_fraction": 0.09333333333333334,
+        "test_index_sha256": "7157d5a6dc8fed09921212ee7df2a2c50dbe0268477c3121aa1689179991cd5e"
+      },
+      {
+        "seed": 2,
+        "n_train": 448,
+        "n_validation": 149,
+        "n_test": 150,
+        "partition_disjoint": true,
+        "selected_min_leaf": 5,
+        "validation_mse": 1.2788635430055768,
+        "test_ate_truth": 3.9288163929366124,
+        "heldout_aipw_ate": 3.885507052693831,
+        "absolute_ate_error": 0.043309340242781325,
+        "ci": [
+          3.0403656175456244,
+          4.730648487842037
+        ],
+        "covered": true,
+        "pehe": 0.6483429124408097,
+        "propensity_clipped_fraction": 0.013333333333333334,
+        "test_index_sha256": "af148577b9410e6a15daad69ea7e52e59d4a4e61572abb34f1a912dc4627acde"
+      },
+      {
+        "seed": 3,
+        "n_train": 448,
+        "n_validation": 149,
+        "n_test": 150,
+        "partition_disjoint": true,
+        "selected_min_leaf": 5,
+        "validation_mse": 1.4371534475182082,
+        "test_ate_truth": 4.074849537691407,
+        "heldout_aipw_ate": 4.361486332413894,
+        "absolute_ate_error": 0.2866367947224866,
+        "ci": [
+          3.823522647311952,
+          4.899450017515836
+        ],
+        "covered": true,
+        "pehe": 0.6855475930523156,
+        "propensity_clipped_fraction": 0.013333333333333334,
+        "test_index_sha256": "fd971af37844e31a26e7b57ff2f5e7ccd22ff99e3db3fba18eb3902988a33afb"
+      },
+      {
+        "seed": 4,
+        "n_train": 448,
+        "n_validation": 149,
+        "n_test": 150,
+        "partition_disjoint": true,
+        "selected_min_leaf": 5,
+        "validation_mse": 1.1325441859545653,
+        "test_ate_truth": 4.004333285911506,
+        "heldout_aipw_ate": 4.063720175070872,
+        "absolute_ate_error": 0.05938688915936563,
+        "ci": [
+          3.6161899360045764,
+          4.511250414137167
+        ],
+        "covered": true,
+        "pehe": 0.5550657016863043,
+        "propensity_clipped_fraction": 0.05333333333333334,
+        "test_index_sha256": "ac7c040fd779168ec37e076425fd3798ce6df1c7d33153f2cf5f1962a26cf424"
+      },
+      {
+        "seed": 5,
+        "n_train": 448,
+        "n_validation": 149,
+        "n_test": 150,
+        "partition_disjoint": true,
+        "selected_min_leaf": 5,
+        "validation_mse": 1.2066240916742552,
+        "test_ate_truth": 4.0592014490678165,
+        "heldout_aipw_ate": 3.898599125964829,
+        "absolute_ate_error": 0.1606023231029874,
+        "ci": [
+          3.38185480381995,
+          4.4153434481097085
+        ],
+        "covered": true,
+        "pehe": 0.632882925610638,
+        "propensity_clipped_fraction": 0.0,
+        "test_index_sha256": "e887e1816bf897059ff302d651435057c6ce3296e9158406d0aa8406052e3e32"
+      },
+      {
+        "seed": 6,
+        "n_train": 448,
+        "n_validation": 149,
+        "n_test": 150,
+        "partition_disjoint": true,
+        "selected_min_leaf": 5,
+        "validation_mse": 1.2980403146832844,
+        "test_ate_truth": 4.032784603571234,
+        "heldout_aipw_ate": 3.8791117061325116,
+        "absolute_ate_error": 0.1536728974387227,
+        "ci": [
+          3.4131424636324557,
+          4.345080948632567
+        ],
+        "covered": true,
+        "pehe": 0.6060969170531282,
+        "propensity_clipped_fraction": 0.006666666666666667,
+        "test_index_sha256": "f40060c849140896669bb2a8f96a22603f03f47a8c3c247d4a2e271d9c389055"
+      },
+      {
+        "seed": 7,
+        "n_train": 448,
+        "n_validation": 149,
+        "n_test": 150,
+        "partition_disjoint": true,
+        "selected_min_leaf": 5,
+        "validation_mse": 1.0682015086129832,
+        "test_ate_truth": 3.8706049817165513,
+        "heldout_aipw_ate": 3.6579473906733284,
+        "absolute_ate_error": 0.2126575910432229,
+        "ci": [
+          2.9554548422864615,
+          4.360439939060195
+        ],
+        "covered": true,
+        "pehe": 0.6041953773707353,
+        "propensity_clipped_fraction": 0.0,
+        "test_index_sha256": "2ddbca64a2579a6bb98c7e075e4ca16d093a74c27ec179f871ac83d566152965"
+      },
+      {
+        "seed": 8,
+        "n_train": 448,
+        "n_validation": 149,
+        "n_test": 150,
+        "partition_disjoint": true,
+        "selected_min_leaf": 5,
+        "validation_mse": 1.3119132819978416,
+        "test_ate_truth": 4.028574909317521,
+        "heldout_aipw_ate": 4.274133863081853,
+        "absolute_ate_error": 0.24555895376433234,
+        "ci": [
+          3.259746707389687,
+          5.288521018774019
+        ],
+        "covered": true,
+        "pehe": 0.6356006043961714,
+        "propensity_clipped_fraction": 0.0,
+        "test_index_sha256": "446ba4231fd4d7b66deb6c0fb72a7a053bf61066c3218afeefabd4f84f2e3ae5"
+      },
+      {
+        "seed": 9,
+        "n_train": 448,
+        "n_validation": 149,
+        "n_test": 150,
+        "partition_disjoint": true,
+        "selected_min_leaf": 5,
+        "validation_mse": 1.3692851425776102,
+        "test_ate_truth": 4.025106469464847,
+        "heldout_aipw_ate": 3.7316173851695815,
+        "absolute_ate_error": 0.2934890842952651,
+        "ci": [
+          2.3922406498184436,
+          5.070994120520719
+        ],
+        "covered": true,
+        "pehe": 0.6817764347830898,
+        "propensity_clipped_fraction": 0.06,
+        "test_index_sha256": "b85b1734a49eba14e8c58488dfd8a8ddea945396c86d05c0160783e4e760a1a5"
+      }
+    ],
+    "limitations": [
+      "Ten resplits of one fixed outcome replication are dependent and are not ten independent data-generating replications.",
+      "Semi-synthetic conditional means are known only to the evaluator; no guarantee for genuine observational causal validity follows.",
+      "Small heldout samples, propensity clipping and nuisance misspecification can invalidate nominal coverage."
+    ]
+  },
+  "elapsed_seconds": 86.27641296386719,
+  "versions": {
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "pandas": "3.1.0",
+    "scikit-learn": "1.9.1",
+    "statsmodels": "0.15.0",
+    "duckdb": "2.0.0"
+  }
+}

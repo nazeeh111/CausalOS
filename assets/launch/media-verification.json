@@ -1,0 +1,36 @@
+{
+  "media": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "avg_frame_rate": "30/1",
+        "nb_frames": "600"
+      },
+      {
+        "codec_name": "aac",
+        "sample_rate": "48000",
+        "channels": 2,
+        "avg_frame_rate": "0/0",
+        "nb_frames": "939"
+      }
+    ],
+    "format": {
+      "duration": "20.000000",
+      "size": "4329541"
+    }
+  },
+  "complete_ffmpeg_decode": "passed",
+  "poster_selected_seconds": 12.5,
+  "poster_frame0_mean_absolute_rgb_error": 3.842844167952675,
+  "poster_frame0_matches": true,
+  "audio_stream_copy_hash": "SHA256=c70cb8017ccb017cf692f593055cceff075ada1445195e45b83f380cdbb23039",
+  "audio_unchanged_during_poster_bake": true,
+  "sha256": "2e9e940e9f372c28ffa488a2aeb2e9948094f16a32a433a22a52e0002c714850",
+  "poster_sha256": "7c9ca3ff9c1801edcee953e5bab828b0ecd6a73b2ee75227970903963456a5da",
+  "composition_sha256": "16d54c3e36cafb1f9ade240777d4f4a6a46bba1673e8aba34acb14a503178186",
+  "caption": "Query information value, weighed against experiment cost."
+}

@@ -1,0 +1,22 @@
+{
+  "duration": 20,
+  "source": "original deterministic score",
+  "strongCues": [
+    {
+      "time": 4.5,
+      "kind": "authored_harmonic_change"
+    },
+    {
+      "time": 9,
+      "kind": "authored_harmonic_change"
+    },
+    {
+      "time": 15,
+      "kind": "authored_harmonic_change"
+    }
+  ],
+  "interactionAccents": [
+    8.8,
+    9.0
+  ]
+}

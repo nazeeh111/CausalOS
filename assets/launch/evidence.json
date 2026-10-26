@@ -1,0 +1,48 @@
+{
+  "source": "benchmarks/flagship_replay.json",
+  "sha256": "5d3a66abba857aee445ce571ca35d2124d5d5018ddf687eb802162f4706a1790",
+  "seed": 42,
+  "model_label": "simulated evidence, finite candidate SCM family",
+  "before": {
+    "query_probability": 0.5,
+    "posterior": [
+      0.25,
+      0.25,
+      0.25,
+      0.25
+    ]
+  },
+  "after_three": {
+    "query_probability": 0.03248648669137345,
+    "posterior": [
+      0.016243243345686727,
+      0.016243243345686727,
+      0.4837567566543133,
+      0.4837567566543133
+    ],
+    "spent": 6.0,
+    "actions": [
+      "a-low",
+      "a-low",
+      "a-low"
+    ],
+    "observations": [
+      0.1925450654741578,
+      0.2903323799894391,
+      -0.1627222729023681
+    ]
+  },
+  "captures": {
+    "before": {
+      "source": "assets/lab-before.png",
+      "sha256": "53949ae84fcdf3372877bf8565bf8d633c8e401ec4b19299bbb179e285639f94",
+      "state": "prior, scrolled to action selection"
+    },
+    "after": {
+      "source": "assets/lab-after-top.png",
+      "sha256": "253154aa5e0e3f346dd70822b336aa96f1e6458df0732bf7e30ae61f71d54163",
+      "state": "after three a-low interventions, top of experiment page"
+    }
+  },
+  "composition_sha256": "16d54c3e36cafb1f9ade240777d4f4a6a46bba1673e8aba34acb14a503178186"
+}

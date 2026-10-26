@@ -1,0 +1,7 @@
+scenario,metric,nominal_guard_minus_evidence,bootstrap_95_low,bootstrap_95_high
+nominal,cost_to_family_alert,-0.16354166666666667,-0.4822916666666666,0.06458333333333333
+nominal,alert_attained,0.010416666666666666,-0.020833333333333332,0.052083333333333336
+weak_confounding,cost_to_family_alert,0.8916666666666666,0.296875,1.475026041666666
+weak_confounding,alert_attained,-0.16666666666666666,-0.25,-0.08333333333333333
+unseen_negative,cost_to_family_alert,-0.22499999999999998,-0.6083333333333334,0.15625
+unseen_negative,alert_attained,0.0,0.0,0.0

@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "If you use CAUSALOS, cite this software and the methodological references appropriate to your analysis."
+title: "CAUSALOS: An assumption-aware causal research laboratory"
+version: 0.1.0
+date-released: 2026-10-26
+type: software
+license: MIT
+authors:
+  - family-names: Abdul-Hadi
+    given-names: Nazeeh
+repository-code: "https://github.com/nazeeh111/CausalOS"
+url: "https://nazeeh111.github.io/CausalOS/demo/"
+abstract: "A local causal-analysis laboratory and a reproducible finite-model experimental-design testbed. Research-preview results include explicit assumptions, negative findings, and model-family limitations."

@@ -1,0 +1,28 @@
+{
+  "dataset": "nsw_mixtape Dehejia-Wahba experimental sample",
+  "rows": 445,
+  "treated": 185,
+  "control": 260,
+  "sha256": "72efd333a4b94a2bee55149d3542021d0adde03201d010ebe971e3e863360cd6",
+  "downloaded_source": "https://raw.githubusercontent.com/vincentarelbundock/Rdatasets/master/csv/causaldata/nsw_mixtape.csv",
+  "upstream": "https://github.com/NickCH-K/causaldata/tree/main/R",
+  "license_declaration": "https://github.com/NickCH-K/causaldata/blob/main/R/DESCRIPTION",
+  "license": "MIT + file LICENSE",
+  "copyright": "2021 Nick Huntington-Klein",
+  "documentation": "https://nickch-k.r-universe.dev/causaldata/doc/manual.html#nsw_mixtape",
+  "study": "LaLonde (1986), Dehejia and Wahba (1999)",
+  "columns": {
+    "treat": "1 job training, 0 randomized control",
+    "age": "age in years",
+    "educ": "years of schooling",
+    "black": "historical study Black race indicator",
+    "hisp": "historical study Hispanic ethnicity indicator",
+    "marr": "married indicator",
+    "nodegree": "no high-school degree indicator",
+    "re74": "real earnings in 1974",
+    "re75": "real earnings in 1975",
+    "re78": "real earnings in 1978; outcome"
+  },
+  "processing": "Bytes retained without modification. Loader drops rownames and constant data_id. No records removed.",
+  "warning": "Sensitive demographic variables reflect historical data collection; these examples do not justify present-day individual decisions or transport to other populations."
+}

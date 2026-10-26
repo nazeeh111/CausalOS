@@ -1,0 +1,11 @@
+{
+  "source": "assets/lab-after-top.png",
+  "source_sha256": "253154aa5e0e3f346dd70822b336aa96f1e6458df0732bf7e30ae61f71d54163",
+  "size": [
+    1280,
+    640
+  ],
+  "label": "genuine application screenshot, simulated laboratory",
+  "transformations": "uniform resize, rounded frame and shadow; no data or result changes",
+  "output_sha256": "17042fb6255f425d22f8c059c30a29b246ff6169c22edd42bea41ac278786af4"
+}

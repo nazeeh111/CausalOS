@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 770" role="img" aria-labelledby="title desc">
+<title id="title">CAUSALOS architecture and evidence boundaries</title><desc id="desc">The analysis workflow separates data profiling, a user graph and explicit assumptions, identification, estimation and evidence export. A separate experiment loop chooses actions from model predictions and beliefs; only the evaluator holds simulator truth.</desc>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0L8 3L0 6" fill="none" stroke="#2846c9" stroke-width="1.5"/></marker><style>text{font-family:system-ui,sans-serif;fill:#222a31}.h{font-size:28px;font-weight:600}.n{font-size:21px;font-weight:550}.s{font-size:16px;fill:#5f6861}.k{font-family:monospace;font-size:13px;letter-spacing:1.3px;fill:#2846c9}.box{fill:#fcfbf7;stroke:#d0d5c8;stroke-width:1.5}.line{stroke:#2846c9;stroke-width:2;fill:none;marker-end:url(#arrow)}</style></defs>
+<rect width="1400" height="770" fill="#f5f4ee"/><text x="55" y="57" class="k">CAUSALOS LAB / SYSTEM MAP</text><text x="55" y="106" class="h">Evidence travels through explicit boundaries.</text>
+<text x="55" y="154" class="k">ANALYSIS WORKFLOW</text>
+<rect class="box" x="55" y="180" width="220" height="135" rx="7"/><text class="n" x="78" y="220">Structured data</text><text class="s" x="78" y="252">CSV or examples</text><text class="s" x="78" y="280">Schema + provenance</text>
+<rect class="box" x="320" y="180" width="220" height="135" rx="7"/><text class="n" x="342" y="220">Profile + SQL</text><text class="s" x="342" y="252">Missingness + cohorts</text><text class="s" x="342" y="280">Balance + diagnostics</text>
+<rect class="box" x="585" y="180" width="220" height="135" rx="7"/><text class="n" x="607" y="220">Identification gate</text><text class="s" x="607" y="252">Graph + assumptions</text><text class="s" x="607" y="280">Valid adjustment set</text>
+<rect class="box" x="850" y="180" width="220" height="135" rx="7"/><text class="n" x="872" y="220">Estimation</text><text class="s" x="872" y="252">Adjustment / IPW</text><text class="s" x="872" y="280">AIPW / cross-fit DML</text>
+<rect class="box" x="1115" y="180" width="230" height="135" rx="7"/><text class="n" x="1137" y="220">Evidence report</text><text class="s" x="1137" y="252">Refutation + sensitivity</text><text class="s" x="1137" y="280">Config + data hash</text>
+<path class="line" d="M275 247h40M540 247h40M805 247h40M1070 247h40"/>
+<path d="M695 315v34" stroke="#936628" stroke-width="2"/><text x="695" y="374" text-anchor="middle" font-size="16" fill="#936628">Unsupported causal claims → abstain</text>
+<path d="M55 412h1290" stroke="#d0d5c8"/>
+<text x="55" y="456" class="k">SIMULATED EXPERIMENT LOOP</text>
+<rect class="box" x="55" y="485" width="270" height="135" rx="7"/><text class="n" x="78" y="525">Candidate SCMs + beliefs</text><text class="s" x="78" y="557">Finite model predictions</text><text class="s" x="78" y="585">Observational ambiguity</text>
+<rect class="box" x="380" y="485" width="270" height="135" rx="7"/><text class="n" x="402" y="525">Design policy</text><text class="s" x="402" y="557">Query + decision value</text><text class="s" x="402" y="585">Budget-aware ranking</text>
+<rect x="705" y="485" width="300" height="135" rx="7" fill="#f2ead7" stroke="#c5b68f" stroke-width="1.5"/><text class="n" x="727" y="525">Isolated evaluator</text><text class="s" x="727" y="557">Owns simulator truth</text><text class="s" x="727" y="585">Reveals one observation</text>
+<rect class="box" x="1060" y="485" width="285" height="135" rx="7"/><text class="n" x="1082" y="525">Bayesian update</text><text class="s" x="1082" y="557">Posterior + conflict check</text><text class="s" x="1082" y="585">Measured learning record</text>
+<path class="line" d="M325 552h50M650 552h50M1005 552h50M1200 620v45H190v-40"/>
+<text x="700" y="709" text-anchor="middle" class="s">Policy sees beliefs and predictive distributions. Evaluator truth is used only for simulation and scoring.</text>
+<text x="55" y="745" class="k">LOCAL PYTHON + FASTAPI · PACKAGED WEB UI · DUCKDB · CPU-COMPATIBLE</text>
+</svg>

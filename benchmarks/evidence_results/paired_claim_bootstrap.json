@@ -1,0 +1,68 @@
+{
+  "method": "paired percentile bootstrap, 10000 resamples of96 seeds, RNG91823",
+  "comparisons": [
+    {
+      "scenario": "nominal",
+      "baseline": "nominal_query_eig_guard",
+      "false_claim_reduction": 0.0,
+      "bootstrap_95_low": 0.0,
+      "bootstrap_95_high": 0.0
+    },
+    {
+      "scenario": "nominal",
+      "baseline": "validity_query_eig",
+      "false_claim_reduction": 0.0,
+      "bootstrap_95_low": 0.0,
+      "bootstrap_95_high": 0.0
+    },
+    {
+      "scenario": "nominal",
+      "baseline": "validity_decision_value",
+      "false_claim_reduction": 0.0,
+      "bootstrap_95_low": 0.0,
+      "bootstrap_95_high": 0.0
+    },
+    {
+      "scenario": "weak_confounding",
+      "baseline": "nominal_query_eig_guard",
+      "false_claim_reduction": 0.15625,
+      "bootstrap_95_low": 0.07291666666666667,
+      "bootstrap_95_high": 0.23958333333333334
+    },
+    {
+      "scenario": "weak_confounding",
+      "baseline": "validity_query_eig",
+      "false_claim_reduction": 0.010416666666666666,
+      "bootstrap_95_low": -0.020833333333333332,
+      "bootstrap_95_high": 0.041666666666666664
+    },
+    {
+      "scenario": "weak_confounding",
+      "baseline": "validity_decision_value",
+      "false_claim_reduction": 0.0,
+      "bootstrap_95_low": 0.0,
+      "bootstrap_95_high": 0.0
+    },
+    {
+      "scenario": "unseen_negative",
+      "baseline": "nominal_query_eig_guard",
+      "false_claim_reduction": 0.0,
+      "bootstrap_95_low": -0.03125,
+      "bootstrap_95_high": 0.03125
+    },
+    {
+      "scenario": "unseen_negative",
+      "baseline": "validity_query_eig",
+      "false_claim_reduction": 0.010416666666666666,
+      "bootstrap_95_low": 0.0,
+      "bootstrap_95_high": 0.03125
+    },
+    {
+      "scenario": "unseen_negative",
+      "baseline": "validity_decision_value",
+      "false_claim_reduction": 0.0,
+      "bootstrap_95_low": 0.0,
+      "bootstrap_95_high": 0.0
+    }
+  ]
+}

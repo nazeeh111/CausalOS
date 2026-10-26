@@ -1,0 +1,23 @@
+{
+  "study": "2: validity-aware design under candidate contamination",
+  "reason": "First study selected nominal query-EIG exactly; test split not reused for a new contribution claim.",
+  "locked_before_execution": true,
+  "train_seeds": [3000, 3023],
+  "validation_seeds": [4000, 4023],
+  "test_seeds": [5000, 5095],
+  "budget": 12,
+  "scenarios": ["nominal", "weak_confounding", "unseen_negative"],
+  "shadow_theta_grid": [-0.15, -0.35],
+  "true_theta_weak_distribution": "Uniform[-0.32,-0.08], independent evaluator RNG",
+  "true_theta_unseen_distribution": "Uniform[-0.65,-0.40], outside shadow grid",
+  "latent_loading_squared": 0.95,
+  "priors_to_develop": [0.05,0.15,0.25],
+  "decision_weights_to_develop": [0,0.5,1],
+  "guard_threshold": 0.20,
+  "conclusion_confidence_threshold": 0.95,
+  "abstention_loss": 0.10,
+  "development_objective": "mean false-claim rate + 0.25 nominal abstention rate + 0.02 cost-to-valid-claim/budget",
+  "baselines": ["nominal_query_eig", "nominal_query_eig_guard", "augmented_model_eig", "validity_query_eig", "validity_decision_value", "evidence_no_guard", "evidence", "random_guard"],
+  "primary_comparison": "evidence vs nominal_query_eig_guard: same augmented posterior and guard, action acquisition differs",
+  "report": "false causal claims, abstention, nominal correct claim rate, cost to valid claim, effect RMSE and predictive conflict; retain all negative findings"
+}

@@ -1,0 +1,2301 @@
+{
+  "seed": 42,
+  "evaluator_scenario": "weak_confounding",
+  "label": "simulated coherent latent-confounded SCM",
+  "states": [
+    {
+      "schema_version": 1,
+      "scenario": "validity-study",
+      "rho": 0.5739524441142261,
+      "nodes": [
+        "A",
+        "Y",
+        "B",
+        "Z",
+        "U"
+      ],
+      "hypotheses": [
+        {
+          "id": "h0",
+          "label": "A \u2192 Y / B \u2192 Z",
+          "edges": [
+            [
+              "A",
+              "Y"
+            ],
+            [
+              "B",
+              "Z"
+            ]
+          ],
+          "effect": 0.5739524441142261,
+          "posterior": 0.2375,
+          "shadow": false
+        },
+        {
+          "id": "h1",
+          "label": "A \u2192 Y / Z \u2192 B",
+          "edges": [
+            [
+              "A",
+              "Y"
+            ],
+            [
+              "Z",
+              "B"
+            ]
+          ],
+          "effect": 0.5739524441142261,
+          "posterior": 0.2375,
+          "shadow": false
+        },
+        {
+          "id": "h2",
+          "label": "Y \u2192 A / B \u2192 Z",
+          "edges": [
+            [
+              "Y",
+              "A"
+            ],
+            [
+              "B",
+              "Z"
+            ]
+          ],
+          "effect": 0.0,
+          "posterior": 0.2375,
+          "shadow": false
+        },
+        {
+          "id": "h3",
+          "label": "Y \u2192 A / Z \u2192 B",
+          "edges": [
+            [
+              "Y",
+              "A"
+            ],
+            [
+              "Z",
+              "B"
+            ]
+          ],
+          "effect": 0.0,
+          "posterior": 0.2375,
+          "shadow": false
+        },
+        {
+          "id": "shadow-4",
+          "label": "Latent confounding / effect -0.15",
+          "edges": [
+            [
+              "U",
+              "A"
+            ],
+            [
+              "U",
+              "Y"
+            ],
+            [
+              "A",
+              "Y"
+            ],
+            [
+              "B",
+              "Z"
+            ]
+          ],
+          "effect": -0.15,
+          "shadow": true,
+          "posterior": 0.0125
+        },
+        {
+          "id": "shadow-5",
+          "label": "Latent confounding / effect -0.15",
+          "edges": [
+            [
+              "U",
+              "A"
+            ],
+            [
+              "U",
+              "Y"
+            ],
+            [
+              "A",
+              "Y"
+            ],
+            [
+              "Z",
+              "B"
+            ]
+          ],
+          "effect": -0.15,
+          "shadow": true,
+          "posterior": 0.0125
+        },
+        {
+          "id": "shadow-6",
+          "label": "Latent confounding / effect -0.35",
+          "edges": [
+            [
+              "U",
+              "A"
+            ],
+            [
+              "U",
+              "Y"
+            ],
+            [
+              "A",
+              "Y"
+            ],
+            [
+              "B",
+              "Z"
+            ]
+          ],
+          "effect": -0.35,
+          "shadow": true,
+          "posterior": 0.0125
+        },
+        {
+          "id": "shadow-7",
+          "label": "Latent confounding / effect -0.35",
+          "edges": [
+            [
+              "U",
+              "A"
+            ],
+            [
+              "U",
+              "Y"
+            ],
+            [
+              "A",
+              "Y"
+            ],
+            [
+              "Z",
+              "B"
+            ]
+          ],
+          "effect": -0.35,
+          "shadow": true,
+          "posterior": 0.0125
+        }
+      ],
+      "posterior": [
+        0.2375,
+        0.2375,
+        0.2375,
+        0.2375,
+        0.0125,
+        0.0125,
+        0.0125,
+        0.0125
+      ],
+      "history": [],
+      "budget_total": 12.0,
+      "budget_remaining": 12.0,
+      "spent": 0.0,
+      "evidence_status": "simulation",
+      "model_conflict": false,
+      "question": "Does setting A to +1 increase Y enough to justify cost rho/2?",
+      "assumptions": [
+        "Specified finite nominal and contamination SCM families",
+        "Known mechanism coefficients and Gaussian noise",
+        "Perfect interventions",
+        "Independent post-intervention samples"
+      ],
+      "warnings": [
+        "All intervention results are simulated, not real-world experimental verification.",
+        "Observational likelihood is identical across hypotheses; arrow orientation is unresolved before intervention.",
+        "Model probabilities are conditional on the candidate family, not proof of causal structure.",
+        "Shadow models challenge the nominal causal family. Their posterior mass measures risk relative to the specified alternatives.",
+        "A model-risk alert is not proof of a real-world negative treatment effect.",
+        "All mechanism coefficients and the finite shadow set are fixed, not estimated from these experiments."
+      ],
+      "query_probability": 0.475,
+      "effect_mean": 0.26012741095425734,
+      "effect_interval": [
+        -0.35,
+        0.5739524441142261
+      ],
+      "interval_type": "Finite contamination-family 95% posterior credible envelope; not a general confidence interval",
+      "entropy": 1.5848096044657631,
+      "confidence": 0.475,
+      "decision": "do not intervene",
+      "claim": "abstain",
+      "candidates": [
+        {
+          "id": "a-low",
+          "label": "Intervene on A",
+          "target": "A",
+          "value": 1.0,
+          "readout": "Y",
+          "n": 8,
+          "cost": 2.0,
+          "mean_predictions": [
+            0.5739524441142261,
+            0.5739524441142261,
+            0.0,
+            0.0,
+            -0.15,
+            -0.15,
+            -0.35,
+            -0.35
+          ],
+          "standard_errors": [
+            0.28952085242157133,
+            0.28952085242157133,
+            0.35355339059327373,
+            0.35355339059327373,
+            0.3864397969338606,
+            0.3864397969338606,
+            0.4365012472605259,
+            0.4365012472605259
+          ],
+          "standard_error": 0.3665038218023079,
+          "kind": "intervention",
+          "expected_information_gain": 0.31030188829620764,
+          "expected_query_information_gain": 0.3087151393094497,
+          "expected_decision_gain": 0.005140526869956141,
+          "predictive_variance": 0.20012122920160524
+        },
+        {
+          "id": "a-high",
+          "label": "High-dose intervention on A",
+          "target": "A",
+          "value": 2.0,
+          "readout": "Y",
+          "n": 20,
+          "cost": 5.0,
+          "mean_predictions": [
+            1.1479048882284522,
+            1.1479048882284522,
+            0.0,
+            0.0,
+            -0.3,
+            -0.3,
+            -0.7,
+            -0.7
+          ],
+          "standard_errors": [
+            0.18310906475312824,
+            0.18310906475312824,
+            0.22360679774997896,
+            0.22360679774997896,
+            0.2444059873687905,
+            0.2444059873687905,
+            0.276067628569519,
+            0.276067628569519
+          ],
+          "standard_error": 0.23179736961035416,
+          "kind": "intervention",
+          "expected_information_gain": 0.7670690797850725,
+          "expected_query_information_gain": 0.7555341068963806,
+          "expected_decision_gain": 0.07824936504581174,
+          "predictive_variance": 0.4128105277925143
+        },
+        {
+          "id": "y-probe",
+          "label": "Reverse-direction probe",
+          "target": "Y",
+          "value": 1.0,
+          "readout": "A",
+          "n": 8,
+          "cost": 2.2,
+          "mean_predictions": [
+            0.0,
+            0.0,
+            0.5739524441142261,
+            0.5739524441142261,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "standard_errors": [
+            0.35355339059327373,
+            0.35355339059327373,
+            0.28952085242157133,
+            0.28952085242157133,
+            0.35355339059327373,
+            0.35355339059327373,
+            0.35355339059327373,
+            0.35355339059327373
+          ],
+          "standard_error": 0.33754525605034813,
+          "kind": "intervention",
+          "expected_information_gain": 0.28747181340974937,
+          "expected_query_information_gain": 0.2874716006561081,
+          "expected_decision_gain": 0.004692652859351637,
+          "predictive_variance": 0.18759006753989182
+        },
+        {
+          "id": "b-probe",
+          "label": "Nuisance-graph probe",
+          "target": "B",
+          "value": 2.0,
+          "readout": "Z",
+          "n": 16,
+          "cost": 0.8,
+          "mean_predictions": [
+            1.6,
+            0.0,
+            1.6,
+            0.0,
+            1.6,
+            0.0,
+            1.6,
+            0.0
+          ],
+          "standard_errors": [
+            0.14999999999999997,
+            0.25,
+            0.14999999999999997,
+            0.25,
+            0.15,
+            0.25,
+            0.15,
+            0.25
+          ],
+          "standard_error": 0.2,
+          "kind": "intervention",
+          "expected_information_gain": 0.6930709031981176,
+          "expected_query_information_gain": 0.0,
+          "expected_decision_gain": 0.0,
+          "predictive_variance": 0.6825000000000001
+        },
+        {
+          "id": "measurement",
+          "label": "Additional observational measurement",
+          "target": "observe",
+          "value": 0.0,
+          "readout": "A",
+          "n": 16,
+          "cost": 0.5,
+          "mean_predictions": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "standard_errors": [
+            0.25,
+            0.25,
+            0.25,
+            0.25,
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "standard_error": 0.25,
+          "kind": "measurement",
+          "expected_information_gain": 0.0,
+          "expected_query_information_gain": 0.0,
+          "expected_decision_gain": 0.0,
+          "predictive_variance": 0.0625
+        }
+      ],
+      "evidence_schema_version": 1,
+      "nominal_posterior": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "nominal_query_probability": 0.5,
+      "shadow_probability": 0.05,
+      "risk_is_surrogate": true,
+      "risk_definition": "Three-class classification with reject loss 0.10; operational claim guard is separate"
+    },
+    {
+      "schema_version": 1,
+      "scenario": "validity-study",
+      "rho": 0.5739524441142261,
+      "nodes": [
+        "A",
+        "Y",
+        "B",
+        "Z",
+        "U"
+      ],
+      "hypotheses": [
+        {
+          "id": "h0",
+          "label": "A \u2192 Y / B \u2192 Z",
+          "edges": [
+            [
+              "A",
+              "Y"
+            ],
+            [
+              "B",
+              "Z"
+            ]
+          ],
+          "effect": 0.5739524441142261,
+          "posterior": 9.519304133600915e-18,
+          "shadow": false
+        },
+        {
+          "id": "h1",
+          "label": "A \u2192 Y / Z \u2192 B",
+          "edges": [
+            [
+              "A",
+              "Y"
+            ],
+            [
+              "Z",
+              "B"
+            ]
+          ],
+          "effect": 0.5739524441142261,
+          "posterior": 9.519304133600915e-18,
+          "shadow": false
+        },
+        {
+          "id": "h2",
+          "label": "Y \u2192 A / B \u2192 Z",
+          "edges": [
+            [
+              "Y",
+              "A"
+            ],
+            [
+              "B",
+              "Z"
+            ]
+          ],
+          "effect": 0.0,
+          "posterior": 0.271977211061685,
+          "shadow": false
+        },
+        {
+          "id": "h3",
+          "label": "Y \u2192 A / Z \u2192 B",
+          "edges": [
+            [
+              "Y",
+              "A"
+            ],
+            [
+              "Z",
+              "B"
+            ]
+          ],
+          "effect": 0.0,
+          "posterior": 0.271977211061685,
+          "shadow": false
+        },
+        {
+          "id": "shadow-4",
+          "label": "Latent confounding / effect -0.15",
+          "edges": [
+            [
+              "U",
+              "A"
+            ],
+            [
+              "U",
+              "Y"
+            ],
+            [
+              "A",
+              "Y"
+            ],
+            [
+              "B",
+              "Z"
+            ]
+          ],
+          "effect": -0.15,
+          "shadow": true,
+          "posterior": 0.11600408195332511
+        },
+        {
+          "id": "shadow-5",
+          "label": "Latent confounding / effect -0.15",
+          "edges": [
+            [
+              "U",
+              "A"
+            ],
+            [
+              "U",
+              "Y"
+            ],
+            [
+              "A",
+              "Y"
+            ],
+            [
+              "Z",
+              "B"
+            ]
+          ],
+          "effect": -0.15,
+          "shadow": true,
+          "posterior": 0.11600408195332511
+        },
+        {
+          "id": "shadow-6",
+          "label": "Latent confounding / effect -0.35",
+          "edges": [
+            [
+              "U",
+              "A"
+            ],
+            [
+              "U",
+              "Y"
+            ],
+            [
+              "A",
+              "Y"
+            ],
+            [
+              "B",
+              "Z"
+            ]
+          ],
+          "effect": -0.35,
+          "shadow": true,
+          "posterior": 0.11201870698498999
+        },
+        {
+          "id": "shadow-7",
+          "label": "Latent confounding / effect -0.35",
+          "edges": [
+            [
+              "U",
+              "A"
+            ],
+            [
+              "U",
+              "Y"
+            ],
+            [
+              "A",
+              "Y"
+            ],
+            [
+              "Z",
+              "B"
+            ]
+          ],
+          "effect": -0.35,
+          "shadow": true,
+          "posterior": 0.11201870698498999
+        }
+      ],
+      "posterior": [
+        9.519304133600915e-18,
+        9.519304133600915e-18,
+        0.271977211061685,
+        0.271977211061685,
+        0.11600408195332511,
+        0.11600408195332511,
+        0.11201870698498999,
+        0.11201870698498999
+      ],
+      "history": [
+        {
+          "round": 1,
+          "action_id": "a-high",
+          "label": "High-dose intervention on A",
+          "observation": -0.5024195123949118,
+          "readout": "Y",
+          "posterior": [
+            9.519304133600915e-18,
+            9.519304133600915e-18,
+            0.271977211061685,
+            0.271977211061685,
+            0.11600408195332511,
+            0.11600408195332511,
+            0.11201870698498999,
+            0.11201870698498999
+          ],
+          "entropy": 1.6984624331462275,
+          "effect_mean": -0.1132143194754905,
+          "confidence": 0.54395442212337,
+          "cost": 5.0,
+          "cumulative_cost": 5.0,
+          "shadow_probability": 0.4560455778766302
+        }
+      ],
+      "budget_total": 12.0,
+      "budget_remaining": 7.0,
+      "spent": 5.0,
+      "evidence_status": "simulation",
+      "model_conflict": true,
+      "question": "Does setting A to +1 increase Y enough to justify cost rho/2?",
+      "assumptions": [
+        "Specified finite nominal and contamination SCM families",
+        "Known mechanism coefficients and Gaussian noise",
+        "Perfect interventions",
+        "Independent post-intervention samples"
+      ],
+      "warnings": [
+        "All intervention results are simulated, not real-world experimental verification.",
+        "Observational likelihood is identical across hypotheses; arrow orientation is unresolved before intervention.",
+        "Model probabilities are conditional on the candidate family, not proof of causal structure.",
+        "Shadow models challenge the nominal causal family. Their posterior mass measures risk relative to the specified alternatives.",
+        "A model-risk alert is not proof of a real-world negative treatment effect.",
+        "All mechanism coefficients and the finite shadow set are fixed, not estimated from these experiments."
+      ],
+      "query_probability": 1.903860826720183e-17,
+      "effect_mean": -0.1132143194754905,
+      "effect_interval": [
+        -0.35,
+        0.0
+      ],
+      "interval_type": "Finite contamination-family 95% posterior credible envelope; not a general confidence interval",
+      "entropy": 1.6984624331462275,
+      "confidence": 0.54395442212337,
+      "decision": "do not intervene",
+      "claim": "abstain",
+      "candidates": [
+        {
+          "id": "a-low",
+          "label": "Intervene on A",
+          "target": "A",
+          "value": 1.0,
+          "readout": "Y",
+          "n": 8,
+          "cost": 2.0,
+          "mean_predictions": [
+            0.5739524441142261,
+            0.5739524441142261,
+            0.0,
+            0.0,
+            -0.15,
+            -0.15,
+            -0.35,
+            -0.35
+          ],
+          "standard_errors": [
+            0.28952085242157133,
+            0.28952085242157133,
+            0.35355339059327373,
+            0.35355339059327373,
+            0.3864397969338606,
+            0.3864397969338606,
+            0.4365012472605259,
+            0.4365012472605259
+          ],
+          "standard_error": 0.3665038218023079,
+          "kind": "intervention",
+          "expected_information_gain": 0.06820032490348993,
+          "expected_query_information_gain": 0.053708232104657694,
+          "expected_decision_gain": 0.0007173679020334306,
+          "predictive_variance": 0.16517528947024818
+        },
+        {
+          "id": "a-high",
+          "label": "High-dose intervention on A",
+          "target": "A",
+          "value": 2.0,
+          "readout": "Y",
+          "n": 20,
+          "cost": 5.0,
+          "mean_predictions": [
+            1.1479048882284522,
+            1.1479048882284522,
+            0.0,
+            0.0,
+            -0.3,
+            -0.3,
+            -0.7,
+            -0.7
+          ],
+          "standard_errors": [
+            0.18310906475312824,
+            0.18310906475312824,
+            0.22360679774997896,
+            0.22360679774997896,
+            0.2444059873687905,
+            0.2444059873687905,
+            0.276067628569519,
+            0.276067628569519
+          ],
+          "standard_error": 0.23179736961035416,
+          "kind": "intervention",
+          "expected_information_gain": 0.4000891993522626,
+          "expected_query_information_gain": 0.2948647944946158,
+          "expected_decision_gain": 0.022955317416062077,
+          "predictive_variance": 0.13752034094182475
+        },
+        {
+          "id": "y-probe",
+          "label": "Reverse-direction probe",
+          "target": "Y",
+          "value": 1.0,
+          "readout": "A",
+          "n": 8,
+          "cost": 2.2,
+          "mean_predictions": [
+            0.0,
+            0.0,
+            0.5739524441142261,
+            0.5739524441142261,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "standard_errors": [
+            0.35355339059327373,
+            0.35355339059327373,
+            0.28952085242157133,
+            0.28952085242157133,
+            0.35355339059327373,
+            0.35355339059327373,
+            0.35355339059327373,
+            0.35355339059327373
+          ],
+          "standard_error": 0.33754525605034813,
+          "kind": "intervention",
+          "expected_information_gain": 0.28877037659443183,
+          "expected_query_information_gain": 0.2887683396690066,
+          "expected_decision_gain": 0.02199944545708378,
+          "predictive_variance": 0.18432013379656986
+        },
+        {
+          "id": "b-probe",
+          "label": "Nuisance-graph probe",
+          "target": "B",
+          "value": 2.0,
+          "readout": "Z",
+          "n": 16,
+          "cost": 0.8,
+          "mean_predictions": [
+            1.6,
+            0.0,
+            1.6,
+            0.0,
+            1.6,
+            0.0,
+            1.6,
+            0.0
+          ],
+          "standard_errors": [
+            0.14999999999999997,
+            0.25,
+            0.14999999999999997,
+            0.25,
+            0.15,
+            0.25,
+            0.15,
+            0.25
+          ],
+          "standard_error": 0.2,
+          "kind": "intervention",
+          "expected_information_gain": 0.6930709031981177,
+          "expected_query_information_gain": 0.0,
+          "expected_decision_gain": 0.0,
+          "predictive_variance": 0.6825
+        },
+        {
+          "id": "measurement",
+          "label": "Additional observational measurement",
+          "target": "observe",
+          "value": 0.0,
+          "readout": "A",
+          "n": 16,
+          "cost": 0.5,
+          "mean_predictions": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "standard_errors": [
+            0.25,
+            0.25,
+            0.25,
+            0.25,
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "standard_error": 0.25,
+          "kind": "measurement",
+          "expected_information_gain": 0.0,
+          "expected_query_information_gain": 0.0,
+          "expected_decision_gain": 0.0,
+          "predictive_variance": 0.06250000000000001
+        }
+      ],
+      "evidence_schema_version": 1,
+      "nominal_posterior": [
+        1.7500187049572174e-17,
+        1.7500187049572174e-17,
+        0.5,
+        0.5
+      ],
+      "nominal_query_probability": 3.500037409914435e-17,
+      "shadow_probability": 0.4560455778766302,
+      "risk_is_surrogate": true,
+      "risk_definition": "Three-class classification with reject loss 0.10; operational claim guard is separate"
+    },
+    {
+      "schema_version": 1,
+      "scenario": "validity-study",
+      "rho": 0.5739524441142261,
+      "nodes": [
+        "A",
+        "Y",
+        "B",
+        "Z",
+        "U"
+      ],
+      "hypotheses": [
+        {
+          "id": "h0",
+          "label": "A \u2192 Y / B \u2192 Z",
+          "edges": [
+            [
+              "A",
+              "Y"
+            ],
+            [
+              "B",
+              "Z"
+            ]
+          ],
+          "effect": 0.5739524441142261,
+          "posterior": 8.3731822324913e-18,
+          "shadow": false
+        },
+        {
+          "id": "h1",
+          "label": "A \u2192 Y / Z \u2192 B",
+          "edges": [
+            [
+              "A",
+              "Y"
+            ],
+            [
+              "Z",
+              "B"
+            ]
+          ],
+          "effect": 0.5739524441142261,
+          "posterior": 8.3731822324913e-18,
+          "shadow": false
+        },
+        {
+          "id": "h2",
+          "label": "Y \u2192 A / B \u2192 Z",
+          "edges": [
+            [
+              "Y",
+              "A"
+            ],
+            [
+              "B",
+              "Z"
+            ]
+          ],
+          "effect": 0.0,
+          "posterior": 0.2994310993592373,
+          "shadow": false
+        },
+        {
+          "id": "h3",
+          "label": "Y \u2192 A / Z \u2192 B",
+          "edges": [
+            [
+              "Y",
+              "A"
+            ],
+            [
+              "Z",
+              "B"
+            ]
+          ],
+          "effect": 0.0,
+          "posterior": 0.2994310993592373,
+          "shadow": false
+        },
+        {
+          "id": "shadow-4",
+          "label": "Latent confounding / effect -0.15",
+          "edges": [
+            [
+              "U",
+              "A"
+            ],
+            [
+              "U",
+              "Y"
+            ],
+            [
+              "A",
+              "Y"
+            ],
+            [
+              "B",
+              "Z"
+            ]
+          ],
+          "effect": -0.15,
+          "shadow": true,
+          "posterior": 0.10203721871638675
+        },
+        {
+          "id": "shadow-5",
+          "label": "Latent confounding / effect -0.15",
+          "edges": [
+            [
+              "U",
+              "A"
+            ],
+            [
+              "U",
+              "Y"
+            ],
+            [
+              "A",
+              "Y"
+            ],
+            [
+              "Z",
+              "B"
+            ]
+          ],
+          "effect": -0.15,
+          "shadow": true,
+          "posterior": 0.10203721871638675
+        },
+        {
+          "id": "shadow-6",
+          "label": "Latent confounding / effect -0.35",
+          "edges": [
+            [
+              "U",
+              "A"
+            ],
+            [
+              "U",
+              "Y"
+            ],
+            [
+              "A",
+              "Y"
+            ],
+            [
+              "B",
+              "Z"
+            ]
+          ],
+          "effect": -0.35,
+          "shadow": true,
+          "posterior": 0.09853168192437589
+        },
+        {
+          "id": "shadow-7",
+          "label": "Latent confounding / effect -0.35",
+          "edges": [
+            [
+              "U",
+              "A"
+            ],
+            [
+              "U",
+              "Y"
+            ],
+            [
+              "A",
+              "Y"
+            ],
+            [
+              "Z",
+              "B"
+            ]
+          ],
+          "effect": -0.35,
+          "shadow": true,
+          "posterior": 0.09853168192437589
+        }
+      ],
+      "posterior": [
+        8.3731822324913e-18,
+        8.3731822324913e-18,
+        0.2994310993592373,
+        0.2994310993592373,
+        0.10203721871638675,
+        0.10203721871638675,
+        0.09853168192437589,
+        0.09853168192437589
+      ],
+      "history": [
+        {
+          "round": 1,
+          "action_id": "a-high",
+          "label": "High-dose intervention on A",
+          "observation": -0.5024195123949118,
+          "readout": "Y",
+          "posterior": [
+            9.519304133600915e-18,
+            9.519304133600915e-18,
+            0.271977211061685,
+            0.271977211061685,
+            0.11600408195332511,
+            0.11600408195332511,
+            0.11201870698498999,
+            0.11201870698498999
+          ],
+          "entropy": 1.6984624331462275,
+          "effect_mean": -0.1132143194754905,
+          "confidence": 0.54395442212337,
+          "cost": 5.0,
+          "cumulative_cost": 5.0,
+          "shadow_probability": 0.4560455778766302
+        },
+        {
+          "round": 2,
+          "action_id": "y-probe",
+          "label": "Reverse-direction probe",
+          "observation": 0.31995354733617626,
+          "readout": "A",
+          "posterior": [
+            8.3731822324913e-18,
+            8.3731822324913e-18,
+            0.2994310993592373,
+            0.2994310993592373,
+            0.10203721871638675,
+            0.10203721871638675,
+            0.09853168192437589,
+            0.09853168192437589
+          ],
+          "entropy": 1.6446037532674898,
+          "effect_mean": -0.09958334296197914,
+          "confidence": 0.5988621987184746,
+          "cost": 2.2,
+          "cumulative_cost": 7.2,
+          "shadow_probability": 0.4011378012815253
+        }
+      ],
+      "budget_total": 12.0,
+      "budget_remaining": 4.8,
+      "spent": 7.2,
+      "evidence_status": "simulation",
+      "model_conflict": true,
+      "question": "Does setting A to +1 increase Y enough to justify cost rho/2?",
+      "assumptions": [
+        "Specified finite nominal and contamination SCM families",
+        "Known mechanism coefficients and Gaussian noise",
+        "Perfect interventions",
+        "Independent post-intervention samples"
+      ],
+      "warnings": [
+        "All intervention results are simulated, not real-world experimental verification.",
+        "Observational likelihood is identical across hypotheses; arrow orientation is unresolved before intervention.",
+        "Model probabilities are conditional on the candidate family, not proof of causal structure.",
+        "Shadow models challenge the nominal causal family. Their posterior mass measures risk relative to the specified alternatives.",
+        "A model-risk alert is not proof of a real-world negative treatment effect.",
+        "All mechanism coefficients and the finite shadow set are fixed, not estimated from these experiments."
+      ],
+      "query_probability": 1.67463644649826e-17,
+      "effect_mean": -0.09958334296197914,
+      "effect_interval": [
+        -0.35,
+        0.0
+      ],
+      "interval_type": "Finite contamination-family 95% posterior credible envelope; not a general confidence interval",
+      "entropy": 1.6446037532674898,
+      "confidence": 0.5988621987184746,
+      "decision": "do not intervene",
+      "claim": "abstain",
+      "candidates": [
+        {
+          "id": "a-low",
+          "label": "Intervene on A",
+          "target": "A",
+          "value": 1.0,
+          "readout": "Y",
+          "n": 8,
+          "cost": 2.0,
+          "mean_predictions": [
+            0.5739524441142261,
+            0.5739524441142261,
+            0.0,
+            0.0,
+            -0.15,
+            -0.15,
+            -0.35,
+            -0.35
+          ],
+          "standard_errors": [
+            0.28952085242157133,
+            0.28952085242157133,
+            0.35355339059327373,
+            0.35355339059327373,
+            0.3864397969338606,
+            0.3864397969338606,
+            0.4365012472605259,
+            0.4365012472605259
+          ],
+          "standard_error": 0.3665038218023079,
+          "kind": "intervention",
+          "expected_information_gain": 0.06562286974433063,
+          "expected_query_information_gain": 0.052875615412651844,
+          "expected_decision_gain": 0.0005487026870264755,
+          "predictive_variance": 0.16169561260396326
+        },
+        {
+          "id": "a-high",
+          "label": "High-dose intervention on A",
+          "target": "A",
+          "value": 2.0,
+          "readout": "Y",
+          "n": 20,
+          "cost": 5.0,
+          "mean_predictions": [
+            1.1479048882284522,
+            1.1479048882284522,
+            0.0,
+            0.0,
+            -0.3,
+            -0.3,
+            -0.7,
+            -0.7
+          ],
+          "standard_errors": [
+            0.18310906475312824,
+            0.18310906475312824,
+            0.22360679774997896,
+            0.22360679774997896,
+            0.2444059873687905,
+            0.2444059873687905,
+            0.276067628569519,
+            0.276067628569519
+          ],
+          "standard_error": 0.23179736961035416,
+          "kind": "intervention",
+          "expected_information_gain": 0.3828234457190316,
+          "expected_query_information_gain": 0.29026904516285,
+          "expected_decision_gain": 0.024081608249548192,
+          "predictive_variance": 0.13241258602720013
+        },
+        {
+          "id": "y-probe",
+          "label": "Reverse-direction probe",
+          "target": "Y",
+          "value": 1.0,
+          "readout": "A",
+          "n": 8,
+          "cost": 2.2,
+          "mean_predictions": [
+            0.0,
+            0.0,
+            0.5739524441142261,
+            0.5739524441142261,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "standard_errors": [
+            0.35355339059327373,
+            0.35355339059327373,
+            0.28952085242157133,
+            0.28952085242157133,
+            0.35355339059327373,
+            0.35355339059327373,
+            0.35355339059327373,
+            0.35355339059327373
+          ],
+          "standard_error": 0.33754525605034813,
+          "kind": "intervention",
+          "expected_information_gain": 0.28315505938459706,
+          "expected_query_information_gain": 0.28315472360874916,
+          "expected_decision_gain": 0.023107921821609312,
+          "predictive_variance": 0.1794759211036338
+        },
+        {
+          "id": "b-probe",
+          "label": "Nuisance-graph probe",
+          "target": "B",
+          "value": 2.0,
+          "readout": "Z",
+          "n": 16,
+          "cost": 0.8,
+          "mean_predictions": [
+            1.6,
+            0.0,
+            1.6,
+            0.0,
+            1.6,
+            0.0,
+            1.6,
+            0.0
+          ],
+          "standard_errors": [
+            0.14999999999999997,
+            0.25,
+            0.14999999999999997,
+            0.25,
+            0.15,
+            0.25,
+            0.15,
+            0.25
+          ],
+          "standard_error": 0.2,
+          "kind": "intervention",
+          "expected_information_gain": 0.6930709031981179,
+          "expected_query_information_gain": 0.0,
+          "expected_decision_gain": 0.0,
+          "predictive_variance": 0.6825000000000001
+        },
+        {
+          "id": "measurement",
+          "label": "Additional observational measurement",
+          "target": "observe",
+          "value": 0.0,
+          "readout": "A",
+          "n": 16,
+          "cost": 0.5,
+          "mean_predictions": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "standard_errors": [
+            0.25,
+            0.25,
+            0.25,
+            0.25,
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "standard_error": 0.25,
+          "kind": "measurement",
+          "expected_information_gain": 0.0,
+          "expected_query_information_gain": 0.0,
+          "expected_decision_gain": 0.0,
+          "predictive_variance": 0.06249999999999999
+        }
+      ],
+      "evidence_schema_version": 1,
+      "nominal_posterior": [
+        1.3981817938098872e-17,
+        1.3981817938098872e-17,
+        0.5,
+        0.5
+      ],
+      "nominal_query_probability": 2.7963635876197743e-17,
+      "shadow_probability": 0.4011378012815253,
+      "risk_is_surrogate": true,
+      "risk_definition": "Three-class classification with reject loss 0.10; operational claim guard is separate"
+    },
+    {
+      "schema_version": 1,
+      "scenario": "validity-study",
+      "rho": 0.5739524441142261,
+      "nodes": [
+        "A",
+        "Y",
+        "B",
+        "Z",
+        "U"
+      ],
+      "hypotheses": [
+        {
+          "id": "h0",
+          "label": "A \u2192 Y / B \u2192 Z",
+          "edges": [
+            [
+              "A",
+              "Y"
+            ],
+            [
+              "B",
+              "Z"
+            ]
+          ],
+          "effect": 0.5739524441142261,
+          "posterior": 2.0303661490415242e-17,
+          "shadow": false
+        },
+        {
+          "id": "h1",
+          "label": "A \u2192 Y / Z \u2192 B",
+          "edges": [
+            [
+              "A",
+              "Y"
+            ],
+            [
+              "Z",
+              "B"
+            ]
+          ],
+          "effect": 0.5739524441142261,
+          "posterior": 2.0303661490415242e-17,
+          "shadow": false
+        },
+        {
+          "id": "h2",
+          "label": "Y \u2192 A / B \u2192 Z",
+          "edges": [
+            [
+              "Y",
+              "A"
+            ],
+            [
+              "B",
+              "Z"
+            ]
+          ],
+          "effect": 0.0,
+          "posterior": 0.013651685698100267,
+          "shadow": false
+        },
+        {
+          "id": "h3",
+          "label": "Y \u2192 A / Z \u2192 B",
+          "edges": [
+            [
+              "Y",
+              "A"
+            ],
+            [
+              "Z",
+              "B"
+            ]
+          ],
+          "effect": 0.0,
+          "posterior": 0.013651685698100267,
+          "shadow": false
+        },
+        {
+          "id": "shadow-4",
+          "label": "Latent confounding / effect -0.15",
+          "edges": [
+            [
+              "U",
+              "A"
+            ],
+            [
+              "U",
+              "Y"
+            ],
+            [
+              "A",
+              "Y"
+            ],
+            [
+              "B",
+              "Z"
+            ]
+          ],
+          "effect": -0.15,
+          "shadow": true,
+          "posterior": 0.24742434724540383
+        },
+        {
+          "id": "shadow-5",
+          "label": "Latent confounding / effect -0.15",
+          "edges": [
+            [
+              "U",
+              "A"
+            ],
+            [
+              "U",
+              "Y"
+            ],
+            [
+              "A",
+              "Y"
+            ],
+            [
+              "Z",
+              "B"
+            ]
+          ],
+          "effect": -0.15,
+          "shadow": true,
+          "posterior": 0.24742434724540383
+        },
+        {
+          "id": "shadow-6",
+          "label": "Latent confounding / effect -0.35",
+          "edges": [
+            [
+              "U",
+              "A"
+            ],
+            [
+              "U",
+              "Y"
+            ],
+            [
+              "A",
+              "Y"
+            ],
+            [
+              "B",
+              "Z"
+            ]
+          ],
+          "effect": -0.35,
+          "shadow": true,
+          "posterior": 0.23892396705649596
+        },
+        {
+          "id": "shadow-7",
+          "label": "Latent confounding / effect -0.35",
+          "edges": [
+            [
+              "U",
+              "A"
+            ],
+            [
+              "U",
+              "Y"
+            ],
+            [
+              "A",
+              "Y"
+            ],
+            [
+              "Z",
+              "B"
+            ]
+          ],
+          "effect": -0.35,
+          "shadow": true,
+          "posterior": 0.23892396705649596
+        }
+      ],
+      "posterior": [
+        2.0303661490415242e-17,
+        2.0303661490415242e-17,
+        0.013651685698100267,
+        0.013651685698100267,
+        0.24742434724540383,
+        0.24742434724540383,
+        0.23892396705649596,
+        0.23892396705649596
+      ],
+      "history": [
+        {
+          "round": 1,
+          "action_id": "a-high",
+          "label": "High-dose intervention on A",
+          "observation": -0.5024195123949118,
+          "readout": "Y",
+          "posterior": [
+            9.519304133600915e-18,
+            9.519304133600915e-18,
+            0.271977211061685,
+            0.271977211061685,
+            0.11600408195332511,
+            0.11600408195332511,
+            0.11201870698498999,
+            0.11201870698498999
+          ],
+          "entropy": 1.6984624331462275,
+          "effect_mean": -0.1132143194754905,
+          "confidence": 0.54395442212337,
+          "cost": 5.0,
+          "cumulative_cost": 5.0,
+          "shadow_probability": 0.4560455778766302
+        },
+        {
+          "round": 2,
+          "action_id": "y-probe",
+          "label": "Reverse-direction probe",
+          "observation": 0.31995354733617626,
+          "readout": "A",
+          "posterior": [
+            8.3731822324913e-18,
+            8.3731822324913e-18,
+            0.2994310993592373,
+            0.2994310993592373,
+            0.10203721871638675,
+            0.10203721871638675,
+            0.09853168192437589,
+            0.09853168192437589
+          ],
+          "entropy": 1.6446037532674898,
+          "effect_mean": -0.09958334296197914,
+          "confidence": 0.5988621987184746,
+          "cost": 2.2,
+          "cumulative_cost": 7.2,
+          "shadow_probability": 0.4011378012815253
+        },
+        {
+          "round": 3,
+          "action_id": "y-probe",
+          "label": "Reverse-direction probe",
+          "observation": -0.29720384561798635,
+          "readout": "A",
+          "posterior": [
+            2.0303661490415242e-17,
+            2.0303661490415242e-17,
+            0.013651685698100267,
+            0.013651685698100267,
+            0.24742434724540383,
+            0.24742434724540383,
+            0.23892396705649596,
+            0.23892396705649596
+          ],
+          "entropy": 1.4924602047186903,
+          "effect_mean": -0.2414740811131683,
+          "confidence": 0.9726966286037996,
+          "cost": 2.2,
+          "cumulative_cost": 9.4,
+          "shadow_probability": 0.9726966286037996
+        }
+      ],
+      "budget_total": 12.0,
+      "budget_remaining": 2.5999999999999996,
+      "spent": 9.4,
+      "evidence_status": "simulation",
+      "model_conflict": true,
+      "question": "Does setting A to +1 increase Y enough to justify cost rho/2?",
+      "assumptions": [
+        "Specified finite nominal and contamination SCM families",
+        "Known mechanism coefficients and Gaussian noise",
+        "Perfect interventions",
+        "Independent post-intervention samples"
+      ],
+      "warnings": [
+        "All intervention results are simulated, not real-world experimental verification.",
+        "Observational likelihood is identical across hypotheses; arrow orientation is unresolved before intervention.",
+        "Model probabilities are conditional on the candidate family, not proof of causal structure.",
+        "Shadow models challenge the nominal causal family. Their posterior mass measures risk relative to the specified alternatives.",
+        "A model-risk alert is not proof of a real-world negative treatment effect.",
+        "All mechanism coefficients and the finite shadow set are fixed, not estimated from these experiments."
+      ],
+      "query_probability": 4.0607322980830484e-17,
+      "effect_mean": -0.2414740811131683,
+      "effect_interval": [
+        -0.35,
+        0.0
+      ],
+      "interval_type": "Finite contamination-family 95% posterior credible envelope; not a general confidence interval",
+      "entropy": 1.4924602047186903,
+      "confidence": 0.9726966286037996,
+      "decision": "do not intervene",
+      "claim": "abstain",
+      "candidates": [
+        {
+          "id": "a-low",
+          "label": "Intervene on A",
+          "target": "A",
+          "value": 1.0,
+          "readout": "Y",
+          "n": 8,
+          "cost": 2.0,
+          "mean_predictions": [
+            0.5739524441142261,
+            0.5739524441142261,
+            0.0,
+            0.0,
+            -0.15,
+            -0.15,
+            -0.35,
+            -0.35
+          ],
+          "standard_errors": [
+            0.28952085242157133,
+            0.28952085242157133,
+            0.35355339059327373,
+            0.35355339059327373,
+            0.3864397969338606,
+            0.3864397969338606,
+            0.4365012472605259,
+            0.4365012472605259
+          ],
+          "standard_error": 0.3665038218023079,
+          "kind": "intervention",
+          "expected_information_gain": 0.03615407591512332,
+          "expected_query_information_gain": 0.00524400374477868,
+          "expected_decision_gain": 0.0,
+          "predictive_variance": 0.17971820391108126
+        },
+        {
+          "id": "a-high",
+          "label": "High-dose intervention on A",
+          "target": "A",
+          "value": 2.0,
+          "readout": "Y",
+          "n": 20,
+          "cost": 5.0,
+          "mean_predictions": [
+            1.1479048882284522,
+            1.1479048882284522,
+            0.0,
+            0.0,
+            -0.3,
+            -0.3,
+            -0.7,
+            -0.7
+          ],
+          "standard_errors": [
+            0.18310906475312824,
+            0.18310906475312824,
+            0.22360679774997896,
+            0.22360679774997896,
+            0.2444059873687905,
+            0.2444059873687905,
+            0.276067628569519,
+            0.276067628569519
+          ],
+          "standard_error": 0.23179736961035416,
+          "kind": "intervention",
+          "expected_information_gain": 0.25853738150925665,
+          "expected_query_information_gain": 0.03410196348049552,
+          "expected_decision_gain": 0.006736640393310109,
+          "predictive_variance": 0.11278593010400104
+        },
+        {
+          "id": "y-probe",
+          "label": "Reverse-direction probe",
+          "target": "Y",
+          "value": 1.0,
+          "readout": "A",
+          "n": 8,
+          "cost": 2.2,
+          "mean_predictions": [
+            0.0,
+            0.0,
+            0.5739524441142261,
+            0.5739524441142261,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "standard_errors": [
+            0.35355339059327373,
+            0.35355339059327373,
+            0.28952085242157133,
+            0.28952085242157133,
+            0.35355339059327373,
+            0.35355339059327373,
+            0.35355339059327373,
+            0.35355339059327373
+          ],
+          "standard_error": 0.33754525605034813,
+          "kind": "intervention",
+          "expected_information_gain": 0.034734990894319306,
+          "expected_query_information_gain": 0.03473499015944048,
+          "expected_decision_gain": 0.0072711529409340905,
+          "predictive_variance": 0.13262445054562283
+        },
+        {
+          "id": "b-probe",
+          "label": "Nuisance-graph probe",
+          "target": "B",
+          "value": 2.0,
+          "readout": "Z",
+          "n": 16,
+          "cost": 0.8,
+          "mean_predictions": [
+            1.6,
+            0.0,
+            1.6,
+            0.0,
+            1.6,
+            0.0,
+            1.6,
+            0.0
+          ],
+          "standard_errors": [
+            0.14999999999999997,
+            0.25,
+            0.14999999999999997,
+            0.25,
+            0.15,
+            0.25,
+            0.15,
+            0.25
+          ],
+          "standard_error": 0.2,
+          "kind": "intervention",
+          "expected_information_gain": 0.6930709031981175,
+          "expected_query_information_gain": 0.0,
+          "expected_decision_gain": 0.0,
+          "predictive_variance": 0.6825000000000002
+        },
+        {
+          "id": "measurement",
+          "label": "Additional observational measurement",
+          "target": "observe",
+          "value": 0.0,
+          "readout": "A",
+          "n": 16,
+          "cost": 0.5,
+          "mean_predictions": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "standard_errors": [
+            0.25,
+            0.25,
+            0.25,
+            0.25,
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "standard_error": 0.25,
+          "kind": "measurement",
+          "expected_information_gain": 0.0,
+          "expected_query_information_gain": 0.0,
+          "expected_decision_gain": 0.0,
+          "predictive_variance": 0.06250000000000001
+        }
+      ],
+      "evidence_schema_version": 1,
+      "nominal_posterior": [
+        7.43632029751484e-16,
+        7.43632029751484e-16,
+        0.4999999999999993,
+        0.4999999999999993
+      ],
+      "nominal_query_probability": 1.487264059502968e-15,
+      "shadow_probability": 0.9726966286037996,
+      "risk_is_surrogate": true,
+      "risk_definition": "Three-class classification with reject loss 0.10; operational claim guard is separate"
+    },
+    {
+      "schema_version": 1,
+      "scenario": "validity-study",
+      "rho": 0.5739524441142261,
+      "nodes": [
+        "A",
+        "Y",
+        "B",
+        "Z",
+        "U"
+      ],
+      "hypotheses": [
+        {
+          "id": "h0",
+          "label": "A \u2192 Y / B \u2192 Z",
+          "edges": [
+            [
+              "A",
+              "Y"
+            ],
+            [
+              "B",
+              "Z"
+            ]
+          ],
+          "effect": 0.5739524441142261,
+          "posterior": 2.0121114531888435e-17,
+          "shadow": false
+        },
+        {
+          "id": "h1",
+          "label": "A \u2192 Y / Z \u2192 B",
+          "edges": [
+            [
+              "A",
+              "Y"
+            ],
+            [
+              "Z",
+              "B"
+            ]
+          ],
+          "effect": 0.5739524441142261,
+          "posterior": 2.0121114531888435e-17,
+          "shadow": false
+        },
+        {
+          "id": "h2",
+          "label": "Y \u2192 A / B \u2192 Z",
+          "edges": [
+            [
+              "Y",
+              "A"
+            ],
+            [
+              "B",
+              "Z"
+            ]
+          ],
+          "effect": 0.0,
+          "posterior": 0.018024365256534215,
+          "shadow": false
+        },
+        {
+          "id": "h3",
+          "label": "Y \u2192 A / Z \u2192 B",
+          "edges": [
+            [
+              "Y",
+              "A"
+            ],
+            [
+              "Z",
+              "B"
+            ]
+          ],
+          "effect": 0.0,
+          "posterior": 0.018024365256534215,
+          "shadow": false
+        },
+        {
+          "id": "shadow-4",
+          "label": "Latent confounding / effect -0.15",
+          "edges": [
+            [
+              "U",
+              "A"
+            ],
+            [
+              "U",
+              "Y"
+            ],
+            [
+              "A",
+              "Y"
+            ],
+            [
+              "B",
+              "Z"
+            ]
+          ],
+          "effect": -0.15,
+          "shadow": true,
+          "posterior": 0.24519979468987202
+        },
+        {
+          "id": "shadow-5",
+          "label": "Latent confounding / effect -0.15",
+          "edges": [
+            [
+              "U",
+              "A"
+            ],
+            [
+              "U",
+              "Y"
+            ],
+            [
+              "A",
+              "Y"
+            ],
+            [
+              "Z",
+              "B"
+            ]
+          ],
+          "effect": -0.15,
+          "shadow": true,
+          "posterior": 0.24519979468987202
+        },
+        {
+          "id": "shadow-6",
+          "label": "Latent confounding / effect -0.35",
+          "edges": [
+            [
+              "U",
+              "A"
+            ],
+            [
+              "U",
+              "Y"
+            ],
+            [
+              "A",
+              "Y"
+            ],
+            [
+              "B",
+              "Z"
+            ]
+          ],
+          "effect": -0.35,
+          "shadow": true,
+          "posterior": 0.23677584005359367
+        },
+        {
+          "id": "shadow-7",
+          "label": "Latent confounding / effect -0.35",
+          "edges": [
+            [
+              "U",
+              "A"
+            ],
+            [
+              "U",
+              "Y"
+            ],
+            [
+              "A",
+              "Y"
+            ],
+            [
+              "Z",
+              "B"
+            ]
+          ],
+          "effect": -0.35,
+          "shadow": true,
+          "posterior": 0.23677584005359367
+        }
+      ],
+      "posterior": [
+        2.0121114531888435e-17,
+        2.0121114531888435e-17,
+        0.018024365256534215,
+        0.018024365256534215,
+        0.24519979468987202,
+        0.24519979468987202,
+        0.23677584005359367,
+        0.23677584005359367
+      ],
+      "history": [
+        {
+          "round": 1,
+          "action_id": "a-high",
+          "label": "High-dose intervention on A",
+          "observation": -0.5024195123949118,
+          "readout": "Y",
+          "posterior": [
+            9.519304133600915e-18,
+            9.519304133600915e-18,
+            0.271977211061685,
+            0.271977211061685,
+            0.11600408195332511,
+            0.11600408195332511,
+            0.11201870698498999,
+            0.11201870698498999
+          ],
+          "entropy": 1.6984624331462275,
+          "effect_mean": -0.1132143194754905,
+          "confidence": 0.54395442212337,
+          "cost": 5.0,
+          "cumulative_cost": 5.0,
+          "shadow_probability": 0.4560455778766302
+        },
+        {
+          "round": 2,
+          "action_id": "y-probe",
+          "label": "Reverse-direction probe",
+          "observation": 0.31995354733617626,
+          "readout": "A",
+          "posterior": [
+            8.3731822324913e-18,
+            8.3731822324913e-18,
+            0.2994310993592373,
+            0.2994310993592373,
+            0.10203721871638675,
+            0.10203721871638675,
+            0.09853168192437589,
+            0.09853168192437589
+          ],
+          "entropy": 1.6446037532674898,
+          "effect_mean": -0.09958334296197914,
+          "confidence": 0.5988621987184746,
+          "cost": 2.2,
+          "cumulative_cost": 7.2,
+          "shadow_probability": 0.4011378012815253
+        },
+        {
+          "round": 3,
+          "action_id": "y-probe",
+          "label": "Reverse-direction probe",
+          "observation": -0.29720384561798635,
+          "readout": "A",
+          "posterior": [
+            2.0303661490415242e-17,
+            2.0303661490415242e-17,
+            0.013651685698100267,
+            0.013651685698100267,
+            0.24742434724540383,
+            0.24742434724540383,
+            0.23892396705649596,
+            0.23892396705649596
+          ],
+          "entropy": 1.4924602047186903,
+          "effect_mean": -0.2414740811131683,
+          "confidence": 0.9726966286037996,
+          "cost": 2.2,
+          "cumulative_cost": 9.4,
+          "shadow_probability": 0.9726966286037996
+        },
+        {
+          "round": 4,
+          "action_id": "y-probe",
+          "label": "Reverse-direction probe",
+          "observation": 0.33116788321704355,
+          "readout": "A",
+          "posterior": [
+            2.0121114531888435e-17,
+            2.0121114531888435e-17,
+            0.018024365256534215,
+            0.018024365256534215,
+            0.24519979468987202,
+            0.24519979468987202,
+            0.23677584005359367,
+            0.23677584005359367
+          ],
+          "entropy": 1.5163368041794167,
+          "effect_mean": -0.23930302644447712,
+          "confidence": 0.9639512694869313,
+          "cost": 2.2,
+          "cumulative_cost": 11.600000000000001,
+          "shadow_probability": 0.9639512694869313
+        }
+      ],
+      "budget_total": 12.0,
+      "budget_remaining": 0.3999999999999986,
+      "spent": 11.600000000000001,
+      "evidence_status": "simulation",
+      "model_conflict": true,
+      "question": "Does setting A to +1 increase Y enough to justify cost rho/2?",
+      "assumptions": [
+        "Specified finite nominal and contamination SCM families",
+        "Known mechanism coefficients and Gaussian noise",
+        "Perfect interventions",
+        "Independent post-intervention samples"
+      ],
+      "warnings": [
+        "All intervention results are simulated, not real-world experimental verification.",
+        "Observational likelihood is identical across hypotheses; arrow orientation is unresolved before intervention.",
+        "Model probabilities are conditional on the candidate family, not proof of causal structure.",
+        "Shadow models challenge the nominal causal family. Their posterior mass measures risk relative to the specified alternatives.",
+        "A model-risk alert is not proof of a real-world negative treatment effect.",
+        "All mechanism coefficients and the finite shadow set are fixed, not estimated from these experiments."
+      ],
+      "query_probability": 4.024222906377687e-17,
+      "effect_mean": -0.23930302644447712,
+      "effect_interval": [
+        -0.35,
+        0.0
+      ],
+      "interval_type": "Finite contamination-family 95% posterior credible envelope; not a general confidence interval",
+      "entropy": 1.5163368041794167,
+      "confidence": 0.9639512694869313,
+      "decision": "do not intervene",
+      "claim": "abstain",
+      "candidates": [
+        {
+          "id": "a-low",
+          "label": "Intervene on A",
+          "target": "A",
+          "value": 1.0,
+          "readout": "Y",
+          "n": 8,
+          "cost": 2.0,
+          "mean_predictions": [
+            0.5739524441142261,
+            0.5739524441142261,
+            0.0,
+            0.0,
+            -0.15,
+            -0.15,
+            -0.35,
+            -0.35
+          ],
+          "standard_errors": [
+            0.28952085242157133,
+            0.28952085242157133,
+            0.35355339059327373,
+            0.35355339059327373,
+            0.3864397969338606,
+            0.3864397969338606,
+            0.4365012472605259,
+            0.4365012472605259
+          ],
+          "standard_error": 0.3665038218023079,
+          "kind": "intervention",
+          "expected_information_gain": 0.03749940426564047,
+          "expected_query_information_gain": 0.006867239587600188,
+          "expected_decision_gain": 0.0,
+          "predictive_variance": 0.1797457812833951
+        },
+        {
+          "id": "a-high",
+          "label": "High-dose intervention on A",
+          "target": "A",
+          "value": 2.0,
+          "readout": "Y",
+          "n": 20,
+          "cost": 5.0,
+          "mean_predictions": [
+            1.1479048882284522,
+            1.1479048882284522,
+            0.0,
+            0.0,
+            -0.3,
+            -0.3,
+            -0.7,
+            -0.7
+          ],
+          "standard_errors": [
+            0.18310906475312824,
+            0.18310906475312824,
+            0.22360679774997896,
+            0.22360679774997896,
+            0.2444059873687905,
+            0.2444059873687905,
+            0.276067628569519,
+            0.276067628569519
+          ],
+          "standard_error": 0.23179736961035416,
+          "kind": "intervention",
+          "expected_information_gain": 0.26670337376075626,
+          "expected_query_information_gain": 0.04428582209482884,
+          "expected_decision_gain": 0.01147911675347971,
+          "predictive_variance": 0.11429959170463685
+        },
+        {
+          "id": "y-probe",
+          "label": "Reverse-direction probe",
+          "target": "Y",
+          "value": 1.0,
+          "readout": "A",
+          "n": 8,
+          "cost": 2.2,
+          "mean_predictions": [
+            0.0,
+            0.0,
+            0.5739524441142261,
+            0.5739524441142261,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "standard_errors": [
+            0.35355339059327373,
+            0.35355339059327373,
+            0.28952085242157133,
+            0.28952085242157133,
+            0.35355339059327373,
+            0.35355339059327373,
+            0.35355339059327373,
+            0.35355339059327373
+          ],
+          "standard_error": 0.33754525605034813,
+          "kind": "intervention",
+          "expected_information_gain": 0.04504866851700928,
+          "expected_query_information_gain": 0.04504867087271827,
+          "expected_decision_gain": 0.011090289378042587,
+          "predictive_variance": 0.13496273388613816
+        },
+        {
+          "id": "b-probe",
+          "label": "Nuisance-graph probe",
+          "target": "B",
+          "value": 2.0,
+          "readout": "Z",
+          "n": 16,
+          "cost": 0.8,
+          "mean_predictions": [
+            1.6,
+            0.0,
+            1.6,
+            0.0,
+            1.6,
+            0.0,
+            1.6,
+            0.0
+          ],
+          "standard_errors": [
+            0.14999999999999997,
+            0.25,
+            0.14999999999999997,
+            0.25,
+            0.15,
+            0.25,
+            0.15,
+            0.25
+          ],
+          "standard_error": 0.2,
+          "kind": "intervention",
+          "expected_information_gain": 0.6930709031981179,
+          "expected_query_information_gain": 1.3877787807814457e-16,
+          "expected_decision_gain": 1.6653345369377348e-16,
+          "predictive_variance": 0.6825000000000003
+        },
+        {
+          "id": "measurement",
+          "label": "Additional observational measurement",
+          "target": "observe",
+          "value": 0.0,
+          "readout": "A",
+          "n": 16,
+          "cost": 0.5,
+          "mean_predictions": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "standard_errors": [
+            0.25,
+            0.25,
+            0.25,
+            0.25,
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "standard_error": 0.25,
+          "kind": "measurement",
+          "expected_information_gain": 0.0,
+          "expected_query_information_gain": 2.7755575615628914e-17,
+          "expected_decision_gain": 0.0,
+          "predictive_variance": 0.06249999999999999
+        }
+      ],
+      "evidence_schema_version": 1,
+      "nominal_posterior": [
+        5.581643027510797e-16,
+        5.581643027510797e-16,
+        0.49999999999999944,
+        0.49999999999999944
+      ],
+      "nominal_query_probability": 1.1163286055021595e-15,
+      "shadow_probability": 0.9639512694869313,
+      "risk_is_surrogate": true,
+      "risk_definition": "Three-class classification with reject loss 0.10; operational claim guard is separate"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+scenario,metric,mean_reduction,paired_se
+nominal,false_claim,0.0,0.0
+nominal,abstention,0.010416666666666666,0.010416666666666666
+nominal,cost_to_valid_claim,0.0031250000000000075,0.20558246907241942
+weak_confounding,false_claim,0.15625,0.04273573682241113
+weak_confounding,abstention,-0.15625,0.04273573682241113
+weak_confounding,cost_to_valid_claim,0.0,0.0
+unseen_negative,false_claim,0.0,0.01480872194397731
+unseen_negative,abstention,0.0,0.01480872194397731
+unseen_negative,cost_to_valid_claim,0.0,0.0

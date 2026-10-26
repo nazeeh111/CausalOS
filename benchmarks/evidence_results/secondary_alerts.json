@@ -1,0 +1,241 @@
+{
+  "endpoint_status": "secondary, added after independent method review; does not change locked optimization objective",
+  "summary": [
+    {
+      "scenario": "nominal",
+      "policy": "nominal_query_eig",
+      "episodes": 96,
+      "cost_to_family_alert": 12.090624999999998,
+      "cost_to_family_alert_se": 0.18615498945417558,
+      "alert_attainment": 0.052083333333333336
+    },
+    {
+      "scenario": "nominal",
+      "policy": "nominal_query_eig_guard",
+      "episodes": 96,
+      "cost_to_family_alert": 12.090624999999998,
+      "cost_to_family_alert_se": 0.18615498945417558,
+      "alert_attainment": 0.052083333333333336
+    },
+    {
+      "scenario": "nominal",
+      "policy": "augmented_model_eig",
+      "episodes": 96,
+      "cost_to_family_alert": 12.085416666666667,
+      "cost_to_family_alert_se": 0.17513139908207337,
+      "alert_attainment": 0.0625
+    },
+    {
+      "scenario": "nominal",
+      "policy": "validity_query_eig",
+      "episodes": 96,
+      "cost_to_family_alert": 11.963541666666666,
+      "cost_to_family_alert_se": 0.2038345120804092,
+      "alert_attainment": 0.07291666666666667
+    },
+    {
+      "scenario": "nominal",
+      "policy": "validity_decision_value",
+      "episodes": 96,
+      "cost_to_family_alert": 12.334375,
+      "cost_to_family_alert_se": 0.10006388447325634,
+      "alert_attainment": 0.03125
+    },
+    {
+      "scenario": "nominal",
+      "policy": "evidence_no_guard",
+      "episodes": 96,
+      "cost_to_family_alert": 12.254166666666668,
+      "cost_to_family_alert_se": 0.13112131675514221,
+      "alert_attainment": 0.041666666666666664
+    },
+    {
+      "scenario": "nominal",
+      "policy": "evidence",
+      "episodes": 96,
+      "cost_to_family_alert": 12.254166666666668,
+      "cost_to_family_alert_se": 0.13112131675514221,
+      "alert_attainment": 0.041666666666666664
+    },
+    {
+      "scenario": "nominal",
+      "policy": "random_guard",
+      "episodes": 96,
+      "cost_to_family_alert": 12.421875,
+      "cost_to_family_alert_se": 0.078125,
+      "alert_attainment": 0.010416666666666666
+    },
+    {
+      "scenario": "weak_confounding",
+      "policy": "nominal_query_eig",
+      "episodes": 96,
+      "cost_to_family_alert": 6.784375000000001,
+      "cost_to_family_alert_se": 0.37039372166122453,
+      "alert_attainment": 0.8229166666666666
+    },
+    {
+      "scenario": "weak_confounding",
+      "policy": "nominal_query_eig_guard",
+      "episodes": 96,
+      "cost_to_family_alert": 6.784375000000001,
+      "cost_to_family_alert_se": 0.37039372166122453,
+      "alert_attainment": 0.8229166666666666
+    },
+    {
+      "scenario": "weak_confounding",
+      "policy": "augmented_model_eig",
+      "episodes": 96,
+      "cost_to_family_alert": 5.973958333333332,
+      "cost_to_family_alert_se": 0.23663042466357112,
+      "alert_attainment": 0.9479166666666666
+    },
+    {
+      "scenario": "weak_confounding",
+      "policy": "validity_query_eig",
+      "episodes": 96,
+      "cost_to_family_alert": 5.206250000000001,
+      "cost_to_family_alert_se": 0.24637642582388924,
+      "alert_attainment": 0.9583333333333334
+    },
+    {
+      "scenario": "weak_confounding",
+      "policy": "validity_decision_value",
+      "episodes": 96,
+      "cost_to_family_alert": 6.433333333333334,
+      "cost_to_family_alert_se": 0.20499072864500326,
+      "alert_attainment": 0.9791666666666666
+    },
+    {
+      "scenario": "weak_confounding",
+      "policy": "evidence_no_guard",
+      "episodes": 96,
+      "cost_to_family_alert": 5.892708333333334,
+      "cost_to_family_alert_se": 0.2151154565131199,
+      "alert_attainment": 0.9895833333333334
+    },
+    {
+      "scenario": "weak_confounding",
+      "policy": "evidence",
+      "episodes": 96,
+      "cost_to_family_alert": 5.892708333333334,
+      "cost_to_family_alert_se": 0.2151154565131199,
+      "alert_attainment": 0.9895833333333334
+    },
+    {
+      "scenario": "weak_confounding",
+      "policy": "random_guard",
+      "episodes": 96,
+      "cost_to_family_alert": 8.248958333333333,
+      "cost_to_family_alert_se": 0.3058924059482564,
+      "alert_attainment": 0.8333333333333334
+    },
+    {
+      "scenario": "unseen_negative",
+      "policy": "nominal_query_eig",
+      "episodes": 96,
+      "cost_to_family_alert": 4.2875000000000005,
+      "cost_to_family_alert_se": 0.21980478779326468,
+      "alert_attainment": 1.0
+    },
+    {
+      "scenario": "unseen_negative",
+      "policy": "nominal_query_eig_guard",
+      "episodes": 96,
+      "cost_to_family_alert": 4.2875000000000005,
+      "cost_to_family_alert_se": 0.21980478779326468,
+      "alert_attainment": 1.0
+    },
+    {
+      "scenario": "unseen_negative",
+      "policy": "augmented_model_eig",
+      "episodes": 96,
+      "cost_to_family_alert": 4.744791666666667,
+      "cost_to_family_alert_se": 0.19549683552687855,
+      "alert_attainment": 0.9895833333333334
+    },
+    {
+      "scenario": "unseen_negative",
+      "policy": "validity_query_eig",
+      "episodes": 96,
+      "cost_to_family_alert": 3.953125,
+      "cost_to_family_alert_se": 0.1991206167401179,
+      "alert_attainment": 0.9895833333333334
+    },
+    {
+      "scenario": "unseen_negative",
+      "policy": "validity_decision_value",
+      "episodes": 96,
+      "cost_to_family_alert": 4.972916666666667,
+      "cost_to_family_alert_se": 0.06195780905050775,
+      "alert_attainment": 1.0
+    },
+    {
+      "scenario": "unseen_negative",
+      "policy": "evidence_no_guard",
+      "episodes": 96,
+      "cost_to_family_alert": 4.5125,
+      "cost_to_family_alert_se": 0.12321755471309147,
+      "alert_attainment": 1.0
+    },
+    {
+      "scenario": "unseen_negative",
+      "policy": "evidence",
+      "episodes": 96,
+      "cost_to_family_alert": 4.5125,
+      "cost_to_family_alert_se": 0.12321755471309147,
+      "alert_attainment": 1.0
+    },
+    {
+      "scenario": "unseen_negative",
+      "policy": "random_guard",
+      "episodes": 96,
+      "cost_to_family_alert": 6.297916666666666,
+      "cost_to_family_alert_se": 0.288268344643306,
+      "alert_attainment": 0.96875
+    }
+  ],
+  "paired_comparisons": [
+    {
+      "scenario": "nominal",
+      "metric": "cost_to_family_alert",
+      "nominal_guard_minus_evidence": -0.16354166666666667,
+      "bootstrap_95_low": -0.4822916666666666,
+      "bootstrap_95_high": 0.06458333333333333
+    },
+    {
+      "scenario": "nominal",
+      "metric": "alert_attained",
+      "nominal_guard_minus_evidence": 0.010416666666666666,
+      "bootstrap_95_low": -0.020833333333333332,
+      "bootstrap_95_high": 0.052083333333333336
+    },
+    {
+      "scenario": "weak_confounding",
+      "metric": "cost_to_family_alert",
+      "nominal_guard_minus_evidence": 0.8916666666666666,
+      "bootstrap_95_low": 0.296875,
+      "bootstrap_95_high": 1.475026041666666
+    },
+    {
+      "scenario": "weak_confounding",
+      "metric": "alert_attained",
+      "nominal_guard_minus_evidence": -0.16666666666666666,
+      "bootstrap_95_low": -0.25,
+      "bootstrap_95_high": -0.08333333333333333
+    },
+    {
+      "scenario": "unseen_negative",
+      "metric": "cost_to_family_alert",
+      "nominal_guard_minus_evidence": -0.22499999999999998,
+      "bootstrap_95_low": -0.6083333333333334,
+      "bootstrap_95_high": 0.15625
+    },
+    {
+      "scenario": "unseen_negative",
+      "metric": "alert_attained",
+      "nominal_guard_minus_evidence": 0.0,
+      "bootstrap_95_low": 0.0,
+      "bootstrap_95_high": 0.0
+    }
+  ]
+}
