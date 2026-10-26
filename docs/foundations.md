@@ -16,12 +16,8 @@ CAUSALOS separates scientific stages because each establishes a different kind o
 
 The narrow statistical scope is intentional: complete finite DAG hypotheses and binary-treatment average effects are easier to audit than automatically estimating every effect on an inferred graph. A partially oriented graph is preserved and estimation abstains. This is conservative: some effects can be identifiable across an equivalence class, but that more general procedure is outside this release.
 
-## Conceptual figures
+## Licenses
 
-[PaperVizAgent](https://github.com/google-research/papervizagent) was investigated. Its standard visual-generation pipeline configures model-provider API keys. To honor this project's free, local execution requirement, conceptual figures use editable SVG/code and statistical plots come from executed numerical analyses. No generated illustration is used as empirical evidence.
-
-## Attribution
-
-CAUSALOS code is MIT licensed. Runtime packages remain under their own licenses; no vendored library source is relabeled. DoWhy (MIT), EconML (MIT), causal-learn (MIT), Causica (MIT) and BoTorch (MIT) are credited research foundations, not claims that all five are runtime dependencies. See the distribution's installed dependency metadata for transitive license texts and [data provenance](../examples/README.md) for dataset-specific rights and restrictions.
+CAUSALOS code is MIT licensed. Runtime packages remain under their own licenses; no vendored library source is relabeled. See the distribution's installed dependency metadata for transitive license texts and [data provenance](../examples/README.md) for dataset-specific rights and restrictions.
 
 Sources were inspected for this release on 2026-10-25. The linked repositories evolve; reproducible local dependency versions are recorded separately.

@@ -82,6 +82,6 @@ Read the [technical research report](docs/research.md), [analysis methods](docs/
 
 The separately labeled structural-model counterfactual tool holds inferred disturbances fixed inside each supplied demo SCM. Competing models can disagree; this does not identify a real person's counterfactual outcome.
 
-## License and attribution
+## License
 
-Original code is [MIT licensed](LICENSE). Libraries and datasets retain their own licenses. Research foundations include [DoWhy](https://github.com/py-why/dowhy), [EconML](https://github.com/py-why/EconML), [causal-learn](https://github.com/py-why/causal-learn), [Causica](https://github.com/microsoft/causica), [BoTorch](https://github.com/meta-pytorch/botorch), and the studies cited in the research report. Runtime dependency and data attribution are documented separately.
+Original code is [MIT licensed](LICENSE). Libraries and datasets retain their own licenses; see [data provenance](examples/README.md) for dataset-specific terms.
