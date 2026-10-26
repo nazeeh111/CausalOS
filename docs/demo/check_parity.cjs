@@ -18,6 +18,9 @@ vm.runInNewContext(fs.readFileSync(path.join(directory,'demo-api.js'),'utf8'),{w
     if(digest(path.resolve(directory,'../../causalos/web',name))!==digest(path.join(directory,name)))throw Error('Copied canonical asset differs: '+name);
   }
   const html=fs.readFileSync(path.join(directory,'index.html'),'utf8');
+  for(const asset of ['styles.css','demo-api.js','app.js','counterfactual.js','evidence.js']){
+    if(!html.includes(`./${asset}?v=${fixtures.version}"`))throw Error('Replay asset lacks release cache key: '+asset);
+  }
   if(!html.includes('CausalOS#run-the-laboratory')||html.includes('#quick-start'))throw Error('Run locally link does not target the installation heading.');
   if(!fs.readFileSync(path.resolve(directory,'../../README.md'),'utf8').includes('## Run the laboratory'))throw Error('Run locally target heading was renamed.');
   const parity=JSON.parse(fs.readFileSync(path.join(directory,'parity.json')));

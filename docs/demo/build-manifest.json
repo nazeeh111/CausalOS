@@ -2,19 +2,19 @@
   "artifact_sha256": {
     "README.md": "3b1bcaa546a9925334d1cecb598ab30fc3c9d28a86302aca8a363c7232e0951e",
     "analysis-results.png": "af95c6557b2e83b3749f775d76c748c4dbcc9c1f2a705eb62f28c8a9428cf8c3",
-    "app.js": "d4dbb2303d35e7cd8cb9d478e8726ece2f0ef91f7fec687512dcb58f45b288a3",
+    "app.js": "ba62a2b64b5ffcb8bac87f5e92806a741e2a6c2bcb0f91596f24d155f137baf6",
     "calibration-learning.svg": "3b12d0aacad7301fb108b9e5b3b01a7da56caa5761a1794df537663f793a910d",
-    "check_parity.cjs": "cccef179f83223fb20ff8630dbb99e52e6bfbefe0fd10b5bc1cbc25e84a88a0a",
-    "counterfactual.js": "4dad9f5891ab697f0291f5b29b9fcca8ce115f37cb1bf7fbfb828de6d7a39d08",
-    "demo-api.js": "8c00aa8b2e519de8b35e081710d99230b7209f45de9e70c531b829b8db0b4e5b",
+    "check_parity.cjs": "3335edbf403eb1171f0b70a4ee53e6bc73332420409f424d4ebc4742ca7565c6",
+    "counterfactual.js": "59b70369cfd823b8658a86ce63ce35c8b7ef294c31148c08b00550a7c30554c3",
+    "demo-api.js": "dfb2217a58576d596b05e030c7fccec768395fd42b781f14968da0af33de2577",
     "evidence-comparison.svg": "a55fcab52058a64ea51dd63b4a27e3683fb1fe45d79f1fed07837f071d4f861a",
-    "evidence.js": "4bbe0097ae385aefdc15447a8cbba49cde5bd1ac2db34576ed9e034dfbff61fc",
-    "fixtures.json": "eb3faa60434b3b54a35beccd9ca2f0a8dcde37315813e37452850ee949f844b9",
-    "index.html": "79c052bee4064fd1e3176edbefeb12a7fab3b1d0566cefb86ce7c76b7e646319",
+    "evidence.js": "4defc45f027b827053d53075f68f7af75f1c29ad9b633c7bab03e566e4064e29",
+    "fixtures.json": "a88cdb0fe420c9bf70c2f42f4957d50a66df825c1213c5a36fe6ade3e3ef1da4",
+    "index.html": "e1cb149bdb98b272a9c9920f4365c92a4ebe4bc45993c2fbbfd9f966434f64da",
     "observations.json": "824fafffea4038dd2f23886d145ce17e3cdcfd5a3896c17f4bae9dc6825ef13e",
     "parity.json": "c35ad1d44bc043290cc1210ba58efd6fa5b4a29e8e96d742825c2b6f6d3074b9",
     "policy-comparison.svg": "10d8906c5c544983279d91c5f3f73779921c1d67f5aa7684d89f93838df61ca5",
-    "styles.css": "45039982e19e0cca815ac6736a85cc906b77945a530e854915366808abdd4d31"
+    "styles.css": "3235fa79d5fdba944aed9b03e204655f3173ff20bcfeb2b04cb085796ed4ad0a"
   },
   "environment": {
     "packages": {
@@ -29,7 +29,7 @@
   },
   "format": "causalos-public-replay-build-v1",
   "source_sha256": {
-    "causalos/__init__.py": "a16ed3cea0cdd073fc4cc579799ec58597686f0257bf344fb16716a1d2ab4952",
+    "causalos/__init__.py": "301cf8277f3516401f84c96182a9d3ab78f334cacf1e2bac1a8ff2b69f1f660c",
     "causalos/api.py": "e93162cbab87fa41c3975e025208170d6dba8aeeaece5d5a83a747b5593bac69",
     "causalos/benchmark.py": "7e195d9c38096831305d9a68a8a397d7c26107ba19768572fb1f61596abc3442",
     "causalos/cli.py": "40dc7668a6de283487f8c027ee7b71bd83e28bd8a124938adbcf5061e9bbffb4",
@@ -46,16 +46,16 @@
     "causalos/resources/data/nsw-provenance.json": "5bd45bac9f01dad8ebb4a4bc298f808e9fe56c3bf91ec901e60fe62740f3ec58",
     "causalos/resources/data/nsw.csv": "72efd333a4b94a2bee55149d3542021d0adde03201d010ebe971e3e863360cd6",
     "causalos/web/analysis-results.png": "af95c6557b2e83b3749f775d76c748c4dbcc9c1f2a705eb62f28c8a9428cf8c3",
-    "causalos/web/app.js": "d4dbb2303d35e7cd8cb9d478e8726ece2f0ef91f7fec687512dcb58f45b288a3",
+    "causalos/web/app.js": "ba62a2b64b5ffcb8bac87f5e92806a741e2a6c2bcb0f91596f24d155f137baf6",
     "causalos/web/calibration-learning.svg": "3b12d0aacad7301fb108b9e5b3b01a7da56caa5761a1794df537663f793a910d",
-    "causalos/web/counterfactual.js": "4dad9f5891ab697f0291f5b29b9fcca8ce115f37cb1bf7fbfb828de6d7a39d08",
+    "causalos/web/counterfactual.js": "59b70369cfd823b8658a86ce63ce35c8b7ef294c31148c08b00550a7c30554c3",
     "causalos/web/evidence-comparison.svg": "a55fcab52058a64ea51dd63b4a27e3683fb1fe45d79f1fed07837f071d4f861a",
-    "causalos/web/evidence.js": "4bbe0097ae385aefdc15447a8cbba49cde5bd1ac2db34576ed9e034dfbff61fc",
-    "causalos/web/index.html": "4539e6e0d69eb913ec527b5309f2c0a7093ad525493fa770d98e213d135a515c",
+    "causalos/web/evidence.js": "4defc45f027b827053d53075f68f7af75f1c29ad9b633c7bab03e566e4064e29",
+    "causalos/web/index.html": "c79e7d7676fef49a27eecb457502d7dd655914fb407def62a19fc71006ccdf91",
     "causalos/web/policy-comparison.svg": "10d8906c5c544983279d91c5f3f73779921c1d67f5aa7684d89f93838df61ca5",
-    "causalos/web/styles.css": "a7ea35a13f76fa0ef6adc737ce6490e8a745724839e25bf9ce03a1e15e26f711",
-    "docs/demo/check_parity.cjs": "cccef179f83223fb20ff8630dbb99e52e6bfbefe0fd10b5bc1cbc25e84a88a0a",
-    "docs/demo/demo-api.js": "8c00aa8b2e519de8b35e081710d99230b7209f45de9e70c531b829b8db0b4e5b",
-    "examples/build_demo.py": "ce6619b171793ec3000570c186dc2db2926266fa0c9a42e09e094faa874a9160"
+    "causalos/web/styles.css": "812d8238d5b910298f32be2c749e73ca13ba8a226d92ef584667814fd8195d16",
+    "docs/demo/check_parity.cjs": "3335edbf403eb1171f0b70a4ee53e6bc73332420409f424d4ebc4742ca7565c6",
+    "docs/demo/demo-api.js": "dfb2217a58576d596b05e030c7fccec768395fd42b781f14968da0af33de2577",
+    "examples/build_demo.py": "eadc9e27fe7ae79d934a22593425f7292b07435b031341ef7e84580e46e3d4cd"
   }
 }

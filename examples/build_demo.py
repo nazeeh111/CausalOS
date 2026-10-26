@@ -33,15 +33,23 @@ def build() -> None:
     for name in ("app.js", "counterfactual.js", "evidence.js"):
         html = html.replace(f'src="/{name}"', f'src="./{name}"')
     html = html.replace('<script defer src="./app.js">', '<script defer src="./demo-api.js"></script><script defer src="./app.js">')
+    for asset in ('styles.css', 'demo-api.js', 'app.js', 'counterfactual.js', 'evidence.js'):
+        html = html.replace(f'./{asset}"', f'./{asset}?v={__version__}"')
     banner = '<div class="public-demo-banner" role="note"><strong>PUBLIC REPRODUCIBLE REPLAY</strong><span>Built-in analyses are precomputed. Run locally for new datasets and edited causal questions.</span><a href="https://github.com/nazeeh111/CausalOS#run-the-laboratory">Run locally ↗</a></div>'
     html = html.replace('<body>', '<body>'+banner)
     html = html.replace('LOCAL RESEARCH ENVIRONMENT', 'PUBLIC REPRODUCIBLE REPLAY')
     html = html.replace('Processed by your local CAUSALOS server.', 'New CSV analyses require the local application.')
     html = html.replace('Use non-sensitive research data.', 'This public replay uses bundled examples only.')
+    importer = '<label class="button button-primary file-button">Import CSV <span>↑</span><input id="csv-file" type="file" accept=".csv,text/csv" aria-label="Import CSV"></label>'
+    local_link = '<a class="button button-primary" href="https://github.com/nazeeh111/CausalOS#run-the-laboratory">Import your data locally ↗</a><input id="csv-file" type="file" hidden disabled>'
+    if importer not in html:
+        raise ValueError('Canonical CSV control changed; review the public replay adaptation.')
+    html = html.replace(importer, local_link)
     html = html.replace('<title>CAUSALOS LAB', '<title>CAUSALOS Public Replay')
     (target / "index.html").write_text(html)
     with (target / "styles.css").open('a') as f:
-        f.write('\n.public-demo-banner{position:sticky;top:0;z-index:100;background:#253dc1;color:#fff;padding:10px 24px;display:flex;justify-content:center;align-items:center;gap:18px;font-size:10px;line-height:1.5}.public-demo-banner strong{font:8px monospace;letter-spacing:.7px}.public-demo-banner a{color:#e1eaa8;white-space:nowrap}.sidebar{top:35px}.public-demo-banner+ .shell{min-height:calc(100vh - 35px)}@media(max-width:720px){.public-demo-banner{position:sticky;padding:9px 16px;gap:8px;flex-wrap:wrap;font-size:9px}.public-demo-banner strong{font-size:7px}.sidebar{top:auto}}\n')
+        f.write('\n.public-demo-banner{position:sticky;top:0;z-index:100;background:#253dc1;color:#fff;padding:10px 24px;display:flex;justify-content:center;align-items:center;gap:18px;font-size:11px;line-height:1.6}.public-demo-banner strong{font:9px var(--mono);letter-spacing:.6px}.public-demo-banner a{color:#e1eaa8;white-space:nowrap}.sidebar{top:var(--demo-banner-height,38px)}.public-demo-banner+.shell{min-height:calc(100vh - 38px)}@media(max-width:1100px){.sidebar{top:var(--demo-banner-height,56px)}.public-demo-banner{padding:10px 20px;gap:12px}.public-demo-banner strong{max-width:140px}}@media(max-width:760px){.public-demo-banner{padding:12px 16px;gap:5px 12px;flex-wrap:wrap;justify-content:flex-start;font-size:10px}.public-demo-banner strong{font-size:9px;max-width:none}.public-demo-banner span{flex-basis:100%;order:2}.public-demo-banner a{margin-left:auto}.sidebar{top:auto}}\n')
+
     examples = {}
     for item in datasets.list_examples():
         name = item['name']

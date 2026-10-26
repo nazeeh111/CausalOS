@@ -6,9 +6,12 @@
 'use strict';
 (() => {
   const originalFetch = window.fetch.bind(window);
+  const revision = typeof document === 'undefined' ? '' : new URL(document.currentScript.src).searchParams.get('v');
   const clone = value => JSON.parse(JSON.stringify(value));
   const load = async name => {
-    const response = await originalFetch(new URL(name, location.href));
+    const url = new URL(name, location.href);
+    if (revision) url.searchParams.set('v', revision);
+    const response = await originalFetch(url, {cache:'no-cache'});
     if (!response.ok) throw Error('Public replay fixture unavailable. Reload this page.');
     return response.json();
   };

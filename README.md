@@ -4,11 +4,13 @@
 
 CAUSALOS is a local causal-analysis and experimental-design laboratory. Compare causal explanations, inspect identifying assumptions, estimate eligible effects, challenge them, and choose a simulated experiment that could resolve uncertainty.
 
-**Research preview · v0.1.0.** Causal conclusions remain conditional on explicit assumptions. Observational structure search returns graph hypotheses. The intervention replay is a labeled simulation, not a real-world experiment.
+**Research preview · v0.1.1.** Causal conclusions remain conditional on explicit assumptions. Observational structure search returns graph hypotheses. The intervention replay is a labeled simulation, not a real-world experiment.
 
-![The functioning CAUSALOS laboratory after three simulated interventions](assets/lab-after-top.png)
+![The CAUSALOS laboratory with the current causal question and simulated evidence](assets/lab-v0.1.1-desktop.png)
 
-[Try the interactive public replay](https://nazeeh111.github.io/CausalOS/demo/) · [Watch the 20-second launch film](assets/launch/brag.mp4) · [Read the research report](docs/research.md)
+[Try the interactive public replay](https://nazeeh111.github.io/CausalOS/demo/) · [Watch the original v0.1.0 launch film](https://github.com/nazeeh111/CausalOS/releases/download/v0.1.0/brag.mp4) · [Read the research report](docs/research.md)
+
+[Inspect the experiment table](assets/lab-v0.1.1-experiments.png) · [Mobile preview](assets/lab-v0.1.1-mobile.png) · [v0.1.1 review and verification](docs/review-v0.1.1.md)
 
 The public replay runs Bayesian experiment selection in your browser using recorded simulator observations. Built-in dataset analyses are precomputed; run the Python application below for new datasets and edited causal questions.
 
