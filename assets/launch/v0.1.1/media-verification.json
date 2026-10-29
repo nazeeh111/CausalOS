@@ -4,7 +4,7 @@
   "verification_date": "2026-10-29",
   "master": {
     "file": "causalos-v0.1.1-launch.mp4",
-    "sha256": "0218fa37128934a245c6184e99b5c0d635ca690a7c1452303af37a8b5da8beb7",
+    "sha256": "cfc60d13db82445618464adada5948aaa9566fd4c82d46cfbe50a74ada149ffd",
     "bytes": 5665226,
     "duration_seconds": 24,
     "width": 1920,
@@ -15,7 +15,11 @@
     "pixel_format": "yuv420p",
     "display_aspect_ratio": "16:9",
     "full_decode": "pass",
-    "faststart": true
+    "faststart": true,
+    "mp4_track_dimensions": [
+      1920,
+      1080
+    ]
   },
   "poster": {
     "file": "causalos-v0.1.1-launch.jpg",
@@ -41,7 +45,7 @@
     "entry": "composition/index-overscan.html",
     "capture_height": 1280,
     "bottom_margin": 200,
-    "finalization": "H.264 crop_bottom=200 metadata; video and AAC stream copied",
+    "finalization": "H.264 crop_bottom=200 metadata, followed by a second stream-copy pass to refresh MP4 track/sample dimensions; no re-encoding",
     "finalizer_reproduction": "byte-identical",
     "frame_12_matches_top_1080_of_overscan": "pixel-identical",
     "lower_captions_checked_at_seconds": [
@@ -49,7 +53,8 @@
       12,
       17.3,
       22.7
-    ]
+    ],
+    "video_and_audio_stream_hashes_unchanged_by_container_fix": true
   },
   "source_checks": {
     "lint": "pass",

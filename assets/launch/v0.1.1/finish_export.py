@@ -3,12 +3,15 @@
 The authored picture is 1920x1080. index-overscan.html adds 200px beneath it
 for the installed renderer's clipped viewport. H.264 picture cropping changes
 only display metadata; the remaining decoded pixels and AAC stream are retained.
+A second stream-copy pass refreshes MP4 track/sample dimensions from the cropped
+H.264 stream, so browsers report 1080p before decoding the first frame.
 """
 from pathlib import Path
 import argparse
 import json
 import shutil
 import subprocess
+import tempfile
 
 parser=argparse.ArgumentParser()
 parser.add_argument('render',type=Path)
@@ -23,9 +26,13 @@ probe=json.loads(subprocess.check_output([ffprobe,'-v','error','-show_streams','
 v=next(s for s in probe['streams'] if s['codec_type']=='video')
 if (v['codec_name'],v['width'],v['height'])!=('h264',1920,1280):
     raise SystemExit('Expected the 1920x1280 H.264 capture-margin render.')
-subprocess.run([ffmpeg,'-hide_banner','-nostdin','-v','error','-i',str(args.render),'-map','0','-c','copy',
-    '-bsf:v','h264_metadata=crop_bottom=200','-movflags','+faststart',
-    '-metadata','title=CAUSALOS v0.1.1 · Evidence before conclusions',
-    '-metadata','comment=Genuine v0.1.1 application captures. Simulated finite-model interventions; no real-world causal verification.',
-    str(args.output)],check=True)
+with tempfile.TemporaryDirectory(prefix='causalos-film-finalize-') as tmp:
+    cropped = Path(tmp)/'cropped.mp4'
+    subprocess.run([ffmpeg,'-hide_banner','-nostdin','-v','error','-i',str(args.render),'-map','0','-c','copy',
+        '-bsf:v','h264_metadata=crop_bottom=200',str(cropped)],check=True)
+    subprocess.run([ffmpeg,'-hide_banner','-nostdin','-v','error','-i',str(cropped),'-map','0','-c','copy',
+        '-movflags','+faststart',
+        '-metadata','title=CAUSALOS v0.1.1 · Evidence before conclusions',
+        '-metadata','comment=Genuine v0.1.1 application captures. Simulated finite-model interventions; no real-world causal verification.',
+        str(args.output)],check=True)
 print(args.output)
