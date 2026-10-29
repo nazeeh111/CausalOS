@@ -8,7 +8,9 @@ CAUSALOS is a local causal-analysis and experimental-design laboratory. Compare 
 
 ![The CAUSALOS laboratory with the current causal question and simulated evidence](assets/lab-v0.1.1-desktop.png)
 
-[Try the interactive public replay](https://nazeeh111.github.io/CausalOS/demo/) · [Watch the original v0.1.0 launch film](https://github.com/nazeeh111/CausalOS/releases/download/v0.1.0/brag.mp4) · [Read the research report](docs/research.md)
+[Try the interactive public replay](https://nazeeh111.github.io/CausalOS/demo/) · [Watch the v0.1.1 launch film](https://nazeeh111.github.io/CausalOS/launch/) · [Read the research report](docs/research.md)
+
+[![Watch the 24-second v0.1.1 launch film](assets/launch/v0.1.1/causalos-v0.1.1-launch.jpg)](https://nazeeh111.github.io/CausalOS/launch/)
 
 [Inspect the experiment table](assets/lab-v0.1.1-experiments.png) · [Mobile preview](assets/lab-v0.1.1-mobile.png) · [v0.1.1 review and verification](docs/review-v0.1.1.md)
 

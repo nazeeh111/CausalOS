@@ -1,0 +1,15 @@
+{
+  "duration": 24,
+  "source": "original deterministic synthesis",
+  "scene_changes": [
+    3.6,
+    8.5,
+    15,
+    19.5
+  ],
+  "interaction_accents": [
+    3.85,
+    8.5
+  ],
+  "voice": false
+}

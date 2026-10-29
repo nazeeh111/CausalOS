@@ -1,4 +1,8 @@
-# CAUSALOS launch film
+# CAUSALOS launch films
+
+The current [v0.1.1 film and editable sources](v0.1.1/README.md) show the redesigned interface and assumption gate. [Watch the current film](https://nazeeh111.github.io/CausalOS/launch/). The original v0.1.0 film is preserved below.
+
+## Original v0.1.0 film
 
 `brag.mp4` is the final 20-second landscape film. `brag.jpg` is the selected settled poster and is also baked into frame zero. The middle scenes use genuine captures of the functioning CAUSALOS laboratory. Exact numerical annotations derive from `benchmarks/flagship_replay.json`, seed 42, before and after three `a-low` interventions. Results are explicitly simulated and conditional on the supplied finite model family. The B/Z nuisance orientation is unresolved.
 

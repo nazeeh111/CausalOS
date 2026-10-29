@@ -1,0 +1,88 @@
+{
+  "app_version": "0.1.1",
+  "app_source_commit": "079eb1c4db042580d60bd28f0708df068109d21e",
+  "verification_date": "2026-10-29",
+  "master": {
+    "file": "causalos-v0.1.1-launch.mp4",
+    "sha256": "0218fa37128934a245c6184e99b5c0d635ca690a7c1452303af37a8b5da8beb7",
+    "bytes": 5665226,
+    "duration_seconds": 24,
+    "width": 1920,
+    "height": 1080,
+    "frames": 720,
+    "fps": 30,
+    "codec": "h264",
+    "pixel_format": "yuv420p",
+    "display_aspect_ratio": "16:9",
+    "full_decode": "pass",
+    "faststart": true
+  },
+  "poster": {
+    "file": "causalos-v0.1.1-launch.jpg",
+    "sha256": "540c80814184247cfb52fd5776e385699daf4ed28b6a5809b5a5f4031569ebfd",
+    "frame_seconds": 12
+  },
+  "audio": {
+    "codec": "aac",
+    "sample_rate": 48000,
+    "channels": 2,
+    "encoded_stream_hash": "SHA256=77c9456f38134ded580f6d491526580fa19bdf7e043b046369d6aefd0511bef6",
+    "integrated_lufs": -20.01,
+    "true_peak_dbtp": -8.15,
+    "loudness_range_lu": 5.6,
+    "mix_correlation": 0.9999729612964822,
+    "alignment_lag_seconds": 0,
+    "identical_to_user_selected_cut": true,
+    "original_synthesized_music": true,
+    "narration": false,
+    "mix_reproduction": "byte-identical"
+  },
+  "export": {
+    "entry": "composition/index-overscan.html",
+    "capture_height": 1280,
+    "bottom_margin": 200,
+    "finalization": "H.264 crop_bottom=200 metadata; video and AAC stream copied",
+    "finalizer_reproduction": "byte-identical",
+    "frame_12_matches_top_1080_of_overscan": "pixel-identical",
+    "lower_captions_checked_at_seconds": [
+      6.7,
+      12,
+      17.3,
+      22.7
+    ]
+  },
+  "source_checks": {
+    "lint": "pass",
+    "runtime": "pass",
+    "layout_samples": 9,
+    "errors": 0,
+    "warnings": 0,
+    "intentional_crossfade_overlap_infos": 4,
+    "contrast_passed": 61,
+    "contrast_checked": 61,
+    "automated_motion_module_enabled": false,
+    "source_and_capture_hashes": "pass",
+    "python_sources_parse": "pass",
+    "public_demo_parity": "pass; 7 scenarios; max absolute discrepancy 3.697671509261813e-16"
+  },
+  "local_watch_page": {
+    "native_video_duration": 24,
+    "native_video_dimensions": [
+      1920,
+      1080
+    ],
+    "normal_speed": 1,
+    "muted": false,
+    "reached_ended": true,
+    "controls": true,
+    "mobile_width": 390,
+    "mobile_scroll_width": 390,
+    "transcript_opens": true
+  },
+  "review": {
+    "user_feedback": "Keep this cut",
+    "scope": "User selected the creative cut. Framing correction preserves its content, timing and AAC soundtrack.",
+    "limits": "Agent inspected source previews and extracted encoded frames and measured audio levels/sync. No agent listening feed or independent continuous audiovisual perception. Source checker motion module was disabled."
+  },
+  "scientific_boundary": "Simulated seed-42 finite-model comparison. 50.0% to 3.2% after three interventions costing six units. B/Z orientation remains unresolved. Withdrawing exchangeability blocks a local example estimate; checking an assumption is not proof."
+}

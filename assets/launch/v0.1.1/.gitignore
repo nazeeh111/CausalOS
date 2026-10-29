@@ -1,0 +1,8 @@
+composition/assets/gsap.vendor.js
+composition/.hyperframes/
+composition/snapshots/
+render-*.mp4
+render-*.log
+check-*.log
+.hf-render-*/
+__pycache__/

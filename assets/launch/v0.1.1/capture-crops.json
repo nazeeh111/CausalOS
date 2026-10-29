@@ -1,0 +1,52 @@
+{
+  "evidence-prior.png": {
+    "source": "capture-prior-full.png",
+    "viewport_box_xyxy": [
+      258,
+      79,
+      1242,
+      675
+    ],
+    "method": "lossless crop of the native viewport screenshot, no UI repainting"
+  },
+  "experiment-table.png": {
+    "source": "capture-selection-full.png",
+    "viewport_box_xyxy": [
+      258,
+      44,
+      1242,
+      691
+    ],
+    "method": "lossless crop of the native viewport screenshot, no UI repainting"
+  },
+  "evidence-after-three.png": {
+    "source": "capture-after-full.png",
+    "viewport_box_xyxy": [
+      258,
+      79,
+      1242,
+      675
+    ],
+    "method": "lossless crop of the native viewport screenshot, no UI repainting"
+  },
+  "assumption-withdrawn.png": {
+    "source": "capture-assumption-full.png",
+    "viewport_box_xyxy": [
+      259,
+      327,
+      724,
+      447
+    ],
+    "method": "lossless crop of the native viewport screenshot, no UI repainting"
+  },
+  "estimate-withheld.png": {
+    "source": "blocked-analysis-context.png",
+    "viewport_box_xyxy": [
+      258,
+      71,
+      1242,
+      193
+    ],
+    "method": "lossless crop of the native viewport screenshot, no UI repainting"
+  }
+}

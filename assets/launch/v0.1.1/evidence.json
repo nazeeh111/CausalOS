@@ -1,0 +1,69 @@
+{
+  "app_version": "0.1.1",
+  "app_source_commit": "079eb1c4db042580d60bd28f0708df068109d21e",
+  "capture_source": "actual local application http://localhost:18949, operated through CUA; reframed screenshots, no fabricated UI",
+  "viewport": [
+    1280,
+    720
+  ],
+  "seed": 42,
+  "nominal_scenario": "fork",
+  "actions": [
+    "a-low",
+    "a-low",
+    "a-low"
+  ],
+  "prior_probability": 0.5,
+  "final_probability": 0.03248648669137345,
+  "displayed_probability": "3.2%",
+  "spent": 6.0,
+  "posterior": [
+    0.016243243345686727,
+    0.016243243345686727,
+    0.4837567566543133,
+    0.4837567566543133
+  ],
+  "observations": [
+    0.1925450654741578,
+    0.2903323799894391,
+    -0.1627222729023681
+  ],
+  "initial_action": {
+    "id": "a-low",
+    "target": "A",
+    "value": 1.0,
+    "n": 8,
+    "cost": 2.0,
+    "expected_query_information_gain": 0.2890013991841607,
+    "expected_information_gain": 0.28900139918416046
+  },
+  "gate": {
+    "example": "confounded",
+    "seed": 42,
+    "before": "identified",
+    "withdrawn_assumption": "exchangeability",
+    "after": "blocked"
+  },
+  "composition_sha256": "84a58b2f1be813292061379ced20d7ec8d3468bde623b4cb9bb18cd8000286d8",
+  "captures": {
+    "capture-selection-full.png": "6daacc9b1b92c0712eaaeb7c61ea7623890a74bca2c928891e060607573519c9",
+    "capture-after-full.png": "97e8dec55a7bc543999af76c205e576c51a7e220fd3007d5c6c1f8f41fb920ff",
+    "assumption-withdrawn.png": "68d6c5d9c5557fd592185d554d3ce436cd5879045abd361e7c79805d8930b719",
+    "estimate-withheld.png": "04a1aedb14e046974f89f5864ad787c216628fa695377fdfb515112b46cb4804",
+    "evidence-after-three.png": "d09df827941af1a102e39349835ccc9f536ddcb5d4f685ddf3c1a6dd8bacd5d3",
+    "blocked-analysis-context.png": "37c7fe2b841d737bbeaecd3fb3c33eed90ad6bbf8e302ffdad46072c3c1fc49e",
+    "overview-prior.png": "56ce48cbff34b40bb9ec835e71c8975d8ea7e4ab78c9e89e2f326450f0d5cf7c",
+    "capture-assumption-full.png": "54a44fbbec568be1b32c5798d6a767085745d342f7a34a32774d25ba1be8daec",
+    "evidence-prior.png": "1a8fab8bbfe424444c19ae0c75e00cb9341b0f8cb7ade9fc4cd95ae8e80bb61d",
+    "experiment-table.png": "ad04d082f6688a5c7d462dc92ed5c9611d948bc84a8690307ae47f981efbe9ca",
+    "capture-prior-full.png": "d716331156b90acf1ec8f81d648f7014c87d2fa490b3250cd65334d8a23a022b"
+  },
+  "web_source_sha256": {
+    "index.html": "c79e7d7676fef49a27eecb457502d7dd655914fb407def62a19fc71006ccdf91",
+    "styles.css": "812d8238d5b910298f32be2c749e73ca13ba8a226d92ef584667814fd8195d16",
+    "counterfactual.js": "59b70369cfd823b8658a86ce63ce35c8b7ef294c31148c08b00550a7c30554c3",
+    "evidence.js": "4defc45f027b827053d53075f68f7af75f1c29ad9b633c7bab03e566e4064e29",
+    "app.js": "ba62a2b64b5ffcb8bac87f5e92806a741e2a6c2bcb0f91596f24d155f137baf6"
+  },
+  "export_entry_sha256": "e4a6368b8804c1cfbcb6a1b474477e37e7e78433b695f4060171b2d8b3014f3a"
+}
