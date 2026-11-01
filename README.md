@@ -1,14 +1,14 @@
-<p align="left"><strong>CAUSALOS LAB</strong> · Open causal research instruments</p>
+# CausalOS
 
-# Ask what would change.
+**Compare causal explanations. Choose an experiment.**
 
-CAUSALOS is a local causal-analysis and experimental-design laboratory. Compare causal explanations, inspect identifying assumptions, estimate eligible effects, challenge them, and choose a simulated experiment that could resolve uncertainty.
+CausalOS is a local causal-analysis and experimental-design laboratory. Compare causal explanations, inspect identifying assumptions, estimate eligible effects, challenge them, and choose a simulated experiment that could resolve uncertainty.
 
 **Research preview · v0.1.1.** Causal conclusions remain conditional on explicit assumptions. Observational structure search returns graph hypotheses. The intervention replay is a labeled simulation, not a real-world experiment.
 
-![The CAUSALOS laboratory with the current causal question and simulated evidence](assets/lab-v0.1.1-desktop.png)
+![The CausalOS laboratory with the current causal question and simulated evidence](assets/lab-v0.1.1-desktop.png)
 
-[Try the interactive public replay](https://nazeeh111.github.io/CausalOS/demo/) · [Watch the v0.1.1 launch film](https://nazeeh111.github.io/CausalOS/launch/) · [Read the research report](docs/research.md)
+[Try the interactive public replay](https://nazeeh111.github.io/CausalOS/demo/) · [Run the laboratory](#run-the-laboratory) · [Read the research report](docs/research.md)
 
 [![Watch the 24-second v0.1.1 launch film](assets/launch/v0.1.1/causalos-v0.1.1-launch.jpg)](https://nazeeh111.github.io/CausalOS/launch/)
 
