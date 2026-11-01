@@ -1,6 +1,6 @@
 {
   "artifact_sha256": {
-    "README.md": "3b1bcaa546a9925334d1cecb598ab30fc3c9d28a86302aca8a363c7232e0951e",
+    "README.md": "65f46a8065ceafdffd4aa1f56332ce988d28100574f93a7d90a221efef9ca7c4",
     "analysis-results.png": "af95c6557b2e83b3749f775d76c748c4dbcc9c1f2a705eb62f28c8a9428cf8c3",
     "app.js": "ba62a2b64b5ffcb8bac87f5e92806a741e2a6c2bcb0f91596f24d155f137baf6",
     "calibration-learning.svg": "3b12d0aacad7301fb108b9e5b3b01a7da56caa5761a1794df537663f793a910d",
@@ -9,8 +9,8 @@
     "demo-api.js": "dfb2217a58576d596b05e030c7fccec768395fd42b781f14968da0af33de2577",
     "evidence-comparison.svg": "a55fcab52058a64ea51dd63b4a27e3683fb1fe45d79f1fed07837f071d4f861a",
     "evidence.js": "4defc45f027b827053d53075f68f7af75f1c29ad9b633c7bab03e566e4064e29",
-    "fixtures.json": "a88cdb0fe420c9bf70c2f42f4957d50a66df825c1213c5a36fe6ade3e3ef1da4",
-    "index.html": "e1cb149bdb98b272a9c9920f4365c92a4ebe4bc45993c2fbbfd9f966434f64da",
+    "fixtures.json": "3fd79786b0d5085a2edeb0f8d498684fe56bcfb655409a9acd0ff78abae15ae1",
+    "index.html": "1f6c91352f164e6a0553eaf32b38423b2782c496922b3883325786868adec440",
     "observations.json": "824fafffea4038dd2f23886d145ce17e3cdcfd5a3896c17f4bae9dc6825ef13e",
     "parity.json": "c35ad1d44bc043290cc1210ba58efd6fa5b4a29e8e96d742825c2b6f6d3074b9",
     "policy-comparison.svg": "10d8906c5c544983279d91c5f3f73779921c1d67f5aa7684d89f93838df61ca5",
@@ -51,11 +51,11 @@
     "causalos/web/counterfactual.js": "59b70369cfd823b8658a86ce63ce35c8b7ef294c31148c08b00550a7c30554c3",
     "causalos/web/evidence-comparison.svg": "a55fcab52058a64ea51dd63b4a27e3683fb1fe45d79f1fed07837f071d4f861a",
     "causalos/web/evidence.js": "4defc45f027b827053d53075f68f7af75f1c29ad9b633c7bab03e566e4064e29",
-    "causalos/web/index.html": "c79e7d7676fef49a27eecb457502d7dd655914fb407def62a19fc71006ccdf91",
+    "causalos/web/index.html": "696272f5a0775c42af66e4f7acd7b3cedd21f9670d5ec31890aaf73c4e39dee1",
     "causalos/web/policy-comparison.svg": "10d8906c5c544983279d91c5f3f73779921c1d67f5aa7684d89f93838df61ca5",
     "causalos/web/styles.css": "812d8238d5b910298f32be2c749e73ca13ba8a226d92ef584667814fd8195d16",
     "docs/demo/check_parity.cjs": "3335edbf403eb1171f0b70a4ee53e6bc73332420409f424d4ebc4742ca7565c6",
     "docs/demo/demo-api.js": "dfb2217a58576d596b05e030c7fccec768395fd42b781f14968da0af33de2577",
-    "examples/build_demo.py": "eadc9e27fe7ae79d934a22593425f7292b07435b031341ef7e84580e46e3d4cd"
+    "examples/build_demo.py": "65fb2d7564a10ac25c657083145ad20c083597e0efd344db38b320e4b383a73f"
   }
 }
