@@ -1,0 +1,5 @@
+# Reopened analysis capture · 0.1.2.dev0
+
+[The desktop capture](../assets/reopened-analysis-0.1.2-dev.png) shows the installed local laboratory at 1280 × 1000 pixels after importing a synthetic 800-row CSV and opening its redacted seed-73 record. The saved question specifies treatment T, outcome Y, adjustment X, and the recorded X → T, X → Y and T → Y graph. Loading a dataset does not itself verify that it matches a saved record; replay checks the recorded binding. The image is an actual local browser capture of a synthetic workflow, not evidence of real-world causal validity.
+
+Capture SHA-256: `b521e6301232ede62acab2d10a6a704351a66eb7fed6990eba60fdd232c7c705`. Rendered application source SHA-256: `causalos/web/app.js` `1d09a5e4284699073053078b82c3c77a73ffac652d45e3b6375c592c5cede3c2`; `causalos/web/evidence.js` `cd2a9b47a3c44de8606b1eb26727e8e480dd12faf5e9fccd4d8985f27e485b8d`; `causalos/web/index.html` `1a79907c3f3333087b8e5ae29c18df789207b56acd7aed6a326a6147af6d22e3`; `causalos/web/styles.css` `17ea562018138591dcbe6cdf792ddb91a1d67ca33d055ec8f83682ff58538022`.

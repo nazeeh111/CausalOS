@@ -138,7 +138,9 @@
       if(path==='/api/counterfactual')return json(counterfactual(body));
       if(path==='/api/benchmarks')return json(fixtures.benchmarks);
       if(path==='/api/report'){
-        const report={format:'causalos-public-replay-evidence-v1',created_utc:new Date().toISOString(),software:{causalos:fixtures.version,mode:'public reproducible replay'},public_replay_limits:localOnly,...body,reproducibility:{...body.reproducibility,public_fixture_source:fixtures.reproducibility,seed:42}};
+        if(body.run!=null)return json({detail:'Analysis-run files require the local Python application. Public replay reports contain recorded examples only.'},422);
+        const entry=Object.values(fixtures.examples).find(e=>canonical(e.data)===canonical(body.data)&&canonical(e.question)===canonical(body.question));
+        const report={...body,format:'causalos-public-replay-evidence-v1',created_utc:new Date().toISOString(),software:{causalos:fixtures.version,mode:'public reproducible replay'},public_replay_limits:localOnly,analysis:entry?clone(entry.analysis):null,analysis_origin:entry?'precomputed bundled example':'no matching recorded analysis',reproducibility:{...body.reproducibility,public_fixture_source:fixtures.reproducibility,seed:42}};
         if(url.searchParams.get('format')==='json')return json(report);
         return new Response('<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CAUSALOS public replay evidence</title><style>body{font:15px/1.6 system-ui;max-width:1000px;margin:40px auto;padding:24px;color:#243132;background:#f5f4ee}h1{font:48px Georgia}pre{background:white;border:1px solid #dce0d2;padding:20px;white-space:pre-wrap;overflow-wrap:anywhere;font:11px/1.6 monospace}</style><h1>CAUSALOS</h1><p>Public reproducible replay. Built-in analyses are precomputed. Simulated experimental evidence is conditional on specified structural models.</p><pre>'+htmlEscape(JSON.stringify(report,null,2))+'</pre></html>',{headers:{'Content-Type':'text/html'}});
       }

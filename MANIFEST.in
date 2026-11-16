@@ -6,6 +6,7 @@ recursive-include docs *.md *.bib
 include docs/nsw-evidence.html docs/nsw-evidence.json
 recursive-include assets *.svg
 include assets/lab-v*.png
+include assets/reopened-analysis-0.1.2-dev.png
 recursive-include assets/launch *.html *.py *.md *.txt *.json
 recursive-exclude assets/launch/composition/assets *
 global-exclude __pycache__ *.py[cod] .DS_Store

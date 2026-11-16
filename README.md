@@ -4,7 +4,7 @@
 
 CausalOS is a local causal-analysis and experimental-design laboratory. Compare causal explanations, inspect identifying assumptions, estimate eligible effects, challenge them, and choose a simulated experiment that could resolve uncertainty.
 
-**Research preview · v0.1.1.** Causal conclusions remain conditional on explicit assumptions. Observational structure search returns graph hypotheses. The intervention replay is a labeled simulation, not a real-world experiment.
+**Research preview · unreleased v0.1.2.dev0.** Causal conclusions remain conditional on explicit assumptions. Observational structure search returns graph hypotheses. The intervention replay is a labeled simulation, not a real-world experiment.
 
 ![The CausalOS laboratory with the current causal question and simulated evidence](assets/lab-v0.1.1-desktop.png)
 
@@ -39,6 +39,80 @@ Open [localhost:8000](http://127.0.0.1:8000). On Windows activate with `.venv\Sc
 4. Compare regression, propensity weighting, augmented weighting and cross-fitted double machine learning. Inspect intervals, covariate balance, overlap, placebo and subset checks, and omitted-confounder sensitivity.
 5. Explore competing structural models in the experiment workspace. Rank affordable interventions, simulate a result and replay posterior learning.
 6. Export an HTML or JSON evidence record with assumptions, limitations, dataset fingerprint and software versions.
+
+## Save, reopen and replay an analysis
+
+![A reopened synthetic analysis showing its saved question and graph](assets/reopened-analysis-0.1.2-dev.png)
+
+*The reopened seed-73 synthetic record shows T → Y adjusted for X and its recorded graph. [Capture context](docs/reopened-capture.md).*
+
+`causalos analyze` now returns a versioned analysis-run bundle. One immutable
+record contains the question, assumptions, requested or default seed, input digest,
+numerical source/runtime identity, estimates and any refusal. The original causal
+engine and scientific limitations are unchanged. Raw rows are omitted by default:
+
+```sh
+causalos analyze data.csv --question question.json --out run.json --report evidence.html
+causalos run-open run.json --report reopened.html
+causalos run-replay run.json --csv data.csv --out replay-check.json
+```
+
+Use `--include-data` on `analyze` only when you want raw scalar rows embedded in
+the saved file. Such a file can replay without `--csv`. Keep it private unless
+sharing the rows is appropriate. Reports always omit the bundle's embedded raw
+table; questions, column names, results and aggregate diagnostics can still be
+sensitive. An omitted dataset cannot be recovered from its digest.
+
+The Causal analysis screen has **Save record**, **Open record** and **Replay saved
+analysis** controls. Including raw rows is an explicit checkbox, off by default.
+The report exports the saved snapshot; editing the current question or loading a
+new dataset does not rewrite that record. Opening a file displays saved estimates
+or refusals and marks externally supplied results unverified. Replay requires the
+same original input and recorded numerical source/runtime, then compares all
+result/refusal fields with relative tolerance 1e-9 and absolute tolerance 1e-12.
+Mismatches, unavailable data and changed software are explicit outcomes, never a
+silent replacement. A blocked causal analysis is a valid replayable record.
+
+New API routes are `POST /api/runs/open`, `/api/runs/save` and `/api/runs/replay`,
+accepting `{"run": "<original run JSON text>"}` with optional matching `data` records.
+The API returns `run` as opaque JSON text; retain/send/download that text without
+parsing and reserializing it in JavaScript. Display-only estimates are separate.
+This preserves exact JSON number types and digests, including large integers. Save defaults
+to omitting raw rows; `include_data:true` is required to embed them. `/api/analyze`
+retains its existing result fields and adds `run`. `/api/report` accepts that
+`run` and checks any supplied data/question against it; independent `analysis`
+objects are rejected. Existing simulation-only reports remain supported.
+
+Content hashes detect inconsistency, not authorship, malicious re-signing, or
+causal validity. The local API remembers at most 16 computed/replayed records in
+memory. Imported, evicted or restarted-session records are explicitly unverified
+until replay succeeds; no persistent server database or authentication promise is
+implied. Matching recorded versions/binaries/platform does not guarantee identical
+hardware floating-point behavior, so replay still checks the actual outputs.
+New local run/report outputs publish complete files without overwriting existing
+paths. Run files contain JSON only and never execute code or choose server paths.
+
+
+Run admission uses one detached scalar snapshot before DataFrame inference. The
+snapshot's exact integers, booleans, nulls, row order and column order define its
+identity. Integers not exactly representable by this float64 numerical engine
+are refused, including9007199254740993; use an explicit audited transformation
+rather than silent rounding. Existing DataFrames can only bind the scalar values
+they currently contain, not recover values lost before calling CausalOS. Pandas
+missing values normalize to null; infinities are refused instead of silently
+becoming missing values.
+Analysis/replay CSV input now parses finite numeric lexemes explicitly, preserves
+integer and boolean values, and treats empty cells as null; other text, including
+NA, remains text. CSV and run files are limited to24 MiB.
+
+All local API POST requests have a24 MiB **complete HTTP JSON envelope** limit,
+checked on declared and actual streamed bytes before JSON parsing. This includes
+opaque run-text escaping and any optional matching rows; a file close to the file
+limit can require the CLI instead. Unknown run/report request fields are refused.
+Replay compares software and all integer/boolean/structural fields exactly.
+Floating tolerance is restricted to named numerical measurements (estimates,
+interval endpoints, overlap/balance and sensitivity outputs); confidence levels,
+sensitivity-grid parameters and assumptions compare exactly.
 
 ## Reproduce an analysis
 
