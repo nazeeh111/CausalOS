@@ -483,4 +483,34 @@ summary { cursor:pointer; color:var(--blue); font-size:12px; padding:8px 0; }
   *,*::before,*::after { animation:none!important; transition:none!important; scroll-behavior:auto!important; }
 }
 
+.analysis-record{margin:24px 0}.record-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}#run-record-status{font-weight:600;overflow-wrap:anywhere}
+
+/* Preserve the research-desk character while keeping evidence readable. */
+.sidebar-bottom, .local-pill, .simulation-tag, .experiment-brief .eyebrow,
+.panel-top .eyebrow, .tag, .candidate-stat > span, .candidate-stat b small,
+.action-bottom .eyebrow, .history-label small, .history-result small,
+.method-note > span, .footer, .overview-card span, .detail-label,
+.subsection > .eyebrow, .research-findings .eyebrow, .posterior-key {
+  font-size: 11px;
+}
+.assumption { font-size: 13px; }
+.assumption small { font-size: 12px; }
+#import-graph + #export-graph { margin-left: 14px; }
+@media (max-width: 720px) {
+  .crumb, .candidate .action-spec, .budget-block > span:last-child,
+  .posterior-label { font-size: 11px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .button, .nav-item { transition: none; }
+}
+
+/* Keep scientific labels readable at the native 700-unit chart width. */
+.effect-chart-scroll{max-width:100%;overflow-x:auto;margin-bottom:16px}
+.effect-chart-scroll:focus-visible{outline:2px solid var(--blue);outline-offset:-2px}
+.effect-chart-scroll .effect-plot{min-width:700px;margin:0}
+.effect-chart-scroll .chart-axis{font-size:12px}
+
+/* Analysis-run persistence requires the local Python runtime. */
+.analysis-record{display:none}
+
 .public-demo-banner{position:sticky;top:0;z-index:100;background:#253dc1;color:#fff;padding:10px 24px;display:flex;justify-content:center;align-items:center;gap:18px;font-size:11px;line-height:1.6}.public-demo-banner strong{font:9px var(--mono);letter-spacing:.6px}.public-demo-banner a{color:#e1eaa8;white-space:nowrap}.sidebar{top:var(--demo-banner-height,38px)}.public-demo-banner+.shell{min-height:calc(100vh - 38px)}@media(max-width:1100px){.sidebar{top:var(--demo-banner-height,56px)}.public-demo-banner{padding:10px 20px;gap:12px}.public-demo-banner strong{max-width:140px}}@media(max-width:760px){.public-demo-banner{padding:12px 16px;gap:5px 12px;flex-wrap:wrap;justify-content:flex-start;font-size:10px}.public-demo-banner strong{font-size:9px;max-width:none}.public-demo-banner span{flex-basis:100%;order:2}.public-demo-banner a{margin-left:auto}.sidebar{top:auto}}

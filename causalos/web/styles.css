@@ -482,3 +482,30 @@ summary { cursor:pointer; color:var(--blue); font-size:12px; padding:8px 0; }
 @media(prefers-reduced-motion:reduce) {
   *,*::before,*::after { animation:none!important; transition:none!important; scroll-behavior:auto!important; }
 }
+
+.analysis-record{margin:24px 0}.record-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}#run-record-status{font-weight:600;overflow-wrap:anywhere}
+
+/* Preserve the research-desk character while keeping evidence readable. */
+.sidebar-bottom, .local-pill, .simulation-tag, .experiment-brief .eyebrow,
+.panel-top .eyebrow, .tag, .candidate-stat > span, .candidate-stat b small,
+.action-bottom .eyebrow, .history-label small, .history-result small,
+.method-note > span, .footer, .overview-card span, .detail-label,
+.subsection > .eyebrow, .research-findings .eyebrow, .posterior-key {
+  font-size: 11px;
+}
+.assumption { font-size: 13px; }
+.assumption small { font-size: 12px; }
+#import-graph + #export-graph { margin-left: 14px; }
+@media (max-width: 720px) {
+  .crumb, .candidate .action-spec, .budget-block > span:last-child,
+  .posterior-label { font-size: 11px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .button, .nav-item { transition: none; }
+}
+
+/* Keep scientific labels readable at the native 700-unit chart width. */
+.effect-chart-scroll{max-width:100%;overflow-x:auto;margin-bottom:16px}
+.effect-chart-scroll:focus-visible{outline:2px solid var(--blue);outline-offset:-2px}
+.effect-chart-scroll .effect-plot{min-width:700px;margin:0}
+.effect-chart-scroll .chart-axis{font-size:12px}

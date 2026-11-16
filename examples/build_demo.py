@@ -45,9 +45,14 @@ def build() -> None:
     if importer not in html:
         raise ValueError('Canonical CSV control changed; review the public replay adaptation.')
     html = html.replace(importer, local_link)
+    record_panel = '<article class="panel analysis-record">'
+    if html.count(record_panel) != 1:
+        raise ValueError('Canonical saved-record panel changed; review the public replay adaptation.')
+    html = html.replace(record_panel, '<p class="info-banner public-record-limits" role="note">Built-in estimates are precomputed, conditional on the recorded assumptions. Save, open and replay analysis-run files in the local Python application. Export report keeps this public replay\'s current recorded analysis and simulation context.</p>'+record_panel)
     html = html.replace('<title>CausalOS Lab', '<title>CausalOS Public Replay')
     (target / "index.html").write_text(html)
     with (target / "styles.css").open('a') as f:
+        f.write('\n/* Analysis-run persistence requires the local Python runtime. */\n.analysis-record{display:none}\n')
         f.write('\n.public-demo-banner{position:sticky;top:0;z-index:100;background:#253dc1;color:#fff;padding:10px 24px;display:flex;justify-content:center;align-items:center;gap:18px;font-size:11px;line-height:1.6}.public-demo-banner strong{font:9px var(--mono);letter-spacing:.6px}.public-demo-banner a{color:#e1eaa8;white-space:nowrap}.sidebar{top:var(--demo-banner-height,38px)}.public-demo-banner+.shell{min-height:calc(100vh - 38px)}@media(max-width:1100px){.sidebar{top:var(--demo-banner-height,56px)}.public-demo-banner{padding:10px 20px;gap:12px}.public-demo-banner strong{max-width:140px}}@media(max-width:760px){.public-demo-banner{padding:12px 16px;gap:5px 12px;flex-wrap:wrap;justify-content:flex-start;font-size:10px}.public-demo-banner strong{font-size:9px;max-width:none}.public-demo-banner span{flex-basis:100%;order:2}.public-demo-banner a{margin-left:auto}.sidebar{top:auto}}\n')
 
     examples = {}

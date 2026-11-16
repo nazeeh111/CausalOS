@@ -7,6 +7,7 @@ This is the static GitHub Pages edition of CAUSALOS. The canonical application s
 - The evaluator bank covers recorded seed 42, budgets of 12, and all supplied action sequences. New random seeds, custom datasets, structure learning, and new fitted estimates require the local Python application.
 - Counterfactual comparisons implement the canonical four-SCM abduction/action/prediction formula for a hypothetical simulated unit. They do not predict an uploaded participant’s individual outcome.
 - Exported reports include current model states, recorded analyses, assumptions, and the build’s source hashes and Python/scientific package versions. Reports escape user text.
+- Analysis-run save/open/replay controls belong to the local Python application and are hidden in this static edition. A public report includes a precomputed analysis only when its complete dataset and question match a bundled fixture; changed questions cannot reuse it. Imported local run files are refused.
 
 The adaptation is numerically equivalent within floating-point tolerance, not bit-for-bit identical. An acquisition ranking may differ when multiple expected gains are effectively zero. Seven cross-language sequence checks had maximum absolute posterior/effect/utility error `3.70e-16`; one acquisition tie was below `1e-24`. All claim and model-risk decisions matched.
 
@@ -21,4 +22,4 @@ The build manifest records the Python and scientific package versions, all analy
 
 Browser smoke verification used the actual static replay: initial models loaded; intervention changed beliefs and budget; counterfactual predictions rendered; family challenge initialized and advanced; bundled regression/IPW/AIPW/DML results rendered; changing exchangeability cleared those results and blocked a new estimate.
 
-The presentation casing refresh reused the recorded analyses. Scientific source hashes, numeric payloads and the recorded analysis environment were preserved. Refreshed build-source hashes identify presentation assembly, not a new Python analysis run.
+The current local candidate rebuild executes the six bundled analyses and deterministic observation banks using its recorded Python environment. It preserves all historical study outputs. The build is a software replay check, not a new held-out policy study or verification of real-world causal assumptions.

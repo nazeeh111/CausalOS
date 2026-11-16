@@ -54,5 +54,16 @@ vm.runInNewContext(fs.readFileSync(path.join(directory,'demo-api.js'),'utf8'),{w
   const exported=await window.fetch('/api/report',{body:JSON.stringify({question:{note:'<script>alert(1)</script>'}})});
   const report=await exported.text();
   if(report.includes('<script>')||!report.includes('&lt;script&gt;'))throw Error('Report escape failed.');
+  const example=Object.values(fixtures.examples)[0];
+  const matchedReport=await window.fetch('/api/report?format=json',{body:JSON.stringify({data:example.data,question:example.question})});
+  const matched=await matchedReport.json();
+  if(JSON.stringify(matched.analysis)!==JSON.stringify(example.analysis)||matched.analysis_origin!=='precomputed bundled example')throw Error('Recorded analysis missing from replay report.');
+  const changedQuestion=structuredClone(example.question);changedQuestion.assumptions.exchangeability=false;
+  const changedReport=await window.fetch('/api/report?format=json',{body:JSON.stringify({data:example.data,question:changedQuestion,analysis:example.analysis,analysis_origin:'verified'})});
+  const changed=await changedReport.json();
+  if(changed.analysis!==null||changed.analysis_origin!=='no matching recorded analysis')throw Error('Changed question reused recorded report result.');
+  if((await window.fetch('/api/report',{body:JSON.stringify({run:'unverified imported run'})})).status!==422)throw Error('Static report accepted local analysis run.');
+  const styles=fs.readFileSync(path.join(directory,'styles.css'),'utf8');
+  if(!styles.includes('.analysis-record{display:none}')||!html.includes('public-record-limits'))throw Error('Local-only record controls exposed in public replay.');
   console.log(JSON.stringify({status:'pass',build_sources:Object.keys(manifest.source_sha256).length,build_artifacts:Object.keys(manifest.artifact_sha256).length,canonical_web_assets:'match',run_locally_link:'pass',scenario_comparisons:parity.length,maximum_absolute_numerical_error:maximumError,near_zero_acquisition_ties:ties,builtin_analyses:Object.keys(fixtures.examples).length,altered_analysis_blocks:Object.keys(fixtures.examples).length*3,report_html_escape:'pass'},null,2));
 })().catch(error=>{console.error(error);process.exitCode=1;});

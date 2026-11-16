@@ -40,7 +40,21 @@ def build_report(data: pd.DataFrame | None = None, question: dict | None = None,
                  analysis: dict | None = None, design: dict | None = None,
                  profile: dict | None = None, metadata: dict | None = None,
                  counterfactual: dict | None = None, evidence_design: dict | None = None,
-                 reproducibility: dict | None = None) -> dict:
+                 reproducibility: dict | None = None, *, run=None, run_verification="unverified_saved_result") -> dict:
+    run_record = None
+    if analysis is not None:
+        raise ValueError("Independent analysis cannot be bound to this report; supply its analysis run")
+    if run is not None:
+        from .runs import AnalysisRun
+        if not isinstance(run, AnalysisRun):
+            run = AnalysisRun.open(run)
+        else:
+            run = AnalysisRun.open(run.bundle())
+        run.check_inputs(data=data, question=question)
+        run_record = run.record
+        question, analysis = run_record["question"], run_record["analysis"]
+    if run_record is None and data is not None and not isinstance(data, pd.DataFrame):
+        data = pd.DataFrame(data)
     packages = {}
     for name in ("numpy", "scipy", "pandas", "scikit-learn", "statsmodels", "networkx", "duckdb"):
         try:
@@ -50,8 +64,11 @@ def build_report(data: pd.DataFrame | None = None, question: dict | None = None,
     return clean({
         "format": "causalos-evidence-v1", "created_utc": datetime.now(timezone.utc).isoformat(),
         "software": {"causalos": __version__, "python": platform.python_version(), "packages": packages},
-        "dataset": {"rows": len(data), "columns": list(data.columns), "sha256": fingerprint(data)}
-        if data is not None else None,
+        "dataset": run_record["dataset"] if run_record is not None else ({"rows": len(data), "columns": list(data.columns), "sha256": fingerprint(data)}
+        if data is not None else None),
+        "analysis_run": {"sha256": run.id, "verification": run_verification,
+                         "integrity_note": "Content hashes detect changes, not authorship or causal validity. Imported results require numerical replay.",
+                         "record": run_record} if run_record is not None else None,
         "source_metadata": metadata,
         "question": question, "analysis": analysis, "profile": profile, "experiment": design,
         "counterfactual": counterfactual,
@@ -74,7 +91,7 @@ def render_html(report: dict) -> str:
         return f"<section><h2>{html.escape(title)}</h2><pre>{text}</pre></section>"
 
     content = "".join(block(title, report.get(key)) for title, key in (
-        ("Interpretation boundaries", "interpretation"), ("Dataset provenance", "dataset"),
+        ("Analysis record and replay status", "analysis_run"), ("Interpretation boundaries", "interpretation"), ("Dataset provenance", "dataset"),
         ("Source and study metadata", "source_metadata"),
         ("Causal question and identifying assumptions", "question"), ("Analysis evidence", "analysis"),
         ("Data validation and SQL exploration", "profile"), ("Simulated sequential experiments", "experiment"),

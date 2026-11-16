@@ -1,38 +1,38 @@
 {
   "artifact_sha256": {
-    "README.md": "65f46a8065ceafdffd4aa1f56332ce988d28100574f93a7d90a221efef9ca7c4",
+    "README.md": "c7dc7953d09d804a11e51201d9fcce60f9977c5f4eaaf4d165114b2bc0cc5992",
     "analysis-results.png": "af95c6557b2e83b3749f775d76c748c4dbcc9c1f2a705eb62f28c8a9428cf8c3",
-    "app.js": "ba62a2b64b5ffcb8bac87f5e92806a741e2a6c2bcb0f91596f24d155f137baf6",
+    "app.js": "c94787c75b8cf69018c7c6aa84aa13da287d81538f98bf92bb0b1ba2b5110adf",
     "calibration-learning.svg": "3b12d0aacad7301fb108b9e5b3b01a7da56caa5761a1794df537663f793a910d",
-    "check_parity.cjs": "3335edbf403eb1171f0b70a4ee53e6bc73332420409f424d4ebc4742ca7565c6",
+    "check_parity.cjs": "420005862ae315320120e6af79f9103e00ae2ac8c085d953136c4cd0fd68915c",
     "counterfactual.js": "59b70369cfd823b8658a86ce63ce35c8b7ef294c31148c08b00550a7c30554c3",
-    "demo-api.js": "dfb2217a58576d596b05e030c7fccec768395fd42b781f14968da0af33de2577",
+    "demo-api.js": "8daecec3842b43926b75505d054efaac93da98bc155f1386c655bcdf7a298c9b",
     "evidence-comparison.svg": "a55fcab52058a64ea51dd63b4a27e3683fb1fe45d79f1fed07837f071d4f861a",
     "evidence.js": "4defc45f027b827053d53075f68f7af75f1c29ad9b633c7bab03e566e4064e29",
-    "fixtures.json": "3fd79786b0d5085a2edeb0f8d498684fe56bcfb655409a9acd0ff78abae15ae1",
-    "index.html": "1f6c91352f164e6a0553eaf32b38423b2782c496922b3883325786868adec440",
+    "fixtures.json": "210d6751a7290e9270cee5cc6d95487b87dd06d611cddf246d286503399b3ce4",
+    "index.html": "3c0860e1ef64d7b51d1c38a1b146abbd3794674e43485b77425cf992a4c1acb2",
     "observations.json": "824fafffea4038dd2f23886d145ce17e3cdcfd5a3896c17f4bae9dc6825ef13e",
     "parity.json": "c35ad1d44bc043290cc1210ba58efd6fa5b4a29e8e96d742825c2b6f6d3074b9",
     "policy-comparison.svg": "10d8906c5c544983279d91c5f3f73779921c1d67f5aa7684d89f93838df61ca5",
-    "styles.css": "3235fa79d5fdba944aed9b03e204655f3173ff20bcfeb2b04cb085796ed4ad0a"
+    "styles.css": "03847abe833063c6a3474a826407ba55b6e89c538a9633c045c9f9f694c7138d"
   },
   "environment": {
     "packages": {
-      "duckdb": "2.0.0",
-      "numpy": "2.5.4",
-      "pandas": "3.1.0",
+      "duckdb": "1.4.3",
+      "numpy": "2.5.2",
+      "pandas": "3.0.5",
       "scikit-learn": "1.9.1",
       "scipy": "1.18.1",
       "statsmodels": "0.15.0"
     },
-    "python": "3.12.14"
+    "python": "3.13.2"
   },
   "format": "causalos-public-replay-build-v1",
   "source_sha256": {
     "causalos/__init__.py": "301cf8277f3516401f84c96182a9d3ab78f334cacf1e2bac1a8ff2b69f1f660c",
-    "causalos/api.py": "e93162cbab87fa41c3975e025208170d6dba8aeeaece5d5a83a747b5593bac69",
+    "causalos/api.py": "fab7ecbff5d2da943773a1d09eaa8cfc44534b17d14a74e424802f7004333372",
     "causalos/benchmark.py": "7e195d9c38096831305d9a68a8a397d7c26107ba19768572fb1f61596abc3442",
-    "causalos/cli.py": "40dc7668a6de283487f8c027ee7b71bd83e28bd8a124938adbcf5061e9bbffb4",
+    "causalos/cli.py": "2d82322fc5b6dff2f4ea524bdd83830da8605f04070c3c7a9f9db62293e91e85",
     "causalos/core.py": "23d2d48e38f5f95766309c348eec537eb9456b8ce7369310923d2854129051ab",
     "causalos/counterfactual.py": "c5d61d1e2a00b32be15cee4dc2d51f7c638f6005064fac29a030164b1a3859b6",
     "causalos/datasets.py": "a9e85d2597e36ce9c55223462b55de06ca8274b9e4a7701fb57ec28b82646ae4",
@@ -40,22 +40,23 @@
     "causalos/discovery.py": "ff940bd6bdc746fa3cb12ef38ed1099166f51f56ad9b91777e9ff2b98e7e15a4",
     "causalos/evidence_design.py": "1c3ad2802fe037fb8466276be56e3a2b6b7be8319b5ec7b91272812de7bcb31b",
     "causalos/profiling.py": "3857d34320448ce9edbb1b0e345b687f7d58f49ce7c36c229bc460883569cac4",
-    "causalos/report.py": "15a3b94652da1eb5cf5ef39a807eb9d17b7b070e544dc566321eb35b261f8464",
+    "causalos/report.py": "f6ca939c1503afdc56d5fe3c5bc221e005e990d2fc4792fb46334d256b5706ea",
     "causalos/resources/benchmark_summary.json": "b007ebb17e1cafa798a4106ad969f596b0ceb11c069a80f856fbef5c8360b0cd",
     "causalos/resources/data/CAUSALDATA_LICENSE.txt": "3e8e36da6816ff0cabff3b3ada5fc9f48706c6bfd8ba479cfe669932c4a5b7b9",
     "causalos/resources/data/nsw-provenance.json": "5bd45bac9f01dad8ebb4a4bc298f808e9fe56c3bf91ec901e60fe62740f3ec58",
     "causalos/resources/data/nsw.csv": "72efd333a4b94a2bee55149d3542021d0adde03201d010ebe971e3e863360cd6",
+    "causalos/runs.py": "e00ae5f8ce51fae9e3aad23b79f03c5f00dabc82670b1d1a7ba75c3a0e472c7a",
     "causalos/web/analysis-results.png": "af95c6557b2e83b3749f775d76c748c4dbcc9c1f2a705eb62f28c8a9428cf8c3",
-    "causalos/web/app.js": "ba62a2b64b5ffcb8bac87f5e92806a741e2a6c2bcb0f91596f24d155f137baf6",
+    "causalos/web/app.js": "c94787c75b8cf69018c7c6aa84aa13da287d81538f98bf92bb0b1ba2b5110adf",
     "causalos/web/calibration-learning.svg": "3b12d0aacad7301fb108b9e5b3b01a7da56caa5761a1794df537663f793a910d",
     "causalos/web/counterfactual.js": "59b70369cfd823b8658a86ce63ce35c8b7ef294c31148c08b00550a7c30554c3",
     "causalos/web/evidence-comparison.svg": "a55fcab52058a64ea51dd63b4a27e3683fb1fe45d79f1fed07837f071d4f861a",
     "causalos/web/evidence.js": "4defc45f027b827053d53075f68f7af75f1c29ad9b633c7bab03e566e4064e29",
-    "causalos/web/index.html": "696272f5a0775c42af66e4f7acd7b3cedd21f9670d5ec31890aaf73c4e39dee1",
+    "causalos/web/index.html": "91e2f6cd99ddcfd157c885fac4ddaa359719e9243f0e53f5ce350609d930f87d",
     "causalos/web/policy-comparison.svg": "10d8906c5c544983279d91c5f3f73779921c1d67f5aa7684d89f93838df61ca5",
-    "causalos/web/styles.css": "812d8238d5b910298f32be2c749e73ca13ba8a226d92ef584667814fd8195d16",
-    "docs/demo/check_parity.cjs": "3335edbf403eb1171f0b70a4ee53e6bc73332420409f424d4ebc4742ca7565c6",
-    "docs/demo/demo-api.js": "dfb2217a58576d596b05e030c7fccec768395fd42b781f14968da0af33de2577",
-    "examples/build_demo.py": "65fb2d7564a10ac25c657083145ad20c083597e0efd344db38b320e4b383a73f"
+    "causalos/web/styles.css": "b5943a4060773d3abefd2fe4acdde4028885173d8426fa41b4ebd740659cb985",
+    "docs/demo/check_parity.cjs": "420005862ae315320120e6af79f9103e00ae2ac8c085d953136c4cd0fd68915c",
+    "docs/demo/demo-api.js": "8daecec3842b43926b75505d054efaac93da98bc155f1386c655bcdf7a298c9b",
+    "examples/build_demo.py": "21f054dcc3f56463b0e5f65851dc3eb70646393fef3a41316dd46c89a8a2642e"
   }
 }

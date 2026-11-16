@@ -2,20 +2,67 @@
 from __future__ import annotations
 
 import json
+from collections import OrderedDict
+import threading
 from pathlib import Path
 from typing import Any, Literal
 
 import pandas as pd
 from fastapi import FastAPI, HTTPException
-from fastapi.responses import HTMLResponse
+from fastapi.responses import HTMLResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
-from pydantic import BaseModel, Field, field_validator
+from pydantic import BaseModel, ConfigDict, Field, field_validator
 
-from causalos import __version__, core, datasets, design, profiling
+from causalos import __version__, datasets, design, profiling
 from causalos.report import build_report, clean, render_html
+from causalos.runs import MAX_RUN_BYTES, AnalysisRun, canonical, create_run, replay_run
 
 ROOT = Path(__file__).resolve().parent
 app = FastAPI(title="CAUSALOS LAB", version=__version__, description="Local causal evidence laboratory")
+
+
+MAX_HTTP_BYTES = MAX_RUN_BYTES
+
+
+class BoundedRequestBody:
+    """Admit complete bounded wire bytes before FastAPI allocates JSON objects."""
+    def __init__(self, app):
+        self.app = app
+
+    async def __call__(self, scope, receive, send):
+        if scope["type"] != "http" or scope["method"] != "POST" or not scope["path"].startswith("/api/"):
+            return await self.app(scope, receive, send)
+        declared = dict(scope.get("headers", [])).get(b"content-length")
+        try:
+            oversized = declared is not None and (int(declared) < 0 or int(declared) > MAX_HTTP_BYTES)
+        except ValueError:
+            return await JSONResponse({"detail": "Invalid Content-Length"}, status_code=400)(scope, receive, send)
+        if oversized:
+            return await JSONResponse({"detail": "HTTP JSON envelope exceeds24 MiB, including run text and optional data"}, status_code=413)(scope, receive, send)
+        chunks, size = [], 0
+        while True:
+            message = await receive()
+            if message["type"] == "http.disconnect":
+                return
+            chunk = message.get("body", b"")
+            size += len(chunk)
+            if size > MAX_HTTP_BYTES:
+                return await JSONResponse({"detail": "HTTP JSON envelope exceeds24 MiB, including run text and optional data"}, status_code=413)(scope, receive, send)
+            chunks.append(chunk)
+            if not message.get("more_body", False):
+                break
+        body = b"".join(chunks)
+        delivered = False
+        async def bounded_receive():
+            nonlocal delivered
+            if not delivered:
+                delivered = True
+                return {"type": "http.request", "body": body, "more_body": False}
+            return await receive()
+        return await self.app(scope, bounded_receive, send)
+
+
+app.add_middleware(BoundedRequestBody)
 
 
 class DataRequest(BaseModel):
@@ -37,7 +84,9 @@ class DataRequest(BaseModel):
 
 
 class AnalysisRequest(DataRequest):
+    model_config = ConfigDict(extra="forbid")
     question: dict[str, Any]
+    include_data: bool = False
 
 
 class DiscoveryRequest(DataRequest):
@@ -57,9 +106,16 @@ class StepRequest(BaseModel):
 
 
 class ReportRequest(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    @field_validator("data")
+    @classmethod
+    def scalar_data(cls, value):
+        return DataRequest(data=value).data if value is not None else None
+
     data: list[dict[str, Any]] | None = None
     question: dict | None = None
     analysis: dict | None = None
+    run: str | dict | None = None
     design: dict | None = None
     profile: dict | None = None
     metadata: dict | None = None
@@ -124,7 +180,70 @@ def profile_data(body: DataRequest):
 
 @app.post("/api/analyze")
 def analyze(body: AnalysisRequest):
-    return safe(core.analyze, pd.DataFrame(body.data), body.question)
+    run = safe(create_run, body.data, body.question, include_data=body.include_data)
+    remember(run, "computed_in_this_process")
+    return {**run.record["analysis"], "run": canonical(run.bundle(include_data=body.include_data)).decode("utf-8")}
+
+
+# Only this process can attest that it computed/replayed these bytes. Portable
+# hashes alone never promote imported client estimates to verified evidence.
+_RUNS = OrderedDict()
+_RUN_LOCK = threading.Lock()
+
+
+def remember(run, status):
+    with _RUN_LOCK:
+        _RUNS[run.id] = (run.bundle(), status)
+        _RUNS.move_to_end(run.id)
+        while len(_RUNS) > 16:
+            _RUNS.popitem(last=False)
+
+
+def verification(run):
+    with _RUN_LOCK:
+        entry = _RUNS.get(run.id)
+        return entry[1] if entry is not None and entry[0] == run.bundle() else "unverified_saved_result"
+
+
+class RunRequest(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    @field_validator("data")
+    @classmethod
+    def scalar_data(cls, value):
+        return DataRequest(data=value).data if value is not None else None
+
+    run: str | dict
+    data: list[dict[str, Any]] | None = None
+    include_data: bool = False
+
+
+@app.post("/api/runs/open")
+def open_analysis_run(body: RunRequest):
+    run = safe(AnalysisRun.open, body.run)
+    return {"run": canonical(run.bundle(include_data=True)).decode("utf-8"),
+            "question": run.record["question"], "analysis": run.record["analysis"], "verification": verification(run),
+            "contains_raw_data": run.bundle(include_data=True)["data"] is not None}
+
+
+@app.post("/api/runs/save")
+def save_analysis_run(body: RunRequest):
+    run = safe(AnalysisRun.open, body.run)
+    if body.include_data and body.data is not None:
+        run = safe(run.with_data, body.data)
+    if body.include_data and run.bundle(include_data=True)["data"] is None:
+        raise HTTPException(422, "Matching data is required to include raw rows")
+    return {"run": canonical(run.bundle(include_data=body.include_data)).decode("utf-8"),
+            "contains_raw_data": body.include_data}
+
+
+@app.post("/api/runs/replay")
+def replay_analysis_run(body: RunRequest):
+    run = safe(AnalysisRun.open, body.run)
+    data = body.data
+    result = safe(replay_run, run, data)
+    if result["status"] == "matched":
+        remember(run, "replayed_in_this_process")
+    return result
 
 
 @app.post("/api/discover")
@@ -198,8 +317,10 @@ def step_evidence(body: EvidenceStepRequest):
 def report(body: ReportRequest, format: str = "html"):
     data = None
     if body.data is not None:
-        data = pd.DataFrame(DataRequest(data=body.data).data)
-    result = build_report(data=data, question=body.question, analysis=body.analysis,
+        data = body.data
+    run = safe(AnalysisRun.open, body.run) if body.run is not None else None
+    result = safe(build_report, data=data, question=body.question, analysis=body.analysis,
+                          run=run, run_verification=verification(run) if run is not None else "unverified_saved_result",
                           design=body.design, profile=body.profile, metadata=body.metadata,
                           counterfactual=body.counterfactual, evidence_design=body.evidence_design,
                           reproducibility=body.reproducibility)
