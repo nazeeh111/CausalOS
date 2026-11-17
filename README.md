@@ -6,7 +6,14 @@ CausalOS is a local causal-analysis and experimental-design laboratory. Compare 
 
 **Research preview · unreleased v0.1.2.dev0.** Causal conclusions remain conditional on explicit assumptions. Observational structure search returns graph hypotheses. The intervention replay is a labeled simulation, not a real-world experiment.
 
-![The CausalOS laboratory with the current causal question and simulated evidence](assets/lab-v0.1.1-desktop.png)
+<picture>
+  <source media="(max-width: 600px)" srcset="docs/presentation/question-first-mobile.png">
+  <img src="docs/presentation/question-first.png" alt="Actual finite-model simulation: the B probe offers 0.693 nats of graph information but no A-to-Y query information. The selected A probe offers 0.289 nats of query information. Six simulated experiments spend 12 budget units and yield a zero-effect claim conditional on the supplied four-model family.">
+</picture>
+
+**Resolving an unrelated edge need not resolve the causal question.** In the built-in seed-42 scenario, both A → Y and Y → A explain the same observational distribution. The cheaper B–Z probe gives more whole-model information, yet no information about A → Y. The selected A interventions update that question instead. The final zero-effect claim depends on the supplied four-model family, equal prior, known Gaussian likelihoods, perfect interventions and the decision rule. It is a simulated decision, not real-world causal identification or evidence of general policy advantage.
+
+[Follow the completed replay](docs/presentation/README.md) · [Raw states and provenance](docs/presentation/provenance.json) · [Vector figure](docs/presentation/question-first.svg) · [Actual current laboratory](docs/presentation/laboratory-current.png)
 
 [Try the interactive public replay](https://nazeeh111.github.io/CausalOS/demo/) · [Run the laboratory](#run-the-laboratory) · [Read the research report](docs/research.md)
 

@@ -1,0 +1,159 @@
+{
+  "selected": "a-low",
+  "ranked": [
+    {
+      "id": "a-low",
+      "label": "Intervene on A",
+      "target": "A",
+      "value": 1.0,
+      "readout": "Y",
+      "n": 8,
+      "cost": 2.0,
+      "mean_predictions": [
+        0.5739524441142261,
+        0.5739524441142261,
+        0.0,
+        0.0
+      ],
+      "standard_errors": [
+        0.28952085242157133,
+        0.28952085242157133,
+        0.35355339059327373,
+        0.35355339059327373
+      ],
+      "standard_error": 0.32153712150742253,
+      "kind": "intervention",
+      "expected_information_gain": 0.28900139918416046,
+      "expected_query_information_gain": 0.2890013991841607,
+      "expected_decision_gain": 0.31569693629021645,
+      "predictive_variance": 0.18676651401963013,
+      "score": 0.20847044270648016,
+      "affordable": true
+    },
+    {
+      "id": "a-high",
+      "label": "High-dose intervention on A",
+      "target": "A",
+      "value": 2.0,
+      "readout": "Y",
+      "n": 20,
+      "cost": 5.0,
+      "mean_predictions": [
+        1.1479048882284522,
+        1.1479048882284522,
+        0.0,
+        0.0
+      ],
+      "standard_errors": [
+        0.18310906475312824,
+        0.18310906475312824,
+        0.22360679774997896,
+        0.22360679774997896
+      ],
+      "standard_error": 0.2033579312515536,
+      "kind": "intervention",
+      "expected_information_gain": 0.6861201491956692,
+      "expected_query_information_gain": 0.6861201491956694,
+      "expected_decision_gain": 0.49694082995728944,
+      "predictive_variance": 0.37118587290207655,
+      "score": 0.1979724273397176,
+      "affordable": true
+    },
+    {
+      "id": "y-probe",
+      "label": "Reverse-direction probe",
+      "target": "Y",
+      "value": 1.0,
+      "readout": "A",
+      "n": 8,
+      "cost": 2.2,
+      "mean_predictions": [
+        0.0,
+        0.0,
+        0.5739524441142261,
+        0.5739524441142261
+      ],
+      "standard_errors": [
+        0.35355339059327373,
+        0.35355339059327373,
+        0.28952085242157133,
+        0.28952085242157133
+      ],
+      "standard_error": 0.32153712150742253,
+      "kind": "intervention",
+      "expected_information_gain": 0.28900139918416046,
+      "expected_query_information_gain": 0.2890013991841607,
+      "expected_decision_gain": 0.31569693629021645,
+      "predictive_variance": 0.18676651401963013,
+      "score": 0.1895185842786183,
+      "affordable": true
+    },
+    {
+      "id": "measurement",
+      "label": "Additional observational measurement",
+      "target": "observe",
+      "value": 0.0,
+      "readout": "A",
+      "n": 16,
+      "cost": 0.5,
+      "mean_predictions": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "standard_errors": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "standard_error": 0.25,
+      "kind": "measurement",
+      "expected_information_gain": 0.0,
+      "expected_query_information_gain": 0.0,
+      "expected_decision_gain": 0.0,
+      "predictive_variance": 0.0625,
+      "score": 0.0,
+      "affordable": true
+    },
+    {
+      "id": "b-probe",
+      "label": "Nuisance-graph probe",
+      "target": "B",
+      "value": 2.0,
+      "readout": "Z",
+      "n": 16,
+      "cost": 0.8,
+      "mean_predictions": [
+        1.6,
+        0.0,
+        1.6,
+        0.0
+      ],
+      "standard_errors": [
+        0.14999999999999997,
+        0.25,
+        0.14999999999999997,
+        0.25
+      ],
+      "standard_error": 0.19999999999999998,
+      "kind": "intervention",
+      "expected_information_gain": 0.6930709031981177,
+      "expected_query_information_gain": 0.0,
+      "expected_decision_gain": 0.0,
+      "predictive_variance": 0.6825000000000001,
+      "score": 0.0,
+      "affordable": true
+    }
+  ],
+  "policy": "causalos",
+  "reason": "Maximize expected reduction in decision regret and query uncertainty per experiment cost.",
+  "parameters": {
+    "decision_weight": 0.0,
+    "query_weight": 1.0,
+    "cost_power": 1.0,
+    "graph_weight": 0.0
+  },
+  "simulated": true
+}

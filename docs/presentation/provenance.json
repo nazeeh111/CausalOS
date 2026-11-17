@@ -1,0 +1,34 @@
+{
+  "base_commit": "1f25fabdf066358cd56963acddaa647f5349bc5c",
+  "base_tree": "221bde7ca7eccd6d9ae510ea021dc75ab0105e4b",
+  "seed": 42,
+  "scenario": "fork",
+  "policy": "causalos",
+  "policy_parameters": {
+    "decision_weight": 0.0,
+    "query_weight": 1.0,
+    "cost_power": 1.0,
+    "graph_weight": 0.0
+  },
+  "data": "actual bounded built-in simulation, not a benchmark or real experiment",
+  "source_sha256": {
+    "causalos/design.py": "e95db6dd2bfe9fe2f4dee1c818ba3582861e479f653752dc492ac1c6099a3850",
+    "causalos/api.py": "fab7ecbff5d2da943773a1d09eaa8cfc44534b17d14a74e424802f7004333372",
+    "causalos/cli.py": "2d82322fc5b6dff2f4ea524bdd83830da8605f04070c3c7a9f9db62293e91e85"
+  },
+  "simulation_stopped_when": "No candidate affordable",
+  "selected_query": "Does setting A to +1 increase Y enough to justify cost rho/2?",
+  "no_training_study": true,
+  "runtime": {
+    "python": "3.13.2 (v3.13.2:4f8bb3947cf, Feb  4 2025, 11:51:10) [Clang 15.0.0 (clang-1500.3.9.4)]",
+    "packages": {
+      "numpy": "2.5.5",
+      "scipy": "1.18.1",
+      "pandas": "3.1.1",
+      "scikit-learn": "1.9.1",
+      "statsmodels": "0.15.0",
+      "fastapi": "0.163.1",
+      "matplotlib": "3.11.2"
+    }
+  }
+}
