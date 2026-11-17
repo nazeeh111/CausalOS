@@ -1,0 +1,269 @@
+{
+  "schema_version": 1,
+  "scenario": "fork",
+  "rho": 0.5739524441142261,
+  "nodes": [
+    "A",
+    "Y",
+    "B",
+    "Z"
+  ],
+  "hypotheses": [
+    {
+      "id": "h0",
+      "label": "A \u2192 Y / B \u2192 Z",
+      "edges": [
+        [
+          "A",
+          "Y"
+        ],
+        [
+          "B",
+          "Z"
+        ]
+      ],
+      "effect": 0.5739524441142261,
+      "posterior": 1.5615768219287814e-24
+    },
+    {
+      "id": "h1",
+      "label": "A \u2192 Y / Z \u2192 B",
+      "edges": [
+        [
+          "A",
+          "Y"
+        ],
+        [
+          "Z",
+          "B"
+        ]
+      ],
+      "effect": 0.5739524441142261,
+      "posterior": 0.5
+    },
+    {
+      "id": "h2",
+      "label": "Y \u2192 A / B \u2192 Z",
+      "edges": [
+        [
+          "Y",
+          "A"
+        ],
+        [
+          "B",
+          "Z"
+        ]
+      ],
+      "effect": 0.0,
+      "posterior": 1.5615768219287814e-24
+    },
+    {
+      "id": "h3",
+      "label": "Y \u2192 A / Z \u2192 B",
+      "edges": [
+        [
+          "Y",
+          "A"
+        ],
+        [
+          "Z",
+          "B"
+        ]
+      ],
+      "effect": 0.0,
+      "posterior": 0.5
+    }
+  ],
+  "posterior": [
+    1.5615768219287814e-24,
+    0.5,
+    1.5615768219287814e-24,
+    0.5
+  ],
+  "history": [
+    {
+      "round": 1,
+      "action_id": "b-probe",
+      "label": "Nuisance-graph probe",
+      "observation": 0.031912713587226756,
+      "readout": "Z",
+      "posterior": [
+        1.5615768219287814e-24,
+        0.5,
+        1.5615768219287814e-24,
+        0.5
+      ],
+      "entropy": 0.6931471805599453,
+      "effect_mean": 0.28697622205711304,
+      "confidence": 0.5,
+      "cost": 0.8,
+      "cumulative_cost": 0.8,
+      "model_conflict": false
+    }
+  ],
+  "budget_total": 12.0,
+  "budget_remaining": 11.2,
+  "spent": 0.8,
+  "evidence_status": "simulation",
+  "model_conflict": false,
+  "question": "Does setting A to +1 increase Y enough to justify cost rho/2?",
+  "assumptions": [
+    "One of four specified linear Gaussian SCMs generated the data",
+    "Perfect interventions",
+    "Known likelihood parameters and independent observations",
+    "No unmodeled confounding in the candidate family"
+  ],
+  "warnings": [
+    "All intervention results are simulated, not real-world experimental verification.",
+    "Observational likelihood is identical across hypotheses; arrow orientation is unresolved before intervention.",
+    "Model probabilities are conditional on the candidate family, not proof of causal structure."
+  ],
+  "query_probability": 0.5,
+  "effect_mean": 0.28697622205711304,
+  "effect_interval": [
+    0.0,
+    0.5739524441142261
+  ],
+  "interval_type": "95% finite-model posterior credible set envelope; not a frequentist confidence interval",
+  "entropy": 0.6931471805599453,
+  "confidence": 0.5,
+  "decision": "do not intervene",
+  "claim": "abstain",
+  "candidates": [
+    {
+      "id": "a-low",
+      "label": "Intervene on A",
+      "target": "A",
+      "value": 1.0,
+      "readout": "Y",
+      "n": 8,
+      "cost": 2.0,
+      "mean_predictions": [
+        0.5739524441142261,
+        0.5739524441142261,
+        0.0,
+        0.0
+      ],
+      "standard_errors": [
+        0.28952085242157133,
+        0.28952085242157133,
+        0.35355339059327373,
+        0.35355339059327373
+      ],
+      "standard_error": 0.32153712150742253,
+      "kind": "intervention",
+      "expected_information_gain": 0.28900139918416057,
+      "expected_query_information_gain": 0.28900139918416057,
+      "expected_decision_gain": 0.31569693629021645,
+      "predictive_variance": 0.18676651401963013
+    },
+    {
+      "id": "a-high",
+      "label": "High-dose intervention on A",
+      "target": "A",
+      "value": 2.0,
+      "readout": "Y",
+      "n": 20,
+      "cost": 5.0,
+      "mean_predictions": [
+        1.1479048882284522,
+        1.1479048882284522,
+        0.0,
+        0.0
+      ],
+      "standard_errors": [
+        0.18310906475312824,
+        0.18310906475312824,
+        0.22360679774997896,
+        0.22360679774997896
+      ],
+      "standard_error": 0.2033579312515536,
+      "kind": "intervention",
+      "expected_information_gain": 0.6861201491956694,
+      "expected_query_information_gain": 0.6861201491956694,
+      "expected_decision_gain": 0.49694082995728944,
+      "predictive_variance": 0.37118587290207655
+    },
+    {
+      "id": "y-probe",
+      "label": "Reverse-direction probe",
+      "target": "Y",
+      "value": 1.0,
+      "readout": "A",
+      "n": 8,
+      "cost": 2.2,
+      "mean_predictions": [
+        0.0,
+        0.0,
+        0.5739524441142261,
+        0.5739524441142261
+      ],
+      "standard_errors": [
+        0.35355339059327373,
+        0.35355339059327373,
+        0.28952085242157133,
+        0.28952085242157133
+      ],
+      "standard_error": 0.32153712150742253,
+      "kind": "intervention",
+      "expected_information_gain": 0.2890013991841606,
+      "expected_query_information_gain": 0.2890013991841606,
+      "expected_decision_gain": 0.31569693629021645,
+      "predictive_variance": 0.18676651401963013
+    },
+    {
+      "id": "b-probe",
+      "label": "Nuisance-graph probe",
+      "target": "B",
+      "value": 2.0,
+      "readout": "Z",
+      "n": 16,
+      "cost": 0.8,
+      "mean_predictions": [
+        1.6,
+        0.0,
+        1.6,
+        0.0
+      ],
+      "standard_errors": [
+        0.14999999999999997,
+        0.25,
+        0.14999999999999997,
+        0.25
+      ],
+      "standard_error": 0.19999999999999998,
+      "kind": "intervention",
+      "expected_information_gain": 0.0,
+      "expected_query_information_gain": 0.0,
+      "expected_decision_gain": 0.0,
+      "predictive_variance": 0.0625
+    },
+    {
+      "id": "measurement",
+      "label": "Additional observational measurement",
+      "target": "observe",
+      "value": 0.0,
+      "readout": "A",
+      "n": 16,
+      "cost": 0.5,
+      "mean_predictions": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "standard_errors": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "standard_error": 0.25,
+      "kind": "measurement",
+      "expected_information_gain": 0.0,
+      "expected_query_information_gain": 0.0,
+      "expected_decision_gain": 0.0,
+      "predictive_variance": 0.0625
+    }
+  ]
+}

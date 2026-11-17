@@ -1,0 +1,633 @@
+<!doctype html><html lang="en"><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>CAUSALOS · Research evidence</title>
+<style>body{background:#f5f3eb;color:#192c34;font:16px/1.6 system-ui,sans-serif;max-width:1000px;margin:48px auto;padding:24px}
+h1{font:64px Georgia,serif;margin:0}h2{font-size:22px;border-bottom:1px solid #b7c0bc;padding-bottom:12px}
+pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#fff;padding:24px;border:1px solid #d5dad2;font:13px/1.6 ui-monospace,monospace}
+header p{max-width:700px}section{break-inside:avoid}@media print{body{margin:0;background:white}pre{font-size:10px}}</style>
+<header><p>CAUSALOS LAB / EVIDENCE RECORD</p><h1>Research evidence.</h1>
+<p>A portable record of assumptions, diagnostics, estimates and simulation. Conclusions apply only within the documented scope.</p>
+<p>Generated 2026-11-17T08:59:12.370346+00:00</p></header><section><h2>Interpretation boundaries</h2><pre>{
+  &quot;association&quot;: &quot;An observed relationship does not establish a causal effect.&quot;,
+  &quot;identification&quot;: &quot;Identification is conditional on the supplied graph and explicit, partly untestable assumptions.&quot;,
+  &quot;simulation&quot;: &quot;Intervention replay is simulated evidence within a specified finite model family, not real-world experimental verification.&quot;,
+  &quot;counterfactuals&quot;: &quot;Individual counterfactual claims require an appropriate structural model; no individual counterfactual is inferred from an average treatment effect.&quot;
+}</pre></section><section><h2>Dataset provenance</h2><pre>{
+  &quot;rows&quot;: 800,
+  &quot;columns&quot;: [
+    &quot;X&quot;,
+    &quot;T&quot;,
+    &quot;Y&quot;
+  ],
+  &quot;sha256&quot;: &quot;45028db7fcdb569a787b42d3a1812a39aaf46eb726f913849c1d08b9a36ec473&quot;
+}</pre></section><section><h2>Source and study metadata</h2><pre>{
+  &quot;name&quot;: &quot;confounded&quot;,
+  &quot;title&quot;: &quot;Measured confounding&quot;,
+  &quot;kind&quot;: &quot;synthetic&quot;,
+  &quot;simulated&quot;: true,
+  &quot;question&quot;: {
+    &quot;treatment&quot;: &quot;T&quot;,
+    &quot;outcome&quot;: &quot;Y&quot;,
+    &quot;covariates&quot;: [
+      &quot;X&quot;
+    ],
+    &quot;graph&quot;: {
+      &quot;nodes&quot;: [
+        &quot;X&quot;,
+        &quot;T&quot;,
+        &quot;Y&quot;
+      ],
+      &quot;edges&quot;: [
+        [
+          &quot;X&quot;,
+          &quot;T&quot;
+        ],
+        [
+          &quot;X&quot;,
+          &quot;Y&quot;
+        ],
+        [
+          &quot;T&quot;,
+          &quot;Y&quot;
+        ]
+      ],
+      &quot;unresolved&quot;: [],
+      &quot;latent&quot;: []
+    },
+    &quot;assumptions&quot;: {
+      &quot;exchangeability&quot;: true,
+      &quot;consistency&quot;: true,
+      &quot;positivity&quot;: true,
+      &quot;temporal_order&quot;: true,
+      &quot;no_interference&quot;: true,
+      &quot;measurement_validity&quot;: true,
+      &quot;selection_ignorability&quot;: true
+    },
+    &quot;graph_source&quot;: &quot;user&quot;,
+    &quot;seed&quot;: 42
+  },
+  &quot;seed&quot;: 42,
+  &quot;n&quot;: 800,
+  &quot;simulation_truth&quot;: {
+    &quot;ate&quot;: 2,
+    &quot;access&quot;: &quot;Evaluation-only metadata, never passed to estimators or design policies.&quot;
+  },
+  &quot;limitations&quot;: [
+    &quot;Synthetic structural causal model. Assumptions are known by construction within this simulation; this is not real-world experimental verification.&quot;
+  ]
+}</pre></section><section><h2>Causal question and identifying assumptions</h2><pre>{
+  &quot;treatment&quot;: &quot;T&quot;,
+  &quot;outcome&quot;: &quot;Y&quot;,
+  &quot;covariates&quot;: [
+    &quot;X&quot;
+  ],
+  &quot;graph&quot;: {
+    &quot;nodes&quot;: [
+      &quot;X&quot;,
+      &quot;T&quot;,
+      &quot;Y&quot;
+    ],
+    &quot;edges&quot;: [
+      [
+        &quot;X&quot;,
+        &quot;T&quot;
+      ],
+      [
+        &quot;X&quot;,
+        &quot;Y&quot;
+      ],
+      [
+        &quot;T&quot;,
+        &quot;Y&quot;
+      ]
+    ],
+    &quot;unresolved&quot;: [],
+    &quot;latent&quot;: []
+  },
+  &quot;graph_source&quot;: &quot;user&quot;,
+  &quot;assumptions&quot;: {
+    &quot;exchangeability&quot;: true,
+    &quot;consistency&quot;: true,
+    &quot;positivity&quot;: true,
+    &quot;temporal_order&quot;: true,
+    &quot;no_interference&quot;: true,
+    &quot;measurement_validity&quot;: true,
+    &quot;selection_ignorability&quot;: true
+  },
+  &quot;seed&quot;: 42
+}</pre></section><section><h2>Data validation and SQL exploration</h2><pre>{
+  &quot;rows&quot;: 800,
+  &quot;columns&quot;: [
+    {
+      &quot;name&quot;: &quot;X&quot;,
+      &quot;dtype&quot;: &quot;float64&quot;,
+      &quot;missing&quot;: 0,
+      &quot;missing_percent&quot;: 0,
+      &quot;unique&quot;: 800,
+      &quot;numeric&quot;: {
+        &quot;mean&quot;: -0.02880754465800366,
+        &quot;std&quot;: 0.9843179471014697,
+        &quot;min&quot;: -2.964528837841651,
+        &quot;q25&quot;: -0.7152761763485606,
+        &quot;median&quot;: -0.008603258754169368,
+        &quot;q75&quot;: 0.6167773461754701,
+        &quot;max&quot;: 2.9138624660073296
+      },
+      &quot;nonfinite&quot;: 0
+    },
+    {
+      &quot;name&quot;: &quot;T&quot;,
+      &quot;dtype&quot;: &quot;int64&quot;,
+      &quot;missing&quot;: 0,
+      &quot;missing_percent&quot;: 0,
+      &quot;unique&quot;: 2,
+      &quot;numeric&quot;: {
+        &quot;mean&quot;: 0.48625,
+        &quot;std&quot;: 0.5001235767187823,
+        &quot;min&quot;: 0,
+        &quot;q25&quot;: 0,
+        &quot;median&quot;: 0,
+        &quot;q75&quot;: 1,
+        &quot;max&quot;: 1
+      },
+      &quot;nonfinite&quot;: 0
+    },
+    {
+      &quot;name&quot;: &quot;Y&quot;,
+      &quot;dtype&quot;: &quot;float64&quot;,
+      &quot;missing&quot;: 0,
+      &quot;missing_percent&quot;: 0,
+      &quot;unique&quot;: 800,
+      &quot;numeric&quot;: {
+        &quot;mean&quot;: 0.8754345462155244,
+        &quot;std&quot;: 2.231002792269624,
+        &quot;min&quot;: -5.156095396773197,
+        &quot;q25&quot;: -0.7488013559183143,
+        &quot;median&quot;: 0.916274916649827,
+        &quot;q75&quot;: 2.484924587164804,
+        &quot;max&quot;: 7.83587968957667
+      },
+      &quot;nonfinite&quot;: 0
+    }
+  ],
+  &quot;duplicates&quot;: 0,
+  &quot;correlation&quot;: {
+    &quot;columns&quot;: [
+      &quot;X&quot;,
+      &quot;T&quot;,
+      &quot;Y&quot;
+    ],
+    &quot;values&quot;: [
+      [
+        1,
+        0.294147335290538,
+        0.7961585289068774
+      ],
+      [
+        0.294147335290538,
+        1,
+        0.6202409643008797
+      ],
+      [
+        0.7961585289068774,
+        0.6202409643008797,
+        1
+      ]
+    ]
+  },
+  &quot;cohorts&quot;: [
+    {
+      &quot;treatment&quot;: 0,
+      &quot;n&quot;: 411
+    },
+    {
+      &quot;treatment&quot;: 1,
+      &quot;n&quot;: 389
+    }
+  ],
+  &quot;balance&quot;: [
+    {
+      &quot;variable&quot;: &quot;X&quot;,
+      &quot;smd_before&quot;: 0.6159052656310654
+    }
+  ],
+  &quot;provenance&quot;: {
+    &quot;sha256&quot;: &quot;16b069a88b0efbe2333dc2c5a880c4c2db6bb722859197c909db6daf2811dc3b&quot;,
+    &quot;hash_definition&quot;: &quot;SHA256 of ordered (column,dtype) JSON and pandas hash_pandas_object(index=False) bytes; pandas-version dependent&quot;,
+    &quot;engine&quot;: &quot;DuckDB 2.0.0&quot;,
+    &quot;transformations&quot;: [],
+    &quot;queries&quot;: [
+      &quot;SELECT COUNT(*) AS rows FROM observations&quot;,
+      &quot;SELECT COUNT(*) FROM (SELECT DISTINCT * FROM observations)&quot;,
+      &quot;SELECT COUNT(*) FILTER (WHERE \&quot;X\&quot; IS NULL), COUNT(DISTINCT \&quot;X\&quot;) FROM observations&quot;,
+      &quot;SELECT AVG(\&quot;X\&quot;), STDDEV_SAMP(\&quot;X\&quot;), MIN(\&quot;X\&quot;), QUANTILE_CONT(\&quot;X\&quot;, 0.25), MEDIAN(\&quot;X\&quot;), QUANTILE_CONT(\&quot;X\&quot;, 0.75), MAX(\&quot;X\&quot;), COUNT(*) FILTER(WHERE NOT ISFINITE(\&quot;X\&quot;)) FROM observations&quot;,
+      &quot;SELECT COUNT(*) FILTER (WHERE \&quot;T\&quot; IS NULL), COUNT(DISTINCT \&quot;T\&quot;) FROM observations&quot;,
+      &quot;SELECT AVG(\&quot;T\&quot;), STDDEV_SAMP(\&quot;T\&quot;), MIN(\&quot;T\&quot;), QUANTILE_CONT(\&quot;T\&quot;, 0.25), MEDIAN(\&quot;T\&quot;), QUANTILE_CONT(\&quot;T\&quot;, 0.75), MAX(\&quot;T\&quot;), COUNT(*) FILTER(WHERE NOT ISFINITE(\&quot;T\&quot;)) FROM observations&quot;,
+      &quot;SELECT COUNT(*) FILTER (WHERE \&quot;Y\&quot; IS NULL), COUNT(DISTINCT \&quot;Y\&quot;) FROM observations&quot;,
+      &quot;SELECT AVG(\&quot;Y\&quot;), STDDEV_SAMP(\&quot;Y\&quot;), MIN(\&quot;Y\&quot;), QUANTILE_CONT(\&quot;Y\&quot;, 0.25), MEDIAN(\&quot;Y\&quot;), QUANTILE_CONT(\&quot;Y\&quot;, 0.75), MAX(\&quot;Y\&quot;), COUNT(*) FILTER(WHERE NOT ISFINITE(\&quot;Y\&quot;)) FROM observations&quot;,
+      &quot;SELECT \&quot;T\&quot; AS treatment, COUNT(*) AS n FROM observations GROUP BY \&quot;T\&quot; ORDER BY \&quot;T\&quot; LIMIT 30&quot;,
+      &quot;SELECT \&quot;T\&quot;, AVG(\&quot;X\&quot;), VAR_SAMP(\&quot;X\&quot;) FROM observations WHERE \&quot;T\&quot; IN (0,1) GROUP BY \&quot;T\&quot; ORDER BY \&quot;T\&quot;&quot;
+    ],
+    &quot;rows_removed&quot;: 0
+  },
+  &quot;warnings&quot;: []
+}</pre></section><section><h2>Simulated sequential experiments</h2><pre>{
+  &quot;schema_version&quot;: 1,
+  &quot;scenario&quot;: &quot;fork&quot;,
+  &quot;rho&quot;: 0.5739524441142261,
+  &quot;nodes&quot;: [
+    &quot;A&quot;,
+    &quot;Y&quot;,
+    &quot;B&quot;,
+    &quot;Z&quot;
+  ],
+  &quot;hypotheses&quot;: [
+    {
+      &quot;id&quot;: &quot;h0&quot;,
+      &quot;label&quot;: &quot;A → Y / B → Z&quot;,
+      &quot;edges&quot;: [
+        [
+          &quot;A&quot;,
+          &quot;Y&quot;
+        ],
+        [
+          &quot;B&quot;,
+          &quot;Z&quot;
+        ]
+      ],
+      &quot;effect&quot;: 0.5739524441142261,
+      &quot;posterior&quot;: 1.1785049407052847e-15
+    },
+    {
+      &quot;id&quot;: &quot;h1&quot;,
+      &quot;label&quot;: &quot;A → Y / Z → B&quot;,
+      &quot;edges&quot;: [
+        [
+          &quot;A&quot;,
+          &quot;Y&quot;
+        ],
+        [
+          &quot;Z&quot;,
+          &quot;B&quot;
+        ]
+      ],
+      &quot;effect&quot;: 0.5739524441142261,
+      &quot;posterior&quot;: 1.1785049407052847e-15
+    },
+    {
+      &quot;id&quot;: &quot;h2&quot;,
+      &quot;label&quot;: &quot;Y → A / B → Z&quot;,
+      &quot;edges&quot;: [
+        [
+          &quot;Y&quot;,
+          &quot;A&quot;
+        ],
+        [
+          &quot;B&quot;,
+          &quot;Z&quot;
+        ]
+      ],
+      &quot;effect&quot;: 0,
+      &quot;posterior&quot;: 0.49999999999999883
+    },
+    {
+      &quot;id&quot;: &quot;h3&quot;,
+      &quot;label&quot;: &quot;Y → A / Z → B&quot;,
+      &quot;edges&quot;: [
+        [
+          &quot;Y&quot;,
+          &quot;A&quot;
+        ],
+        [
+          &quot;Z&quot;,
+          &quot;B&quot;
+        ]
+      ],
+      &quot;effect&quot;: 0,
+      &quot;posterior&quot;: 0.49999999999999883
+    }
+  ],
+  &quot;posterior&quot;: [
+    1.1785049407052847e-15,
+    1.1785049407052847e-15,
+    0.49999999999999883,
+    0.49999999999999883
+  ],
+  &quot;history&quot;: [
+    {
+      &quot;round&quot;: 1,
+      &quot;action_id&quot;: &quot;a-low&quot;,
+      &quot;label&quot;: &quot;Intervene on A&quot;,
+      &quot;observation&quot;: 0.1925450654741578,
+      &quot;readout&quot;: &quot;Y&quot;,
+      &quot;posterior&quot;: [
+        0.18646865901372572,
+        0.18646865901372572,
+        0.3135313409862742,
+        0.3135313409862742
+      ],
+      &quot;entropy&quot;: 1.3536476646196114,
+      &quot;effect_mean&quot;: 0.2140482851832602,
+      &quot;confidence&quot;: 0.6270626819725486,
+      &quot;cost&quot;: 2,
+      &quot;cumulative_cost&quot;: 2,
+      &quot;model_conflict&quot;: false
+    },
+    {
+      &quot;round&quot;: 2,
+      &quot;action_id&quot;: &quot;a-low&quot;,
+      &quot;label&quot;: &quot;Intervene on A&quot;,
+      &quot;observation&quot;: 0.2903323799894391,
+      &quot;readout&quot;: &quot;Y&quot;,
+      &quot;posterior&quot;: [
+        0.19319837229621045,
+        0.19319837229621045,
+        0.3068016277037895,
+        0.3068016277037895
+      ],
+      &quot;entropy&quot;: 1.3602561690148165,
+      &quot;effect_mean&quot;: 0.22177335595660036,
+      &quot;confidence&quot;: 0.6136032554075791,
+      &quot;cost&quot;: 2,
+      &quot;cumulative_cost&quot;: 4,
+      &quot;model_conflict&quot;: false
+    },
+    {
+      &quot;round&quot;: 3,
+      &quot;action_id&quot;: &quot;a-low&quot;,
+      &quot;label&quot;: &quot;Intervene on A&quot;,
+      &quot;observation&quot;: -0.1627222729023681,
+      &quot;readout&quot;: &quot;Y&quot;,
+      &quot;posterior&quot;: [
+        0.016243243345686727,
+        0.016243243345686727,
+        0.4837567566543133,
+        0.4837567566543133
+      ],
+      &quot;entropy&quot;: 0.8364291230604494,
+      &quot;effect_mean&quot;: 0.01864569843719807,
+      &quot;confidence&quot;: 0.9675135133086266,
+      &quot;cost&quot;: 2,
+      &quot;cumulative_cost&quot;: 6,
+      &quot;model_conflict&quot;: false
+    },
+    {
+      &quot;round&quot;: 4,
+      &quot;action_id&quot;: &quot;a-high&quot;,
+      &quot;label&quot;: &quot;High-dose intervention on A&quot;,
+      &quot;observation&quot;: -0.3033414842940529,
+      &quot;readout&quot;: &quot;Y&quot;,
+      &quot;posterior&quot;: [
+        1.178504940705293e-15,
+        1.178504940705293e-15,
+        0.49999999999999883,
+        0.49999999999999883
+      ],
+      &quot;entropy&quot;: 0.693147180560027,
+      &quot;effect_mean&quot;: 1.352811582236988e-15,
+      &quot;confidence&quot;: 0.9999999999999977,
+      &quot;cost&quot;: 5,
+      &quot;cumulative_cost&quot;: 11,
+      &quot;model_conflict&quot;: false
+    },
+    {
+      &quot;round&quot;: 5,
+      &quot;action_id&quot;: &quot;measurement&quot;,
+      &quot;label&quot;: &quot;Additional observational measurement&quot;,
+      &quot;observation&quot;: 0.12388541290768368,
+      &quot;readout&quot;: &quot;A&quot;,
+      &quot;posterior&quot;: [
+        1.178504940705293e-15,
+        1.178504940705293e-15,
+        0.4999999999999989,
+        0.4999999999999989
+      ],
+      &quot;entropy&quot;: 0.693147180560027,
+      &quot;effect_mean&quot;: 1.352811582236988e-15,
+      &quot;confidence&quot;: 0.9999999999999977,
+      &quot;cost&quot;: 0.5,
+      &quot;cumulative_cost&quot;: 11.5,
+      &quot;model_conflict&quot;: false
+    },
+    {
+      &quot;round&quot;: 6,
+      &quot;action_id&quot;: &quot;measurement&quot;,
+      &quot;label&quot;: &quot;Additional observational measurement&quot;,
+      &quot;observation&quot;: -0.4480268022603534,
+      &quot;readout&quot;: &quot;A&quot;,
+      &quot;posterior&quot;: [
+        1.1785049407052847e-15,
+        1.1785049407052847e-15,
+        0.49999999999999883,
+        0.49999999999999883
+      ],
+      &quot;entropy&quot;: 0.693147180560027,
+      &quot;effect_mean&quot;: 1.3528115822369785e-15,
+      &quot;confidence&quot;: 0.9999999999999977,
+      &quot;cost&quot;: 0.5,
+      &quot;cumulative_cost&quot;: 12,
+      &quot;model_conflict&quot;: false
+    }
+  ],
+  &quot;budget_total&quot;: 12,
+  &quot;budget_remaining&quot;: 0,
+  &quot;spent&quot;: 12,
+  &quot;evidence_status&quot;: &quot;simulation&quot;,
+  &quot;model_conflict&quot;: false,
+  &quot;question&quot;: &quot;Does setting A to +1 increase Y enough to justify cost rho/2?&quot;,
+  &quot;assumptions&quot;: [
+    &quot;One of four specified linear Gaussian SCMs generated the data&quot;,
+    &quot;Perfect interventions&quot;,
+    &quot;Known likelihood parameters and independent observations&quot;,
+    &quot;No unmodeled confounding in the candidate family&quot;
+  ],
+  &quot;warnings&quot;: [
+    &quot;All intervention results are simulated, not real-world experimental verification.&quot;,
+    &quot;Observational likelihood is identical across hypotheses; arrow orientation is unresolved before intervention.&quot;,
+    &quot;Model probabilities are conditional on the candidate family, not proof of causal structure.&quot;
+  ],
+  &quot;query_probability&quot;: 2.3570098814105693e-15,
+  &quot;effect_mean&quot;: 1.3528115822369785e-15,
+  &quot;effect_interval&quot;: [
+    0,
+    0
+  ],
+  &quot;interval_type&quot;: &quot;95% finite-model posterior credible set envelope; not a frequentist confidence interval&quot;,
+  &quot;entropy&quot;: 0.693147180560027,
+  &quot;confidence&quot;: 0.9999999999999977,
+  &quot;decision&quot;: &quot;do not intervene&quot;,
+  &quot;claim&quot;: &quot;zero effect&quot;,
+  &quot;candidates&quot;: [
+    {
+      &quot;id&quot;: &quot;a-low&quot;,
+      &quot;label&quot;: &quot;Intervene on A&quot;,
+      &quot;target&quot;: &quot;A&quot;,
+      &quot;value&quot;: 1,
+      &quot;readout&quot;: &quot;Y&quot;,
+      &quot;n&quot;: 8,
+      &quot;cost&quot;: 2,
+      &quot;mean_predictions&quot;: [
+        0.5739524441142261,
+        0.5739524441142261,
+        0,
+        0
+      ],
+      &quot;standard_errors&quot;: [
+        0.28952085242157133,
+        0.28952085242157133,
+        0.35355339059327373,
+        0.35355339059327373
+      ],
+      &quot;standard_error&quot;: 0.32153712150742253,
+      &quot;kind&quot;: &quot;intervention&quot;,
+      &quot;expected_information_gain&quot;: 2.9976021664879227e-15,
+      &quot;expected_query_information_gain&quot;: 3.1041611167729303e-15,
+      &quot;expected_decision_gain&quot;: 0,
+      &quot;predictive_variance&quot;: 0.12500000000000067
+    },
+    {
+      &quot;id&quot;: &quot;a-high&quot;,
+      &quot;label&quot;: &quot;High-dose intervention on A&quot;,
+      &quot;target&quot;: &quot;A&quot;,
+      &quot;value&quot;: 2,
+      &quot;readout&quot;: &quot;Y&quot;,
+      &quot;n&quot;: 20,
+      &quot;cost&quot;: 5,
+      &quot;mean_predictions&quot;: [
+        1.1479048882284522,
+        1.1479048882284522,
+        0,
+        0
+      ],
+      &quot;standard_errors&quot;: [
+        0.18310906475312824,
+        0.18310906475312824,
+        0.22360679774997896,
+        0.22360679774997896
+      ],
+      &quot;standard_error&quot;: 0.2033579312515536,
+      &quot;kind&quot;: &quot;intervention&quot;,
+      &quot;expected_information_gain&quot;: 3.097522238704187e-14,
+      &quot;expected_query_information_gain&quot;: 3.1174808888089106e-14,
+      &quot;expected_decision_gain&quot;: 0,
+      &quot;predictive_variance&quot;: 0.05000000000000306
+    },
+    {
+      &quot;id&quot;: &quot;y-probe&quot;,
+      &quot;label&quot;: &quot;Reverse-direction probe&quot;,
+      &quot;target&quot;: &quot;Y&quot;,
+      &quot;value&quot;: 1,
+      &quot;readout&quot;: &quot;A&quot;,
+      &quot;n&quot;: 8,
+      &quot;cost&quot;: 2.2,
+      &quot;mean_predictions&quot;: [
+        0,
+        0,
+        0.5739524441142261,
+        0.5739524441142261
+      ],
+      &quot;standard_errors&quot;: [
+        0.35355339059327373,
+        0.35355339059327373,
+        0.28952085242157133,
+        0.28952085242157133
+      ],
+      &quot;standard_error&quot;: 0.32153712150742253,
+      &quot;kind&quot;: &quot;intervention&quot;,
+      &quot;expected_information_gain&quot;: 4.440892098500626e-15,
+      &quot;expected_query_information_gain&quot;: 4.6936009989089535e-15,
+      &quot;expected_decision_gain&quot;: 2.1597907179683994e-24,
+      &quot;predictive_variance&quot;: 0.0838223239869142
+    },
+    {
+      &quot;id&quot;: &quot;b-probe&quot;,
+      &quot;label&quot;: &quot;Nuisance-graph probe&quot;,
+      &quot;target&quot;: &quot;B&quot;,
+      &quot;value&quot;: 2,
+      &quot;readout&quot;: &quot;Z&quot;,
+      &quot;n&quot;: 16,
+      &quot;cost&quot;: 0.8,
+      &quot;mean_predictions&quot;: [
+        1.6,
+        0,
+        1.6,
+        0
+      ],
+      &quot;standard_errors&quot;: [
+        0.14999999999999997,
+        0.25,
+        0.14999999999999997,
+        0.25
+      ],
+      &quot;standard_error&quot;: 0.19999999999999998,
+      &quot;kind&quot;: &quot;intervention&quot;,
+      &quot;expected_information_gain&quot;: 0.6930709031981179,
+      &quot;expected_query_information_gain&quot;: 0,
+      &quot;expected_decision_gain&quot;: 3.1554436208840472e-30,
+      &quot;predictive_variance&quot;: 0.6825000000000001
+    },
+    {
+      &quot;id&quot;: &quot;measurement&quot;,
+      &quot;label&quot;: &quot;Additional observational measurement&quot;,
+      &quot;target&quot;: &quot;observe&quot;,
+      &quot;value&quot;: 0,
+      &quot;readout&quot;: &quot;A&quot;,
+      &quot;n&quot;: 16,
+      &quot;cost&quot;: 0.5,
+      &quot;mean_predictions&quot;: [
+        0,
+        0,
+        0,
+        0
+      ],
+      &quot;standard_errors&quot;: [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      &quot;standard_error&quot;: 0.25,
+      &quot;kind&quot;: &quot;measurement&quot;,
+      &quot;expected_information_gain&quot;: 0,
+      &quot;expected_query_information_gain&quot;: 0,
+      &quot;expected_decision_gain&quot;: 6.7053176943786e-30,
+      &quot;predictive_variance&quot;: 0.0625
+    }
+  ],
+  &quot;recommendations&quot;: {
+    &quot;selected&quot;: null,
+    &quot;ranked&quot;: [],
+    &quot;policy&quot;: &quot;causalos&quot;,
+    &quot;reason&quot;: &quot;Maximize expected reduction in decision regret and query uncertainty per experiment cost.&quot;,
+    &quot;parameters&quot;: {
+      &quot;decision_weight&quot;: 0,
+      &quot;query_weight&quot;: 1,
+      &quot;cost_power&quot;: 1,
+      &quot;graph_weight&quot;: 0
+    },
+    &quot;simulated&quot;: true
+  }
+}</pre></section><section><h2>Exact simulation configuration</h2><pre>{
+  &quot;nominal_design&quot;: {
+    &quot;seed&quot;: 42,
+    &quot;scenario&quot;: &quot;fork&quot;,
+    &quot;initial_budget&quot;: 12
+  },
+  &quot;validity_design&quot;: {
+    &quot;seed&quot;: 42,
+    &quot;environment&quot;: &quot;weak_confounding&quot;,
+    &quot;contamination_prior&quot;: 0.05,
+    &quot;decision_weight&quot;: 0.5
+  }
+}</pre></section><section><h2>Reproducibility environment</h2><pre>{
+  &quot;causalos&quot;: &quot;0.1.2.dev0&quot;,
+  &quot;python&quot;: &quot;3.13.2&quot;,
+  &quot;packages&quot;: {
+    &quot;numpy&quot;: &quot;2.5.5&quot;,
+    &quot;scipy&quot;: &quot;1.18.1&quot;,
+    &quot;pandas&quot;: &quot;3.1.1&quot;,
+    &quot;scikit-learn&quot;: &quot;1.9.1&quot;,
+    &quot;statsmodels&quot;: &quot;0.15.0&quot;,
+    &quot;networkx&quot;: &quot;3.7&quot;,
+    &quot;duckdb&quot;: &quot;2.0.0&quot;
+  }
+}</pre></section></html>
