@@ -302,7 +302,7 @@ def run_benchmark(
     validation_count: int = 24,
 ) -> dict:
     output = Path(output)
-    output.mkdir(parents=True, exist_ok=True)
+    output.mkdir(parents=True, exist_ok=False)
     start = time.time()
     parameters, optimization = optimize(train_count, validation_count)
     rows, traces = [], []

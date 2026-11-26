@@ -401,7 +401,7 @@ def run_benchmark(
     if not 2 <= test_count <= 1000 or not 2 <= development_count <= 1000:
         raise ValueError("Seed counts must lie between 2 and 1000.")
     output = Path(output)
-    output.mkdir(parents=True, exist_ok=True)
+    output.mkdir(parents=True, exist_ok=False)
     scenarios = ("nominal", "weak_confounding", "unseen_negative")
     candidates = [
         {"contamination_prior": cp, "decision_weight": dw}

@@ -63,4 +63,28 @@ The newer current-main saved-analysis workflow is preserved separately: `analyze
 
 ## Figure regeneration
 
-`python docs/presentation/render.py` reads these raw JSON records, checks bound numerical source hashes, and exports desktop/phone PNGs and SVGs with Matplotlib. It does not run a benchmark, fit a model or call a service. Graph arrows are schematic model orientations, not estimated spatial coordinates. Important numbers and assumptions are available in this Markdown and raw JSON, including all five actions and all six observations. No claim of general causal discovery, real-world validity or policy superiority follows from the figure.
+The figure and its provenance describe the recorded execution at source commit
+`1f25fabdf066358cd56963acddaa647f5349bc5c`. The original renderer checks those
+source hashes; the current CLI has since changed to protect existing output
+directories, so running that renderer in the current checkout intentionally
+refuses rather than relabeling the historical evidence.
+
+To reproduce the historical figure from a fresh clone, use commit
+`16ca7d5d6436e40cda8f108d3bd69b627cfb2598`, which includes the presentation
+files alongside the bound original production sources. With Git, Python and
+Matplotlib available, the following creates a temporary copy outside the
+checkout and leaves your current branch untouched:
+
+```sh
+figure_source="$(mktemp -d "${TMPDIR:-/tmp}/causalos-figure-XXXXXX")"
+git clone https://github.com/nazeeh111/CausalOS.git "$figure_source/checkout"
+git -C "$figure_source/checkout" archive --format=tar --output="$figure_source/source.tar" 16ca7d5d6436e40cda8f108d3bd69b627cfb2598
+tar -xf "$figure_source/source.tar" -C "$figure_source"
+(cd "$figure_source" && python docs/presentation/render.py)
+```
+
+The renderer reads these raw JSON records, checks bound source hashes, and
+exports desktop/phone PNGs and SVGs with Matplotlib. Rendering bytes can vary
+with Matplotlib, fonts and platform; compare the visual result rather than
+assuming byte-for-byte identity. It does not run a benchmark, fit a model or
+call a service. Graph arrows are schematic model orientations, not estimated spatial coordinates. Important numbers and assumptions are available in this Markdown and raw JSON, including all five actions and all six observations. No claim of general causal discovery, real-world validity or policy superiority follows from the figure.

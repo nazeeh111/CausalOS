@@ -72,7 +72,7 @@ def _main():
     from causalos import datasets, design, profiling
     if args.command == "example":
         data, metadata = datasets.example(args.name, seed=args.seed)
-        args.out.mkdir(parents=True, exist_ok=True)
+        args.out.mkdir(parents=True, exist_ok=False)
         data.to_csv(args.out / "data.csv", index=False)
         (args.out / "question.json").write_text(json.dumps(clean(metadata.get("question", {})), indent=2))
         (args.out / "provenance.json").write_text(json.dumps(clean(metadata), indent=2))
