@@ -150,6 +150,13 @@ causalos benchmark --out artifacts/benchmark
 causalos benchmark --study evidence --out artifacts/evidence-benchmark
 ```
 
+`example` and both benchmark studies require a new output directory. Existing
+files, directories and symlinks are refused before benchmark computation or
+output writes, preserving earlier datasets and research results. Choose a fresh
+path for each run. An interrupted or failed run can leave an incomplete directory;
+inspect it and choose another path before retrying.
+
+
 Read the [technical research report](docs/research.md), [analysis methods](docs/analysis.md), [foundations and prior art](docs/foundations.md), [data provenance](examples/README.md), [verification record](docs/verification.md) and [contribution guide](CONTRIBUTING.md). The evidence policy is an original finite-model implementation and measured investigation, with a limited novelty claim. Published-method comparisons are explicitly scoped criterion adaptations, not reproductions of large neural systems.
 
 [Inspect a complete exported NSW evidence report](https://nazeeh111.github.io/CausalOS/nsw-evidence.html), including its assumptions, SQL diagnostics, estimator intervals, study provenance and exact configuration. The corresponding [machine-readable record](docs/nsw-evidence.json) is included in the source.
